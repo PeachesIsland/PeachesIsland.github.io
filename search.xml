@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/24/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>postman、apipost 预览接口数据</title>
+    <url>/2022/09/24/postman%E3%80%81apipost%20%E9%A2%84%E8%A7%88%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
+<p>ps：早知道这个功能能省事好多啊</p>
+<p>在此记录一下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>工具</category>
       </categories>
+  </entry>
+  <entry>
+    <title>redis</title>
+    <url>/2022/09/24/redis/</url>
+    <content><![CDATA[<p>redis</p>
+<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
+        <tag>get</tag>
+        <tag>set</tag>
+      </tags>
   </entry>
   <entry>
     <title>mysql 常用语句</title>
@@ -43,21 +51,9 @@
       </categories>
   </entry>
   <entry>
-    <title>postman、apipost 预览接口数据</title>
-    <url>/2022/09/24/postman%E3%80%81apipost%20%E9%A2%84%E8%A7%88%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
-<p>ps：早知道这个功能能省事好多啊</p>
-<p>在此记录一下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>redis</title>
-    <url>/2022/09/24/redis/</url>
-    <content><![CDATA[<p>redis</p>
+    <title>Hello World</title>
+    <url>/2022/09/24/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -72,12 +68,7 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>redis</category>
+        <category>Hexo</category>
       </categories>
-      <tags>
-        <tag>jQuery</tag>
-        <tag>表格</tag>
-        <tag>表单验证</tag>
-      </tags>
   </entry>
 </search>
