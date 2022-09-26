@@ -50,7 +50,11 @@
     <title>mysql 优化</title>
     <url>/2022/09/24/mysql-you-hua/</url>
     <content><![CDATA[<p>mysql</p>
-<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引<br>区分度公式 ： count(distinct col_name)&#x2F;count(*)<br>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
+<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<p>区分度公式 ： </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
+
 <h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
 
 <h3 id="用户“性别”要不要建立索引-？"><a href="#用户“性别”要不要建立索引-？" class="headerlink" title="用户“性别”要不要建立索引 ？"></a>用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
