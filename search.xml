@@ -47,7 +47,7 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql 常用语句</title>
+    <title>mysql 优化</title>
     <url>/2022/09/24/mysql-you-hua/</url>
     <content><![CDATA[<p>mysql</p>
 <h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引<br>区分度公式 ： count(distinct col_name)&#x2F;count(*)<br>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
