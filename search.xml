@@ -19,7 +19,7 @@
   </entry>
   <entry>
     <title>postman、apipost 预览接口数据</title>
-    <url>/2022/09/24/postman%E3%80%81apipost%20%E9%A2%84%E8%A7%88%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE/</url>
+    <url>/2022/09/24/postman-apipost-yu-lan-jie-kou-shu-ju/</url>
     <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
 <p>ps：早知道这个功能能省事好多啊</p>
 <p>在此记录一下：</p>
@@ -48,7 +48,7 @@
   </entry>
   <entry>
     <title>mysql 常用语句</title>
-    <url>/2022/09/24/mysql%20%E4%BC%98%E5%8C%96/</url>
+    <url>/2022/09/24/mysql-you-hua/</url>
     <content><![CDATA[<p>mysql</p>
 <h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引<br>区分度公式 ： count(distinct col_name)&#x2F;count(*)<br>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
 <h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
