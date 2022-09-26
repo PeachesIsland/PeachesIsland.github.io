@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>go 踩坑记录</title>
+    <url>/2022/09/26/gobase/</url>
+    <content><![CDATA[<p>golang</p>
+<h2 id="int64"><a href="#int64" class="headerlink" title="int64"></a>int64</h2><h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>数据类型</tag>
+        <tag>int64</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>postman、apipost 预览接口数据</title>
     <url>/2022/09/24/postman%E3%80%81apipost%20%E9%A2%84%E8%A7%88%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
@@ -31,11 +48,13 @@
   </entry>
   <entry>
     <title>mysql 常用语句</title>
-    <url>/2022/09/24/mysql%20%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</url>
+    <url>/2022/09/24/mysql%20%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>mysql</p>
-<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
+<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引<br>区分度公式 ： count(distinct col_name)&#x2F;count(*)<br>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
 
-
+<h3 id="用户“性别”要不要建立索引-？"><a href="#用户“性别”要不要建立索引-？" class="headerlink" title="用户“性别”要不要建立索引 ？"></a>用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
+<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
 ]]></content>
       <categories>
         <category>mysql</category>
