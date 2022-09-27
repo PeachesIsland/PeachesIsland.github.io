@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PowerShell一次执行多条命令</title>
+    <url>/2022/09/27/powershell-yi-ci-zhi-xing-duo-tiao-ming-ling/</url>
+    <content><![CDATA[<p>参考文章 <a href="https://blog.csdn.net/u011215669/article/details/81086097">csdn</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add . | git commit -m <span class="string">&quot;edit&quot;</span> | git push</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
     <title>go 踩坑记录</title>
     <url>/2022/09/26/gobase/</url>
     <content><![CDATA[<p>golang</p>
