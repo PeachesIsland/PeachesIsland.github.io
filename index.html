@@ -282,7 +282,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-27 17:44:18" itemprop="dateModified" datetime="2022-09-27T17:44:18+08:00">2022-09-27</time>
+                <time title="修改时间：2022-09-27 17:48:24" itemprop="dateModified" datetime="2022-09-27T17:48:24+08:00">2022-09-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
 
       
           <p>golang</p>
-<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64) </span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"></span><br><span class="line">fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
+<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
 
 
       
