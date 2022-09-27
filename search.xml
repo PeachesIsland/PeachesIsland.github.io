@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>go 修改结构体切片的值</title>
+    <url>/2022/09/27/go-jie-gou-ti-qie-pian-de-zhi/</url>
+    <content><![CDATA[<p>golang</p>
+<h2 id="for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的"><a href="#for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的" class="headerlink" title="for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的"></a>for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</h2><h3 id="for-循环里的-v-属于临时变量"><a href="#for-循环里的-v-属于临时变量" class="headerlink" title="for 循环里的 v 属于临时变量"></a>for 循环里的 v 属于临时变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">	Name    string</span><br><span class="line">	Address string</span><br><span class="line">	Age     int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	<span class="built_in">users</span> := []User&#123;</span><br><span class="line">		&#123;<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;北京&quot;</span>, 18&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;李四&quot;</span>, <span class="string">&quot;上海&quot;</span>, 19&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;王五&quot;</span>, <span class="string">&quot;广州&quot;</span>, 20&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	users02 := <span class="built_in">users</span></span><br><span class="line">	fmt.Printf(<span class="string">&quot;原数据:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := range <span class="built_in">users</span> &#123;</span><br><span class="line">		v.Name = <span class="string">&quot;大傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第一种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">	<span class="keyword">for</span> k, v := range users02 &#123;</span><br><span class="line">		<span class="built_in">users</span>[k].Name = <span class="string">&quot;小傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第二种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (原数据:)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># ( [&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Add)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (ress:广州 Age:20&#125;])</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (第一种方式修改后:)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># ( [&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Add)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (ress:广州 Age:20&#125;])</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (第二种方式修改后:)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># ( [&#123;Name:小傻瓜：张三 Address:北京 Age:18&#125; &#123;Name:小傻瓜：李四 Address:上海 Age:19)</span></span><br><span class="line"></span><br><span class="line">[//]: <span class="comment"># (&#125; &#123;Name:小傻瓜：王五 Address:广州 Age:20&#125;])</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>结构体</tag>
+        <tag>切片</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PowerShell一次执行多条命令</title>
     <url>/2022/09/27/powershell-yi-ci-zhi-xing-duo-tiao-ming-ling/</url>
     <content><![CDATA[<p>参考文章 <a href="https://blog.csdn.net/u011215669/article/details/81086097">csdn</a></p>
@@ -10,24 +26,19 @@
       </categories>
   </entry>
   <entry>
-    <title>mysql 优化</title>
-    <url>/2022/09/24/mysql-you-hua/</url>
-    <content><![CDATA[<p>mysql</p>
-<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
-<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
-<p>区分度公式 ： </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
+    <title>go int64 精度丢失</title>
+    <url>/2022/09/26/go-int64-jing-du-diu-shi/</url>
+    <content><![CDATA[<p>golang</p>
+<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
-
-<h3 id="用户“性别”要不要建立索引-？"><a href="#用户“性别”要不要建立索引-？" class="headerlink" title="用户“性别”要不要建立索引 ？"></a>用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
-<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
 ]]></content>
       <categories>
-        <category>mysql</category>
+        <category>golang</category>
       </categories>
       <tags>
-        <tag>mysql优化</tag>
+        <tag>golang</tag>
+        <tag>数据类型</tag>
+        <tag>int64</tag>
       </tags>
   </entry>
   <entry>
@@ -60,35 +71,24 @@
       </tags>
   </entry>
   <entry>
-    <title>go int64 精度丢失</title>
-    <url>/2022/09/26/go-int64-jing-du-diu-shi/</url>
-    <content><![CDATA[<p>golang</p>
-<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
+    <title>mysql 优化</title>
+    <url>/2022/09/24/mysql-you-hua/</url>
+    <content><![CDATA[<p>mysql</p>
+<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
+<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<p>区分度公式 ： </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
 
+<h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
+
+<h3 id="用户“性别”要不要建立索引-？"><a href="#用户“性别”要不要建立索引-？" class="headerlink" title="用户“性别”要不要建立索引 ？"></a>用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
+<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
 ]]></content>
       <categories>
-        <category>golang</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>golang</tag>
-        <tag>数据类型</tag>
-        <tag>int64</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>go 修改结构体切片的值</title>
-    <url>/2022/09/27/go-jie-gou-ti-qie-pian-de-zhi/</url>
-    <content><![CDATA[<p>golang</p>
-<h2 id="for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的"><a href="#for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的" class="headerlink" title="for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的"></a>for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</h2><h3 id="for-循环里的-v-属于临时变量"><a href="#for-循环里的-v-属于临时变量" class="headerlink" title="for 循环里的 v 属于临时变量"></a>for 循环里的 v 属于临时变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">	Name    string</span><br><span class="line">	Address string</span><br><span class="line">	Age     int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	<span class="built_in">users</span> := []User&#123;</span><br><span class="line">		&#123;<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;北京&quot;</span>, 18&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;李四&quot;</span>, <span class="string">&quot;上海&quot;</span>, 19&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;王五&quot;</span>, <span class="string">&quot;广州&quot;</span>, 20&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	users02 := <span class="built_in">users</span></span><br><span class="line">	fmt.Printf(<span class="string">&quot;原数据:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := range <span class="built_in">users</span> &#123;</span><br><span class="line">		v.Name = <span class="string">&quot;大傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第一种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">	<span class="keyword">for</span> k, v := range users02 &#123;</span><br><span class="line">		<span class="built_in">users</span>[k].Name = <span class="string">&quot;小傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第二种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">原数据:</span><br><span class="line"> [&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Add</span><br><span class="line">ress:广州 Age:20&#125;]</span><br><span class="line">第一种方式修改后:</span><br><span class="line"> [&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Add</span><br><span class="line">ress:广州 Age:20&#125;]</span><br><span class="line">第二种方式修改后:</span><br><span class="line"> [&#123;Name:小傻瓜：张三 Address:北京 Age:18&#125; &#123;Name:小傻瓜：李四 Address:上海 Age:19</span><br><span class="line">&#125; &#123;Name:小傻瓜：王五 Address:广州 Age:20&#125;]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-        <tag>结构体</tag>
-        <tag>切片</tag>
+        <tag>mysql优化</tag>
       </tags>
   </entry>
 </search>
