@@ -18,8 +18,8 @@
 <li>conf.d :存储自定义配置文件</li>
 <li>my.cnf :是默认配置文件</li>
 </ul>
-<p>如图：<img src="https://s3.bmp.ovh/imgs/2022/09/28/9106e755438c0a34.png"></p>
-<h4 id="1-6-1-创建对应的文件夹"><a href="#1-6-1-创建对应的文件夹" class="headerlink" title="1.6.1. 创建对应的文件夹"></a>1.6.1. 创建对应的文件夹</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/data  </span><br><span class="line">d:/docker/mysql/conf.d</span><br></pre></td></tr></table></figure>
+<h4 id="1-6-1-创建对应的文件夹"><a href="#1-6-1-创建对应的文件夹" class="headerlink" title="1.6.1. 创建对应的文件夹"></a>1.6.1. 创建对应的文件夹</h4><p>如下：<br><img src="https://s3.bmp.ovh/imgs/2022/09/28/9106e755438c0a34.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/data  </span><br><span class="line">d:/docker/mysql/conf.d</span><br></pre></td></tr></table></figure>
 <h4 id="1-6-2-创建对应的配置文件-my-cnf"><a href="#1-6-2-创建对应的配置文件-my-cnf" class="headerlink" title="1.6.2. 创建对应的配置文件 my.cnf"></a>1.6.2. 创建对应的配置文件 my.cnf</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/my.cnf</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-6-3-my-cnf添加如下内容"><a href="#1-6-3-my-cnf添加如下内容" class="headerlink" title="1.6.3. my.cnf添加如下内容"></a>1.6.3. my.cnf添加如下内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">user=mysql</span><br><span class="line">character-set-server=utf8</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">secure_file_priv=/var/lib/mysql</span><br><span class="line">expire_logs_days=7</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br><span class="line">max_connections=1000</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
