@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>自动提交脚本</title>
+    <url>/2022/09/28/zi-dong-ti-jiao-jiao-ben/</url>
+    <content><![CDATA[<p>参考文章 <a href="https://blog.csdn.net/qq_22630169/article/details/74236535?spm=1001.2014.3001.5502">csdn</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">if</span> [ ! -n <span class="string">&quot;<span class="variable">$1</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;请输入提交信息&quot;</span></span><br><span class="line">  <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  msg=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$msg</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">echoMsg</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$1</span>:&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;cd D:\github\github-hexo&quot;</span></span><br><span class="line"><span class="built_in">cd</span> D:\github\github-hexo</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo g&quot;</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo d&quot;</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;git pull&quot;</span></span><br><span class="line">git pull</span><br><span class="line">echoMsg <span class="string">&quot;git status&quot;</span></span><br><span class="line">git status</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git add .&quot;</span></span><br><span class="line">git add .</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git commit -m <span class="variable">$msg</span>&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;<span class="variable">$msg</span>&quot;</span></span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git push &quot;</span></span><br><span class="line">git push </span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
     <title>go 修改结构体切片的值</title>
     <url>/2022/09/27/go-jie-gou-ti-qie-pian-de-zhi/</url>
     <content><![CDATA[<p>golang</p>
