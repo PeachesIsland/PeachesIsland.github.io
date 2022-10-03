@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>redis 使用场景</title>
+    <url>/2022/10/03/redis/redis-shi-yong-chang-jing/</url>
+    <content><![CDATA[<h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis 使用场景</title>
+    <url>/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/</url>
+    <content><![CDATA[<h2 id="1-redis-与数据库缓存一致性问题"><a href="#1-redis-与数据库缓存一致性问题" class="headerlink" title="1. redis 与数据库缓存一致性问题"></a>1. redis 与数据库缓存一致性问题</h2><h3 id="1-1-延时双删"><a href="#1-1-延时双删" class="headerlink" title="1.1. 延时双删"></a>1.1. 延时双删</h3><h3 id="1-2-先写库，再删除缓存"><a href="#1-2-先写库，再删除缓存" class="headerlink" title="1.2. 先写库，再删除缓存"></a>1.2. 先写库，再删除缓存</h3><pre><code>引入MQ
+    MQ mysql，失败可重试
+    MQ 更新 redis
+闹正原子操作
+</code></pre>
+<h3 id="1-3-热点数据永不过期，保证若一致性"><a href="#1-3-热点数据永不过期，保证若一致性" class="headerlink" title="1.3. 热点数据永不过期，保证若一致性"></a>1.3. 热点数据永不过期，保证若一致性</h3>]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker 常用操作</title>
     <url>/2022/10/03/docker/docker-chang-yong-cao-zuo/</url>
     <content><![CDATA[<h3 id="1-docker-命令"><a href="#1-docker-命令" class="headerlink" title="1. docker 命令"></a>1. docker 命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker start 容器名/id     <span class="comment">#开始运行容器</span></span><br><span class="line">docker stop 容器名/id      <span class="comment">#停止运行容器</span></span><br><span class="line">docker ps       <span class="comment">#列出正在运行的容器</span></span><br><span class="line">docker run      <span class="comment">#构建容器</span></span><br><span class="line">docker build    <span class="comment">#创建镜像</span></span><br></pre></td></tr></table></figure>
@@ -156,7 +183,18 @@ handle off
   <entry>
     <title>redis</title>
     <url>/2022/10/03/redis/redis/</url>
-    <content><![CDATA[<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>redis 所有的key 原则上都要设置过期时间！！！</p>
+<h2 id="1-常用数据类型"><a href="#1-常用数据类型" class="headerlink" title="1. 常用数据类型"></a>1. 常用数据类型</h2><h3 id="1-1-string-字符串"><a href="#1-1-string-字符串" class="headerlink" title="1.1. string 字符串"></a>1.1. string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-hash-哈希"><a href="#1-2-hash-哈希" class="headerlink" title="1.2. hash 哈希"></a>1.2. hash 哈希</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; hget </span><br><span class="line">&gt; hmget </span><br><span class="line">&gt; hset </span><br><span class="line">&gt; hmset </span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-list-链表"><a href="#1-3-list-链表" class="headerlink" title="1.3. list 链表"></a>1.3. list 链表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; lpush user zhangsan</span><br><span class="line">&gt; lpush user lisi</span><br><span class="line">&gt; lpush user wangwu</span><br><span class="line">&gt; rpop user </span><br><span class="line">&gt; lpop user </span><br><span class="line">&gt;lrange user 1 10</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-set-集合"><a href="#1-4-set-集合" class="headerlink" title="1.4. set 集合"></a>1.4. set 集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; sadd</span><br><span class="line">&gt; spop</span><br><span class="line">&gt; smembers</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-sort-set-有序集合"><a href="#1-5-sort-set-有序集合" class="headerlink" title="1.5. sort set 有序集合"></a>1.5. sort set 有序集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; zadd</span><br><span class="line">&gt; zrange</span><br></pre></td></tr></table></figure>
+
+
+
 
 <p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
 ]]></content>
