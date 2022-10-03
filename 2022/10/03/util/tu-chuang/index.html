@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="golang for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的for 循环里的 v 属于临时变量12345678910111213141516171819202122232425262728293031323334package mainimport &quot;fmt&quot;type User struct &amp;#123;	Name    string	Addr">
+  <meta name="description" content="免费 图床 https:&#x2F;&#x2F;www.imgurl.org&#x2F;vip&#x2F;manage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="go 修改结构体切片的值">
-<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/go-jie-gou-ti-qie-pian-de-zhi/index.html">
+<meta property="og:title" content="免费 图床">
+<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/util/tu-chuang/index.html">
 <meta property="og:site_name" content="Peaches Island">
-<meta property="og:description" content="golang for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的for 循环里的 v 属于临时变量12345678910111213141516171819202122232425262728293031323334package mainimport &quot;fmt&quot;type User struct &amp;#123;	Name    string	Addr">
+<meta property="og:description" content="免费 图床 https:&#x2F;&#x2F;www.imgurl.org&#x2F;vip&#x2F;manage">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-03T01:44:31.842Z">
-<meta property="article:modified_time" content="2022-10-03T01:44:31.842Z">
+<meta property="article:published_time" content="2022-10-03T01:44:31.846Z">
+<meta property="article:modified_time" content="2022-10-03T01:44:31.846Z">
 <meta property="article:author" content="Peaches">
-<meta property="article:tag" content="golang">
-<meta property="article:tag" content="结构体">
-<meta property="article:tag" content="切片">
+<meta property="article:tag" content="图床">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/go-jie-gou-ti-qie-pian-de-zhi/">
+<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/util/tu-chuang/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>go 修改结构体切片的值 | Peaches Island</title>
+  <title>免费 图床 | Peaches Island</title>
   
 
 
@@ -191,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/go-jie-gou-ti-qie-pian-de-zhi/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/util/tu-chuang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          go 修改结构体切片的值
+          免费 图床
         </h1>
 
         <div class="post-meta">
@@ -222,7 +220,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
                 </span>
             </span>
 
@@ -237,9 +235,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>golang</p>
-<h2 id="for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的"><a href="#for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的" class="headerlink" title="for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的"></a>for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</h2><h3 id="for-循环里的-v-属于临时变量"><a href="#for-循环里的-v-属于临时变量" class="headerlink" title="for 循环里的 v 属于临时变量"></a>for 循环里的 v 属于临时变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">	Name    string</span><br><span class="line">	Address string</span><br><span class="line">	Age     int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	<span class="built_in">users</span> := []User&#123;</span><br><span class="line">		&#123;<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;北京&quot;</span>, 18&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;李四&quot;</span>, <span class="string">&quot;上海&quot;</span>, 19&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;王五&quot;</span>, <span class="string">&quot;广州&quot;</span>, 20&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	users02 := <span class="built_in">users</span></span><br><span class="line">	fmt.Printf(<span class="string">&quot;原数据:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := range <span class="built_in">users</span> &#123;</span><br><span class="line">		v.Name = <span class="string">&quot;大傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第一种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">	<span class="keyword">for</span> k, v := range users02 &#123;</span><br><span class="line">		<span class="built_in">users</span>[k].Name = <span class="string">&quot;小傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第二种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"><a href="#打印内容，可以看到大傻瓜没加上，小傻瓜加上了" class="headerlink" title="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"></a>打印内容，可以看到大傻瓜没加上，小傻瓜加上了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">原数据:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第一种方式修改后:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第二种方式修改后:</span><br><span class="line">[&#123;Name:小傻瓜：张三 Address:北京 Age:18&#125; &#123;Name:小傻瓜：李四 Address:上海 Age:19 &#125; &#123;Name:小傻瓜：王五 Address:广州 Age:20&#125;]</span><br></pre></td></tr></table></figure>
+        <p>免费 图床 <a target="_blank" rel="noopener" href="https://www.imgurl.org/vip/manage">https://www.imgurl.org/vip/manage</a></p>
+
     </div>
 
     
@@ -248,9 +245,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/golang/" rel="tag"># golang</a>
-              <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="tag"># 结构体</a>
-              <a href="/tags/%E5%88%87%E7%89%87/" rel="tag"># 切片</a>
+              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"># 图床</a>
           </div>
 
         
@@ -259,12 +254,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/10/03/go-int64-jing-du-diu-shi/" rel="prev" title="go int64 精度丢失">
-      <i class="fa fa-chevron-left"></i> go int64 精度丢失
+    <a href="/2022/10/03/redis/redis/" rel="prev" title="redis">
+      <i class="fa fa-chevron-left"></i> redis
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/10/03/mysql-you-hua/" rel="next" title="mysql 优化">
-      mysql 优化 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/10/03/util/zi-dong-ti-jiao-jiao-ben/" rel="next" title="hexo 修改后 自动提交脚本">
+      hexo 修改后 自动提交脚本 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -324,7 +319,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#for-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84%E4%BD%93%E5%88%87%E7%89%87%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8-value-%E5%80%BC%E5%8E%BB%E4%BF%AE%E6%94%B9%EF%BC%8C%E6%98%AF%E4%B8%8D%E4%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%9F%E6%95%B0%E6%8D%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%E5%BE%AA%E7%8E%AF%E9%87%8C%E7%9A%84-v-%E5%B1%9E%E4%BA%8E%E4%B8%B4%E6%97%B6%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">for 循环里的 v 属于临时变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E5%86%85%E5%AE%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E5%A4%A7%E5%82%BB%E7%93%9C%E6%B2%A1%E5%8A%A0%E4%B8%8A%EF%BC%8C%E5%B0%8F%E5%82%BB%E7%93%9C%E5%8A%A0%E4%B8%8A%E4%BA%86"><span class="nav-number">1.2.</span> <span class="nav-text">打印内容，可以看到大傻瓜没加上，小傻瓜加上了</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
