@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>github 添加 sshkey</title>
+    <title>GitHub 添加 sshkey</title>
     <url>/2022/10/03/github-tian-jia-sshkey/</url>
-    <content><![CDATA[<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><h3 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="GitHub-添加-sshkey"><a href="#GitHub-添加-sshkey" class="headerlink" title="GitHub 添加 sshkey"></a>GitHub 添加 sshkey</h2><h3 id="生成密钥-邮箱填自己的GitHub注册邮箱"><a href="#生成密钥-邮箱填自己的GitHub注册邮箱" class="headerlink" title="生成密钥 邮箱填自己的GitHub注册邮箱"></a>生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成密钥-邮箱填自己的GitHub注册邮箱-1"><a href="#生成密钥-邮箱填自己的GitHub注册邮箱-1" class="headerlink" title="生成密钥 邮箱填自己的GitHub注册邮箱"></a>生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="将生成的密钥添加到GitHub-SSH-keys-里面"><a href="#将生成的密钥添加到GitHub-SSH-keys-里面" class="headerlink" title="将生成的密钥添加到GitHub SSH keys 里面"></a>将生成的密钥添加到GitHub SSH keys 里面</h3><p>点击头像 &#x3D;》 <code>Settings</code> &#x3D;》 <code>SSH and GPG keys</code> &#x3D;》 点击 <code>New SSH key</code> 按钮 添加即可</p>
+<h3 id="测试是否添加成功"><a href="#测试是否添加成功" class="headerlink" title="测试是否添加成功"></a>测试是否添加成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com <span class="comment"># 回车 输入 yes即可 </span></span><br></pre></td></tr></table></figure>
 
-<p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
 ]]></content>
       <categories>
-        <category>github</category>
+        <category>GitHub</category>
       </categories>
       <tags>
         <tag>github</tag>
