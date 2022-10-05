@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux 常用操作和命令</title>
+    <url>/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/</url>
+    <content><![CDATA[<p>linux 常用操作和命令</p>
+<h4 id="后台执行脚本-a-sh"><a href="#后台执行脚本-a-sh" class="headerlink" title="后台执行脚本 a.sh"></a>后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查找-a-sh-的进程"><a href="#查找-a-sh-的进程" class="headerlink" title="查找 a.sh 的进程"></a>查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>死信队列</title>
     <url>/2022/10/05/mq/si-xin-dui-lie/</url>
     <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
@@ -272,25 +287,25 @@ handle off
     <title>mysql 优化</title>
     <url>/2022/10/03/mysql/mysql-you-hua/</url>
     <content><![CDATA[<p>mysql</p>
-<h2 id="mysql-优化的不同维度："><a href="#mysql-优化的不同维度：" class="headerlink" title="mysql 优化的不同维度："></a>mysql 优化的不同维度：</h2><pre><code>sql语句优化
+<h2 id="1-mysql-优化的不同维度："><a href="#1-mysql-优化的不同维度：" class="headerlink" title="1. mysql 优化的不同维度："></a>1. mysql 优化的不同维度：</h2><pre><code>sql语句优化
 表优化（分表，加索引）
 库优化（分库，主从分离，读写分离）
 </code></pre>
-<h2 id="防sql注入："><a href="#防sql注入：" class="headerlink" title="防sql注入："></a>防sql注入：</h2><pre><code>限制权限
+<h2 id="2-防sql注入："><a href="#2-防sql注入：" class="headerlink" title="2. 防sql注入："></a>2. 防sql注入：</h2><pre><code>限制权限
 过滤用户数据，参数化
 不使用原生sql
 </code></pre>
-<h2 id="explain-执行计划"><a href="#explain-执行计划" class="headerlink" title="explain 执行计划"></a>explain 执行计划</h2><pre><code>从优到劣依次为：
+<h2 id="3-explain-执行计划"><a href="#3-explain-执行计划" class="headerlink" title="3. explain 执行计划"></a>3. explain 执行计划</h2><pre><code>从优到劣依次为：
 null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL 
 </code></pre>
-<h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
+<h2 id="4-mysql-优化"><a href="#4-mysql-优化" class="headerlink" title="4. mysql 优化"></a>4. mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
 <p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
 <p>区分度公式 ： </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
 
-<h3 id="在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
+<h3 id="4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
 
-<h3 id="用户“性别”要不要建立索引-？"><a href="#用户“性别”要不要建立索引-？" class="headerlink" title="用户“性别”要不要建立索引 ？"></a>用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
+<h3 id="4-2-用户“性别”要不要建立索引-？"><a href="#4-2-用户“性别”要不要建立索引-？" class="headerlink" title="4.2. 用户“性别”要不要建立索引 ？"></a>4.2. 用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
 <p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
 ]]></content>
       <categories>
