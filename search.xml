@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>死信队列</title>
+    <url>/2022/10/05/mq/si-xin-dui-lie/</url>
+    <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
+达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，
+此时CMQ 不会立刻将消息丢弃，而是将其发送到该消费者对应的特殊队列中，这个特殊队列就是DLQ。
+</code></pre>
+<h3 id="2-常见用途"><a href="#2-常见用途" class="headerlink" title="2. 常见用途"></a>2. 常见用途</h3><pre><code>发送消息十分钟后发送给用户
+未支付订单取消订单
+下单后收到支付系统消息
+规定每天固定发送消息
+</code></pre>
+]]></content>
+      <categories>
+        <category>mq</category>
+      </categories>
+      <tags>
+        <tag>mq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 为什么使用 B+ 树</title>
+    <url>/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/</url>
+    <content><![CDATA[<p>mysql 为什么使用 B+ 树</p>
+<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
+一个节点可以存多个元素，元素也排序了 
+</code></pre>
+<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
+叶子节点之间有指针（底层-&gt; 叶子）
+非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
+</code></pre>
+<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
+而B+树是通过对数据进行排序来提升查询速度的
+B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
+所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
+所以两千万条数据以上的表需要做分库分表，无法通过索引优化
+</code></pre>
+<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
+如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
+查询过程是回表操作，索引会慢
+</code></pre>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>redis 使用场景</title>
     <url>/2022/10/03/redis/redis-shi-yong-chang-jing/</url>
     <content><![CDATA[<h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>]]></content>
@@ -223,6 +272,17 @@ handle off
     <title>mysql 优化</title>
     <url>/2022/10/03/mysql/mysql-you-hua/</url>
     <content><![CDATA[<p>mysql</p>
+<h2 id="mysql-优化的不同维度："><a href="#mysql-优化的不同维度：" class="headerlink" title="mysql 优化的不同维度："></a>mysql 优化的不同维度：</h2><pre><code>sql语句优化
+表优化（分表，加索引）
+库优化（分库，主从分离，读写分离）
+</code></pre>
+<h2 id="防sql注入："><a href="#防sql注入：" class="headerlink" title="防sql注入："></a>防sql注入：</h2><pre><code>限制权限
+过滤用户数据，参数化
+不使用原生sql
+</code></pre>
+<h2 id="explain-执行计划"><a href="#explain-执行计划" class="headerlink" title="explain 执行计划"></a>explain 执行计划</h2><pre><code>从优到劣依次为：
+null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL 
+</code></pre>
 <h2 id="mysql-优化"><a href="#mysql-优化" class="headerlink" title="mysql 优化"></a>mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
 <p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
 <p>区分度公式 ： </p>
