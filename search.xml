@@ -8,7 +8,34 @@
 
 <h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
 <h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-ps：process-status-，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status-，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status ，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status ，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>]]></content>
+<h4 id="4-ps：process-status-，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status-，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status ，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status ，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
+<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
+    |
+&lt;-hjkl-&gt;
+   |
+   V
+</code></pre>
+<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
+        编辑模式 《====》 正常模式 《====》 命令模式
+    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
+                                          ：q 退出
+                                          ：q！不保存退出
+                                          ：w 保存
+</code></pre>
+<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
+p 拷贝当前复制，
+dd 删除当前行，5dd 删除当前光标下的5行
+:set nu  显示行号
+:set nonu 不显示行号
+G 跳转到末行
+gg 跳转到首行
+/xx 回车 查找xx
+n: 查找下一个
+Shift + g :200 跳转到第200行 
+</code></pre>
+]]></content>
       <categories>
         <category>linux</category>
       </categories>
