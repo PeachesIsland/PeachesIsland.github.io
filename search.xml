@@ -4,10 +4,9 @@
     <title>linux 常用操作和命令</title>
     <url>/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/</url>
     <content><![CDATA[<p>linux 常用操作和命令</p>
-<h4 id="后台执行脚本-a-sh"><a href="#后台执行脚本-a-sh" class="headerlink" title="后台执行脚本 a.sh"></a>后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
+<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
 
-<h4 id="查找-a-sh-的进程"><a href="#查找-a-sh-的进程" class="headerlink" title="查找 a.sh 的进程"></a>查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
-]]></content>
+<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>linux</category>
       </categories>
