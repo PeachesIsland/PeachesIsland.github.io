@@ -183,6 +183,170 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/util/postman-apipost-yu-lan-jie-kou-shu-ju/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/03/util/postman-apipost-yu-lan-jie-kou-shu-ju/" class="post-title-link" itemprop="url">postman、apipost 预览接口数据</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-03 09:44:31" itemprop="dateCreated datePublished" datetime="2022-10-03T09:44:31+08:00">2022-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
+<p>ps：早知道这个功能能省事好多啊</p>
+<p>在此记录一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/mysql/mysql-you-hua/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/03/mysql/mysql-you-hua/" class="post-title-link" itemprop="url">mysql 优化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-03 09:44:31" itemprop="dateCreated datePublished" datetime="2022-10-03T09:44:31+08:00">2022-10-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-05 14:09:33" itemprop="dateModified" datetime="2022-10-05T14:09:33+08:00">2022-10-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>mysql</p>
+<h2 id="1-mysql-优化的不同维度："><a href="#1-mysql-优化的不同维度：" class="headerlink" title="1. mysql 优化的不同维度："></a>1. mysql 优化的不同维度：</h2><pre><code>sql语句优化
+表优化（分表，加索引）
+库优化（分库，主从分离，读写分离）
+</code></pre>
+<h2 id="2-防sql注入："><a href="#2-防sql注入：" class="headerlink" title="2. 防sql注入："></a>2. 防sql注入：</h2><pre><code>限制权限
+过滤用户数据，参数化
+不使用原生sql
+</code></pre>
+<h2 id="3-explain-执行计划"><a href="#3-explain-执行计划" class="headerlink" title="3. explain 执行计划"></a>3. explain 执行计划</h2><pre><code>从优到劣依次为：
+null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL 
+</code></pre>
+<h2 id="4-mysql-优化"><a href="#4-mysql-优化" class="headerlink" title="4. mysql 优化"></a>4. mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
+<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<p>区分度公式 ： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-用户“性别”要不要建立索引-？"><a href="#4-2-用户“性别”要不要建立索引-？" class="headerlink" title="4.2. 用户“性别”要不要建立索引 ？"></a>4.2. 用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
+<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/golang/go-shi-xian-wen-jian-shang-chuan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -681,20 +845,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
