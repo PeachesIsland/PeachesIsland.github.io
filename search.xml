@@ -508,11 +508,11 @@ Shift + g :200 跳转到第200行
     <title>weight</title>
     <url>/2022/10/13/shenghuo/chart/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart4080" style="height: 300px"></canvas>
+    <canvas id="chart2493" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart4080').getContext('2d');
+    var ctx = document.getElementById('chart2493').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -530,14 +530,14 @@ data: ['156.2 ','156.2 ','156.2 ','156.2 ','156.2 ','156.2 ','156.2 ','156.2 ','
 options: {
 responsive: true,
 steppedLine: true,
-title: {
-display: true,
-text: 'Chart.js 折线图'
-}
+	title: {
+	display: true,
+	text: 'Chart.js 折线图'
+	}
 }
 };
     new Chart(ctx, options);
-</script>%}]]></content>
+</script>]]></content>
       <categories>
         <category>生活</category>
       </categories>
