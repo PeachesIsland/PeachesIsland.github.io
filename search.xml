@@ -4,11 +4,11 @@
     <title>20221013</title>
     <url>/2022/10/13/shenghuo/chart/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart7806" style="height: 300px"></canvas>
+    <canvas id="chart2361" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart7806').getContext('2d');
+    var ctx = document.getElementById('chart2361').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -16,7 +16,7 @@ labels:
 
 ,
 datasets: [{
-    label: 'My First dataset',
+    label: '女',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
 data: [
