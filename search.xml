@@ -504,4 +504,23 @@ Shift + g :200 跳转到第200行
         <tag>git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>20221013</title>
+    <url>/2022/10/13/shenghuo/chart/</url>
+    <content><![CDATA[<div style="width: 90%;margin: 0 auto">
+    <canvas id="chart7143" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart7143').getContext('2d');
+    var options = \\TODO option goes here;
+    new Chart(ctx, options);
+</script>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
 </search>
