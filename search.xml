@@ -508,22 +508,22 @@ Shift + g :200 跳转到第200行
     <title>20221013</title>
     <url>/2022/10/13/shenghuo/chart/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart4421" style="height: 300px"></canvas>
+    <canvas id="chart5476" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart4421').getContext('2d');
+    var ctx = document.getElementById('chart5476').getContext('2d');
     var options = {
 type: 'line',
 data: {
 labels: ['2022-10-07', '2022-10-08', '2022-10-09', '2022-10-10', '2022-10-11', '2022-10-12', '2022-10-13'],
 datasets: [{
-label: '女',
+label: 'LXL',
 backgroundColor: 'rgb(255, 99, 132)',
 borderColor: 'rgb(255, 99, 132)',
 data: [124.7, 124.9, 125.9, 125, 125.2, 124, 124.3]
 },{
-label: '男',
+label: 'LJX',
 backgroundColor: 'rgb(255, 99, 132)',
 borderColor: 'rgb(255, 99, 132)',
 data: [154.7, 154.9, 155.9, 155, 155.2, 154, 154.3]
