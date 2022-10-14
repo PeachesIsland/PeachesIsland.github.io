@@ -568,11 +568,11 @@ steppedLine: true,
     <title>weight 2019-2022</title>
     <url>/2022/10/13/shenghuo/chart-2019-2022/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart9364" style="height: 300px"></canvas>
+    <canvas id="chart2032" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart9364').getContext('2d');
+    var ctx = document.getElementById('chart2032').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -592,12 +592,12 @@ responsive: true,
 steppedLine: true,
 	title: {
 	display: true,
-	text: '2019-12-21 开始统计 '
+	text: '2019-12-21 开始统计'
 	}
 }
 };
     new Chart(ctx, options);
-</script>]]></content>
+</script>}]]></content>
       <categories>
         <category>生活</category>
       </categories>
