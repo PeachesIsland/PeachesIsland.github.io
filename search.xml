@@ -23,11 +23,11 @@
     <title>weight 2019-2022</title>
     <url>/2022/10/13/shenghuo/chart-2019-2022/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart224" style="height: 300px"></canvas>
+    <canvas id="chart6313" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart224').getContext('2d');
+    var ctx = document.getElementById('chart6313').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -52,7 +52,7 @@ steppedLine: true,
 }
 };
     new Chart(ctx, options);
-</script>hart %}}]]></content>
+</script>]]></content>
       <categories>
         <category>生活</category>
       </categories>
