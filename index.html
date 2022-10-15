@@ -183,6 +183,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/15/shenghuo/chart-202210/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/15/shenghuo/chart-202210/" class="post-title-link" itemprop="url">weight</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-15 13:41:28" itemprop="dateCreated datePublished" datetime="2022-10-15T13:41:28+08:00">2022-10-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div style="width: 90%;margin: 0 auto">
+    <canvas id="chart732" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart732').getContext('2d');
+    var options = {
+type: 'line',
+data: {
+labels: ['2022-10-01','2022-10-02','2022-10-03','2022-10-04','2022-10-05','2022-10-06','2022-10-07','2022-10-08','2022-10-09','2022-10-10','2022-10-11','2022-10-12','2022-10-13','2022-10-14','2022-10-15',],
+datasets: [{
+label: 'LXL',
+backgroundColor: 'rgb(255, 179, 255,0.5)',
+borderColor: 'rgb(255, 153, 255,1)',
+data: ['125.2','124.9','125.7','125.7','124.7','124.9','124.9','125.9','125.9','125','125.2','124','124.3','124.6','125.1',]},
+{
+label: 'LJX',
+backgroundColor: 'rgb(204, 242, 255,0.5)',
+borderColor: 'rgb(128, 222, 255,1)',
+data: ['152.6','152.8','152','151.3','150.5','151.1','150.1','150','149.9','149.5','149','149.1','149.4','148.7','149.7',]}]},
+options: {
+responsive: true,
+steppedLine: true,
+	title: {
+	display: true,
+	text: '9月9号开始统计'
+	}
+}
+};
+    new Chart(ctx, options);
+</script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/13/shenghuo/jian-fei/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -920,97 +1016,6 @@ Shift + g :200 跳转到第200行
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/" class="post-title-link" itemprop="url">mysql 为什么使用 B+ 树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-10-03 15:22:48" itemprop="dateCreated datePublished" datetime="2022-10-03T15:22:48+08:00">2022-10-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-05 13:58:51" itemprop="dateModified" datetime="2022-10-05T13:58:51+08:00">2022-10-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>mysql 为什么使用 B+ 树</p>
-<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
-一个节点可以存多个元素，元素也排序了 
-</code></pre>
-<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
-叶子节点之间有指针（底层-&gt; 叶子）
-非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
-</code></pre>
-<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
-而B+树是通过对数据进行排序来提升查询速度的
-B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
-所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
-所以两千万条数据以上的表需要做分库分表，无法通过索引优化
-</code></pre>
-<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
-如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
-查询过程是回表操作，索引会慢
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1080,7 +1085,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
