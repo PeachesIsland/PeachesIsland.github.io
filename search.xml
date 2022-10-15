@@ -4,11 +4,11 @@
     <title>weight</title>
     <url>/2022/10/15/shenghuo/weight/weight-202210/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart3370" style="height: 300px"></canvas>
+    <canvas id="chart3052" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart3370').getContext('2d');
+    var ctx = document.getElementById('chart3052').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -28,7 +28,7 @@ responsive: true,
 steppedLine: true,
 	title: {
 	display: true,
-	text: '9月9号开始统计'
+	text: '10月1号开始统计'
 	}
 }
 };
