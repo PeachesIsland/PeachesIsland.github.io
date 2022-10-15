@@ -2,13 +2,13 @@
 <search>
   <entry>
     <title>weight</title>
-    <url>/2022/10/15/shenghuo/chart-202210/</url>
+    <url>/2022/10/15/shenghuo/weight/weight-202210/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart732" style="height: 300px"></canvas>
+    <canvas id="chart3370" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart732').getContext('2d');
+    var ctx = document.getElementById('chart3370').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -35,10 +35,10 @@ steppedLine: true,
     new Chart(ctx, options);
 </script>]]></content>
       <categories>
-        <category>生活</category>
+        <category>体重</category>
       </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>体重</tag>
       </tags>
   </entry>
   <entry>
@@ -62,13 +62,13 @@ steppedLine: true,
   </entry>
   <entry>
     <title>weight 2019-2022</title>
-    <url>/2022/10/13/shenghuo/chart-2019-2022/</url>
+    <url>/2022/10/13/shenghuo/weight/weight-2019-2022/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart6313" style="height: 300px"></canvas>
+    <canvas id="chart9616" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart6313').getContext('2d');
+    var ctx = document.getElementById('chart9616').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -95,21 +95,21 @@ steppedLine: true,
     new Chart(ctx, options);
 </script>]]></content>
       <categories>
-        <category>生活</category>
+        <category>体重</category>
       </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>体重</tag>
       </tags>
   </entry>
   <entry>
     <title>weight</title>
-    <url>/2022/10/13/shenghuo/chart/</url>
+    <url>/2022/10/13/shenghuo/weight/weight-2022/</url>
     <content><![CDATA[<div style="width: 90%;margin: 0 auto">
-    <canvas id="chart6393" style="height: 300px"></canvas>
+    <canvas id="chart7200" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart6393').getContext('2d');
+    var ctx = document.getElementById('chart7200').getContext('2d');
     var options = {
 type: 'line',
 data: {
@@ -136,10 +136,10 @@ steppedLine: true,
     new Chart(ctx, options);
 </script>]]></content>
       <categories>
-        <category>生活</category>
+        <category>体重</category>
       </categories>
       <tags>
-        <tag>生活</tag>
+        <tag>体重</tag>
       </tags>
   </entry>
   <entry>
