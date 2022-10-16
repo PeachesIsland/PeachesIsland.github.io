@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/16/shenghuo/weight/weight-202210/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/" class="post-title-link" itemprop="url">linux 常用操作和命令</a>
+            <a href="/2022/10/16/shenghuo/weight/weight-202210/" class="post-title-link" itemprop="url">weight</a>
         </h2>
 
         <div class="post-meta">
@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-05 14:06:10 / 修改时间：14:43:01" itemprop="dateCreated datePublished" datetime="2022-10-05T14:06:10+08:00">2022-10-05</time>
+              <time title="创建时间：2022-10-16 11:10:39 / 修改时间：11:13:17" itemprop="dateCreated datePublished" datetime="2022-10-16T11:10:39+08:00">2022-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -216,7 +216,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                  <a href="/categories/%E4%BD%93%E9%87%8D/" itemprop="url" rel="index"><span itemprop="name">体重</span></a>
                 </span>
             </span>
 
@@ -231,37 +231,112 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>linux 常用操作和命令</p>
-<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
+          <div style="width: 90%;margin: 0 auto">
+    <canvas id="chart4939" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart4939').getContext('2d');
+    var options = {
+type: 'line',
+data: {
+labels: ['2022-10-01','2022-10-02','2022-10-03','2022-10-04','2022-10-05','2022-10-06','2022-10-07','2022-10-08','2022-10-09','2022-10-10','2022-10-11','2022-10-12','2022-10-13','2022-10-14','2022-10-15','2022-10-16',],
+datasets: [{
+label: 'LXL',
+backgroundColor: 'rgb(255, 179, 255,0.5)',
+borderColor: 'rgb(255, 153, 255,1)',
+data: ['125.2','124.9','125.7','125.7','124.7','124.9','124.9','125.9','125.9','125','125.2','124.0','124.3','124.6','125.1','124.2',]},
+{
+label: 'LJX',
+backgroundColor: 'rgb(204, 242, 255,0.5)',
+borderColor: 'rgb(128, 222, 255,1)',
+data: ['152.6','152.8','152','151.3','150.5','151.1','150.1','150','149.9','149.5','149','149.1','149.4','148.7','149.7','148.2',]}]},
+options: {
+responsive: true,
+steppedLine: true,
+	title: {
+	display: true,
+	text: '10月1号开始统计'
+	}
+}
+};
+    new Chart(ctx, options);
+</script>
+      
+    </div>
 
-<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
-<h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
-<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br><span class="line"><span class="built_in">cat</span> aa.log <span class="comment">#查看aa.log 文件内容</span></span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
-    |
-&lt;-hjkl-&gt;
-   |
-   V
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/16/go-mian-shi/go-mian-shi-ti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/16/go-mian-shi/go-mian-shi-ti/" class="post-title-link" itemprop="url">go 面试题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-16 09:39:37 / 修改时间：09:47:20" itemprop="dateCreated datePublished" datetime="2022-10-16T09:39:37+08:00">2022-10-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="x3D-和-x3D-的区别？"><a href="#x3D-和-x3D-的区别？" class="headerlink" title="&#x3D; 和 :&#x3D; 的区别？"></a>&#x3D; 和 :&#x3D; 的区别？</h3><pre><code>=是赋值变量，:=是定义变量并赋值
 </code></pre>
-<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
-        编辑模式 《====》 正常模式 《====》 命令模式
-    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
-                                          ：q 退出
-                                          ：q！不保存退出
-                                          ：w 保存
+<h3 id="new和make的区别"><a href="#new和make的区别" class="headerlink" title="new和make的区别"></a>new和make的区别</h3><pre><code>=是赋值变量，:=是定义变量并赋值
+Go语言中new和make都是用来内存分配的原语（allocation primitives）。
+简单的说，new只分配内存，make用于slice，map，和channel的初始化。
 </code></pre>
-<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
-p 拷贝当前复制，
-dd 删除当前行，5dd 删除当前光标下的5行
-:set nu  显示行号
-:set nonu 不显示行号
-G 跳转到末行
-gg 跳转到首行
-/xx 回车 查找xx
-n: 查找下一个
-Shift + g :200 跳转到第200行 
+<h3 id="new和make的区别-1"><a href="#new和make的区别-1" class="headerlink" title="new和make的区别"></a>new和make的区别</h3><pre><code>=是赋值变量，:=是定义变量并赋值
+Go语言中new和make都是用来内存分配的原语（allocation primitives）。
+简单的说，new只分配内存，make用于slice，map，和channel的初始化。
 </code></pre>
 
       
@@ -282,7 +357,7 @@ Shift + g :200 跳转到第200行
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/05/mq/si-xin-dui-lie/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/15/golang/golang-gin-fen-pian-shang-chuan-wen-jian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -296,7 +371,7 @@ Shift + g :200 跳转到第200行
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/05/mq/si-xin-dui-lie/" class="post-title-link" itemprop="url">死信队列</a>
+            <a href="/2022/10/15/golang/golang-gin-fen-pian-shang-chuan-wen-jian/" class="post-title-link" itemprop="url">golang 实现简单分片文件上传</a>
         </h2>
 
         <div class="post-meta">
@@ -307,7 +382,7 @@ Shift + g :200 跳转到第200行
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-05 13:32:53 / 修改时间：13:53:02" itemprop="dateCreated datePublished" datetime="2022-10-05T13:32:53+08:00">2022-10-05</time>
+              <time title="创建时间：2022-10-15 15:05:26 / 修改时间：15:08:33" itemprop="dateCreated datePublished" datetime="2022-10-15T15:05:26+08:00">2022-10-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,7 +390,7 @@ Shift + g :200 跳转到第200行
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
                 </span>
             </span>
 
@@ -330,15 +405,9 @@ Shift + g :200 跳转到第200行
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
-达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，
-此时CMQ 不会立刻将消息丢弃，而是将其发送到该消费者对应的特殊队列中，这个特殊队列就是DLQ。
-</code></pre>
-<h3 id="2-常见用途"><a href="#2-常见用途" class="headerlink" title="2. 常见用途"></a>2. 常见用途</h3><pre><code>发送消息十分钟后发送给用户
-未支付订单取消订单
-下单后收到支付系统消息
-规定每天固定发送消息
-</code></pre>
+          <h2 id="golang-分片上传文件"><a href="#golang-分片上传文件" class="headerlink" title="golang 分片上传文件"></a>golang 分片上传文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	r := gin.New()</span><br><span class="line">	r.Use(</span><br><span class="line">		func(c *gin.Context) &#123;</span><br><span class="line">			defer <span class="function"><span class="title">func</span></span>() &#123;</span><br><span class="line">				<span class="keyword">if</span> e := recover(); e != nil &#123;</span><br><span class="line">					c.AbortWithStatusJSON(400, gin.H&#123;<span class="string">&quot;err&quot;</span>: e&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;()</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">	r.GET(<span class="string">&quot;/&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Transfer-Encoding&quot;</span>, <span class="string">&quot;chunked&quot;</span>)</span><br><span class="line">		//c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;image/png&quot;</span>)</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;video/mp4&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> i := 0; i &lt;= 5; i++ &#123;</span><br><span class="line">			//f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.png&quot;</span>, i))</span><br><span class="line">			f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.mp4&quot;</span>, i))</span><br><span class="line">			time.Sleep(time.Second)</span><br><span class="line">			b, _ := ioutil.ReadAll(f)</span><br><span class="line"></span><br><span class="line">			c.Writer.Write(b)</span><br><span class="line">			c.Writer.(http.Flusher).Flush()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	r.POST(<span class="string">&quot;/file&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		file, <span class="built_in">head</span>, _ := c.Request.FormFile(<span class="string">&quot;file&quot;</span>)</span><br><span class="line">		block := head.Size / 5</span><br><span class="line">		index := 0</span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			buf := make([]byte, block)</span><br><span class="line">			n, err := file.Read(buf)</span><br><span class="line"></span><br><span class="line">			//fmt.Println(<span class="string">&quot;buf&quot;</span>, buf)</span><br><span class="line">			//fmt.Println(<span class="string">&quot;n&quot;</span>, n)</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> err != nil &amp;&amp; err != io.EOF &#123;</span><br><span class="line">				panic(err.Error())</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> n == 0 &#123;</span><br><span class="line">				<span class="built_in">break</span></span><br><span class="line">			&#125;</span><br><span class="line">			//time.Sleep(1 * time.Second)</span><br><span class="line">			//saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.png&quot;</span>, index), buf)</span><br><span class="line">			saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.mp4&quot;</span>, index), buf)</span><br><span class="line">			index++</span><br><span class="line">		&#125;</span><br><span class="line">		c.JSON(200, gin.H&#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;ok&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line">	r.Run(<span class="string">&quot;:8888&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func saveBlock(name string, buf []byte) &#123;</span><br><span class="line">	save, _ := os.OpenFile(<span class="string">&quot;./file/&quot;</span>+name, os.O_CREATE|os.O_RDWR, 0600)</span><br><span class="line">	defer save.Close()</span><br><span class="line">	save.Write(buf)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参考文章: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cy4y1b7Bi?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">公开课:Gin模拟实现大文件上传、分片存储和分块显示</a></p>
 
       
     </div>
@@ -358,7 +427,7 @@ Shift + g :200 跳转到第200行
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/13/shenghuo/jian-fei/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -372,7 +441,7 @@ Shift + g :200 跳转到第200行
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/" class="post-title-link" itemprop="url">mysql 为什么使用 B+ 树</a>
+            <a href="/2022/10/13/shenghuo/jian-fei/" class="post-title-link" itemprop="url">减肥</a>
         </h2>
 
         <div class="post-meta">
@@ -382,14 +451,14 @@ Shift + g :200 跳转到第200行
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-10-03 15:22:48" itemprop="dateCreated datePublished" datetime="2022-10-03T15:22:48+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-13 16:52:21" itemprop="dateCreated datePublished" datetime="2022-10-13T16:52:21+08:00">2022-10-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-05 13:58:51" itemprop="dateModified" datetime="2022-10-05T13:58:51+08:00">2022-10-05</time>
+                <time title="修改时间：2022-10-14 13:27:07" itemprop="dateModified" datetime="2022-10-14T13:27:07+08:00">2022-10-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -397,7 +466,7 @@ Shift + g :200 跳转到第200行
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
                 </span>
             </span>
 
@@ -412,24 +481,14 @@ Shift + g :200 跳转到第200行
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>mysql 为什么使用 B+ 树</p>
-<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
-一个节点可以存多个元素，元素也排序了 
-</code></pre>
-<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
-叶子节点之间有指针（底层-&gt; 叶子）
-非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
-</code></pre>
-<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
-而B+树是通过对数据进行排序来提升查询速度的
-B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
-所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
-所以两千万条数据以上的表需要做分库分表，无法通过索引优化
-</code></pre>
-<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
-如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
-查询过程是回表操作，索引会慢
-</code></pre>
+          <h2 id="每月减重多少是合适的？"><a href="#每月减重多少是合适的？" class="headerlink" title="每月减重多少是合适的？"></a>每月减重多少是合适的？</h2><p>每月减重 3-5% 是合适的</p>
+<h2 id="可以饥饿减肥吗"><a href="#可以饥饿减肥吗" class="headerlink" title="可以饥饿减肥吗"></a>可以饥饿减肥吗</h2><p>饥饿减肥 72 小时内 消耗 约 70克蛋白，差不多300克肌肉</p>
+<p>超过72小时后才会消耗脂肪</p>
+<p>饥饿减肥消耗的肌肉是很难涨回来的，但是脂肪会涨回来的特别快</p>
+<p>同时，如果恢复了以前的饮食，体重还会反弹，甚至更高</p>
+<h2 id="可以吃碳水吗"><a href="#可以吃碳水吗" class="headerlink" title="可以吃碳水吗"></a>可以吃碳水吗</h2><p>可以吃，100克精米面 ，可以适量吃，不要超量</p>
+<p>一天需要的碳水在 200克左右 ，所以每顿饭100克左右，差不多3个馒头<br>女生运动的少，可以吃更少一点 100-150g（生米）</p>
+<p>有糖的存在，脂肪的代谢还是比较顺畅<br>没有糖，只能使用酮代谢脂肪，生酮副作用比较大 </p>
 
       
     </div>
@@ -449,7 +508,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-shi-yong-chang-jing/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/13/shenghuo/weight/weight-2019-2022/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -463,7 +522,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/redis/redis-shi-yong-chang-jing/" class="post-title-link" itemprop="url">redis 使用场景</a>
+            <a href="/2022/10/13/shenghuo/weight/weight-2019-2022/" class="post-title-link" itemprop="url">weight 2019-2022</a>
         </h2>
 
         <div class="post-meta">
@@ -472,17 +531,23 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-10-03 15:10:58 / 修改时间：15:13:52" itemprop="dateCreated datePublished" datetime="2022-10-03T15:10:58+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-13 15:34:21" itemprop="dateCreated datePublished" datetime="2022-10-13T15:34:21+08:00">2022-10-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-15 13:44:00" itemprop="dateModified" datetime="2022-10-15T13:44:00+08:00">2022-10-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                  <a href="/categories/%E4%BD%93%E9%87%8D/" itemprop="url" rel="index"><span itemprop="name">体重</span></a>
                 </span>
             </span>
 
@@ -497,7 +562,37 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>
+          <div style="width: 90%;margin: 0 auto">
+    <canvas id="chart9616" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart9616').getContext('2d');
+    var options = {
+type: 'line',
+data: {
+labels: ['2019-12-21 ','2019-12-22 ','2019-12-24 ','2019-12-25 ','2019-12-26 ','2019-12-27 ','2019-12-28 ','2019-12-30 ','2019-12-31 ','2019-12-27 ','2020-01-02 ','2020-01-07 ','2020-01-08 ','2020-01-13 ','2020-01-31 ','2020-02-03 ','2020-02-05 ','2020-02-10 ','2020-02-11 ','2020-02-12 ','2020-04-02 ','2020-04-09 ','*2020-07-09 ','2020-08-09 ','2020-09-22 ','2020-10-08 ','2021-02-18 ','2021-02-19 ','2021-03-28 ','2021-05-02 ','2021-05-03 ','2021-05-06 ','2021-05-08 ','2021-05-08 ','2021-05-08 ','2021-05-09 ','2021-05-14 ','2021-05-19 ','2021-07-11 ','2021-07-15 ','2021-07-17 ','2021-07-19 ','2021-07-22 ','2021-07-24 ','2021-07-25 ','2021-07-26 ','2021-07-26 ','2021-07-30 ','2021-08-11 ','2021-08-12 ','2021-08-17 ','2021-08-24 ','2021-08-28 ','2021-12-17 ','2022-03-06 ','2022-03-13 ','2022-03-21 ','2022-03-24 ','2022-05-05 ',],
+datasets: [{
+label: 'LXL',
+backgroundColor: 'rgb(255, 179, 255,0.5)',
+borderColor: 'rgb(255, 153, 255,1)',
+data: ['100.8 ','99.6 ','100 ','99.8 ','100 ','99.6 ','99.6 ','99.4 ','98.8 ','99 ','99.4 ','99.6 ','99.2 ','100.2 ','102.2 ','103.4 ','102.2 ','103.4 ','102.2 ','102.8 ','103.4 ','103.8 ','103.8 ','110 ','111.2 ','109.8 ','115.8 ','112.8 ','114 ','115.4 ','114.8 ','114.2 ','113.6 ','113.0 ','113.0 ','113.2 ','114.0 ','115.8 ','117.2 ','116.2 ','115.6 ','115.6 ','115.8 ','115.6 ','115.8 ','116.0 ','114.0 ','115.2 ','114.2 ','113.6 ','114.0 ','114.6 ','112.8 ','120.0 ','122.4 ','120.8 ','120.8 ','120.8 ','120.6 ',]},
+{
+label: 'LJX',
+backgroundColor: 'rgb(204, 242, 255,0.5)',
+borderColor: 'rgb(128, 222, 255,1)',
+data: ['129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','129 ','136.2 ','137.4 ','136.2 ','137.2 ','136.6 ','136.6 ','136.6 ','135.2 ','135.8 ','136.4 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','135.6 ','137.6 ','146.6 ','149.6 ','146.6 ','147 ','145.8 ','145.8 ',]}]},
+options: {
+responsive: true,
+steppedLine: true,
+	title: {
+	display: true,
+	text: '2019-12-21 开始统计'
+	}
+}
+};
+    new Chart(ctx, options);
+</script>
       
     </div>
 
@@ -516,7 +611,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/13/shenghuo/weight/weight-2022/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -530,7 +625,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/" class="post-title-link" itemprop="url">redis 使用场景</a>
+            <a href="/2022/10/13/shenghuo/weight/weight-2022/" class="post-title-link" itemprop="url">weight</a>
         </h2>
 
         <div class="post-meta">
@@ -539,17 +634,23 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-10-03 15:04:26 / 修改时间：15:11:10" itemprop="dateCreated datePublished" datetime="2022-10-03T15:04:26+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-13 13:24:47" itemprop="dateCreated datePublished" datetime="2022-10-13T13:24:47+08:00">2022-10-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-15 13:44:00" itemprop="dateModified" datetime="2022-10-15T13:44:00+08:00">2022-10-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                  <a href="/categories/%E4%BD%93%E9%87%8D/" itemprop="url" rel="index"><span itemprop="name">体重</span></a>
                 </span>
             </span>
 
@@ -564,12 +665,37 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-redis-与数据库缓存一致性问题"><a href="#1-redis-与数据库缓存一致性问题" class="headerlink" title="1. redis 与数据库缓存一致性问题"></a>1. redis 与数据库缓存一致性问题</h2><h3 id="1-1-延时双删"><a href="#1-1-延时双删" class="headerlink" title="1.1. 延时双删"></a>1.1. 延时双删</h3><h3 id="1-2-先写库，再删除缓存"><a href="#1-2-先写库，再删除缓存" class="headerlink" title="1.2. 先写库，再删除缓存"></a>1.2. 先写库，再删除缓存</h3><pre><code>引入MQ
-    MQ mysql，失败可重试
-    MQ 更新 redis
-闹正原子操作
-</code></pre>
-<h3 id="1-3-热点数据永不过期，保证若一致性"><a href="#1-3-热点数据永不过期，保证若一致性" class="headerlink" title="1.3. 热点数据永不过期，保证若一致性"></a>1.3. 热点数据永不过期，保证若一致性</h3>
+          <div style="width: 90%;margin: 0 auto">
+    <canvas id="chart7200" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart7200').getContext('2d');
+    var options = {
+type: 'line',
+data: {
+labels: ['2022-09-09','2022-09-11','2022-09-11','2022-09-12','2022-09-13','2022-09-14','2022-09-15','2022-09-16','2022-09-17','2022-09-18','2022-09-19','2022-09-20','2022-09-21','2022-09-22','2022-09-23','2022-09-24','2022-09-25','2022-09-26','2022-09-27','2022-09-28','2022-09-29','2022-09-30','2022-10-01','2022-10-02','2022-10-03','2022-10-04','2022-10-05','2022-10-06','2022-10-07','2022-10-08','2022-10-09','2022-10-10','2022-10-11','2022-10-12','2022-10-13','2022-10-14','2022-10-15',],
+datasets: [{
+label: 'LXL',
+backgroundColor: 'rgb(255, 179, 255,0.5)',
+borderColor: 'rgb(255, 153, 255,1)',
+data: ['127.0','127.0','127.0','127.6','128.3','127.4','127.4','127.8','126.4','126.7','127.9','128.3','128.3','127.9','127.6','127.0','127.0','126.4','126.6','126.3','125.7','125.3','125.2','124.9','125.7','125.7','124.7','124.9','124.9','125.9','125.9','125','125.2','124','124.3','124.6','125.1',]},
+{
+label: 'LJX',
+backgroundColor: 'rgb(204, 242, 255,0.5)',
+borderColor: 'rgb(128, 222, 255,1)',
+data: ['156.2','156.2','156.2','156.2','156.2','156.2','156.2','156.2','156.2','156.2','155.2','155.1','154.8','154.6','154.4','154.2','153.4','153.7','155.4','154.5','153.9','152.9','152.6','152.8','152','151.3','150.5','151.1','150.1','150','149.9','149.5','149','149.1','149.4','148.7','149.7',]}]},
+options: {
+responsive: true,
+steppedLine: true,
+	title: {
+	display: true,
+	text: '9月9号开始统计'
+	}
+}
+};
+    new Chart(ctx, options);
+</script>
       
     </div>
 
@@ -588,7 +714,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/docker/docker-chang-yong-cao-zuo/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/12/util/git-che-xiao-add-commit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -602,7 +728,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/docker/docker-chang-yong-cao-zuo/" class="post-title-link" itemprop="url">docker 常用操作</a>
+            <a href="/2022/10/12/util/git-che-xiao-add-commit/" class="post-title-link" itemprop="url">git 撤销 add commit</a>
         </h2>
 
         <div class="post-meta">
@@ -613,7 +739,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-03 14:55:47 / 修改时间：14:59:36" itemprop="dateCreated datePublished" datetime="2022-10-03T14:55:47+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-12 16:46:39 / 修改时间：16:47:45" itemprop="dateCreated datePublished" datetime="2022-10-12T16:46:39+08:00">2022-10-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -621,7 +747,7 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
                 </span>
             </span>
 
@@ -636,163 +762,9 @@ B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-docker-命令"><a href="#1-docker-命令" class="headerlink" title="1. docker 命令"></a>1. docker 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器名/id     <span class="comment">#开始运行容器</span></span><br><span class="line">docker stop 容器名/id      <span class="comment">#停止运行容器</span></span><br><span class="line">docker ps       <span class="comment">#列出正在运行的容器</span></span><br><span class="line">docker run      <span class="comment">#构建容器</span></span><br><span class="line">docker build    <span class="comment">#创建镜像</span></span><br></pre></td></tr></table></figure>
+          <h2 id="git-撤销-add-commit"><a href="#git-撤销-add-commit" class="headerlink" title="git 撤销 add commit"></a>git 撤销 add commit</h2><h3 id="git-撤销-add"><a href="#git-撤销-add" class="headerlink" title="git 撤销 add"></a>git 撤销 add</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/golang/beego-chang-yong-cao-zuo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/03/golang/beego-chang-yong-cao-zuo/" class="post-title-link" itemprop="url">beego 常用操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-03 14:46:42 / 修改时间：14:55:47" itemprop="dateCreated datePublished" datetime="2022-10-03T14:46:42+08:00">2022-10-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-bee-命令"><a href="#1-bee-命令" class="headerlink" title="1. bee 命令"></a>1. bee 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bee new xxx <span class="comment"># 创建一个新项目</span></span><br><span class="line">bee api xxx <span class="comment"># 创建一个api项目</span></span><br><span class="line">bee run <span class="comment"># 运行 beego 项目</span></span><br><span class="line">bee pack <span class="comment"># 上线时用来打包beego文件的，打包完成的文件在bin文件中</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-beego-过滤器"><a href="#2-beego-过滤器" class="headerlink" title="2. beego 过滤器"></a>2. beego 过滤器</h3><pre><code>安全验证，如IP屏蔽，token 验证，访问地址屏蔽
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ne 不等于</span><br><span class="line">lt 小于</span><br><span class="line">gt 大于</span><br><span class="line">le 小于等于</span><br><span class="line">ge 大于等于</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-beego-通过orm-操作数据库"><a href="#3-beego-通过orm-操作数据库" class="headerlink" title="3. beego 通过orm 操作数据库"></a>3. beego 通过orm 操作数据库</h3><pre><code>在关系型数据库和对象之间做一个映射
-在操作数据库时，不需要写复杂的sql语句，只需要操作对象即可对对应的数据进行操作
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/golang/go-init-han-shu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/03/golang/go-init-han-shu/" class="post-title-link" itemprop="url">go init 函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-03 14:36:49 / 修改时间：14:45:40" itemprop="dateCreated datePublished" datetime="2022-10-03T14:36:49+08:00">2022-10-03</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>先于main函数执行，实现包级别的一些初始化操作
-每个包可以包含多个 init 函数
-所有编译器发现的函数都会被安排在main函数之前执行
-init 函数没有输入参数，返回值会且仅会导入一次
-</code></pre>
-<h3 id="2-主要作用"><a href="#2-主要作用" class="headerlink" title="2. 主要作用"></a>2. 主要作用</h3><pre><code>初始化不能采用初始化表达式初始化的变量
-程序运行前的注册
-实现 sync.Once 功能
-</code></pre>
-<h3 id="3-init-执行顺序"><a href="#3-init-执行顺序" class="headerlink" title="3. init 执行顺序"></a>3. init 执行顺序</h3><pre><code>单个包中init执行顺序 初始化变量 &gt; init 函数 &gt; main 函数
-单个包中多个init 执行是顺序的
-相互以来的包之间的init 函数，按照递归的顺序执行
-</code></pre>
+<h3 id="git-撤销-commit"><a href="#git-撤销-commit" class="headerlink" title="git 撤销 commit"></a>git 撤销 commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -812,7 +784,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/mysql/mysql-dai-shu-li-wen-ti/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/12/shenghuo/20221012/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -826,7 +798,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/mysql/mysql-dai-shu-li-wen-ti/" class="post-title-link" itemprop="url">Mysql 待梳理问题</a>
+            <a href="/2022/10/12/shenghuo/20221012/" class="post-title-link" itemprop="url">20221012</a>
         </h2>
 
         <div class="post-meta">
@@ -837,7 +809,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-03 14:26:50 / 修改时间：14:31:58" itemprop="dateCreated datePublished" datetime="2022-10-03T14:26:50+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-12 15:41:36 / 修改时间：15:43:07" itemprop="dateCreated datePublished" datetime="2022-10-12T15:41:36+08:00">2022-10-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -845,7 +817,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
                 </span>
             </span>
 
@@ -860,7 +832,8 @@ init 函数没有输入参数，返回值会且仅会导入一次
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-Mysql-待梳理问题"><a href="#1-Mysql-待梳理问题" class="headerlink" title="1. Mysql 待梳理问题"></a>1. Mysql 待梳理问题</h2><h3 id="1-1-mysql-如何进行分库分表"><a href="#1-1-mysql-如何进行分库分表" class="headerlink" title="1.1. mysql 如何进行分库分表"></a>1.1. mysql 如何进行分库分表</h3>
+          <p>极简 不是数量少，而是够用</p>
+
       
     </div>
 
@@ -879,7 +852,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-dai-shu-li-wen-ti/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/11/shenghuo/2022101101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -893,7 +866,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/03/redis/redis-dai-shu-li-wen-ti/" class="post-title-link" itemprop="url">Redis 待梳理问题</a>
+            <a href="/2022/10/11/shenghuo/2022101101/" class="post-title-link" itemprop="url">20221011</a>
         </h2>
 
         <div class="post-meta">
@@ -904,7 +877,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-03 14:24:33 / 修改时间：14:31:58" itemprop="dateCreated datePublished" datetime="2022-10-03T14:24:33+08:00">2022-10-03</time>
+              <time title="创建时间：2022-10-11 17:55:37 / 修改时间：17:58:42" itemprop="dateCreated datePublished" datetime="2022-10-11T17:55:37+08:00">2022-10-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -912,7 +885,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
                 </span>
             </span>
 
@@ -927,7 +900,81 @@ init 函数没有输入参数，返回值会且仅会导入一次
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-Redis-待梳理问题"><a href="#1-Redis-待梳理问题" class="headerlink" title="1. Redis 待梳理问题"></a>1. Redis 待梳理问题</h2><h3 id="1-1-redis-主从模式是什么？和集群模式的区别是什么？"><a href="#1-1-redis-主从模式是什么？和集群模式的区别是什么？" class="headerlink" title="1.1. redis 主从模式是什么？和集群模式的区别是什么？"></a>1.1. redis 主从模式是什么？和集群模式的区别是什么？</h3>
+          <h2 id="20221011"><a href="#20221011" class="headerlink" title="20221011"></a>20221011</h2><h3 id="今天某人的胳膊被挠了"><a href="#今天某人的胳膊被挠了" class="headerlink" title="今天某人的胳膊被挠了"></a>今天某人的胳膊被挠了</h3><p>胳膊被挠了，说是自己挠的，但是看着不像是自己挠的</p>
+<p>如果是别人挠的，那这可不是个好苗头啊，要出轨啦</p>
+<p>如果是自己挠的，这也太蠢了吧！无法想象</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/11/shenghuo/20221011/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/11/shenghuo/20221011/" class="post-title-link" itemprop="url">今天某人的胳膊被挠了-20221011</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-11 17:49:06 / 修改时间：18:03:14" itemprop="dateCreated datePublished" datetime="2022-10-11T17:49:06+08:00">2022-10-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="20221011"><a href="#20221011" class="headerlink" title="20221011"></a>20221011</h2><h3 id="记录一下最近的思考"><a href="#记录一下最近的思考" class="headerlink" title="记录一下最近的思考"></a>记录一下最近的思考</h3><p>每次和前端对接的时候都很不愉快<br>然后我观察了一下，那人好像和谁说话态度都很不好</p>
+<p>每次对接工作都搞的很压抑</p>
+<p>不禁在思考，这人是一直是这样的工作态度吗？是平时对待家人，朋友也是这种态度还是仅仅在工作的时候才会这样？</p>
+<p>那么，这样的态度对工作效率有提升吗。</p>
+
       
     </div>
 
@@ -945,7 +992,7 @@ init 函数没有输入参数，返回值会且仅会导入一次
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1011,20 +1058,20 @@ init 函数没有输入参数，返回值会且仅会导入一次
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
