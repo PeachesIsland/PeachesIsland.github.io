@@ -36,7 +36,7 @@
       </tags>
   </entry>
   <entry>
-    <title>2022 echart</title>
+    <title>2019-2022 长胖啦</title>
     <url>/2022/10/31/shenghuo/weight/echart-2020-2022/</url>
     <content><![CDATA[<script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script>
 <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
@@ -56,10 +56,10 @@
   }
 </script>
 
-<div id="echarts6509" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts1809" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6509'));
+        var myChart = echarts.init(document.getElementById('echarts1809'));
 
         // 指定图表的配置项和数据
         var option = option = {
