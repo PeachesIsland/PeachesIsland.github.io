@@ -21,10 +21,10 @@
   }
 </script>
 
-<div id="echarts245" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts2184" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts245'));
+        var myChart = echarts.init(document.getElementById('echarts2184'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -228,10 +228,11 @@
     10月1号-10月31：
         LXL 减重：5.4斤
         LJX 减重：9.6斤
-    11月1号-11月30：
-        LXL 减重：119.4-？
-        LJX 减重：143.3-？
+    11月1号-11月19：
+        LXL 减重：2.4斤
+        LJX 减重：6.1斤
 </code></pre>
+<p>3-？</p>
 ]]></content>
       <categories>
         <category>体重</category>
