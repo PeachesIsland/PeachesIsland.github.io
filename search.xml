@@ -21,10 +21,10 @@
   }
 </script>
 
-<div id="echarts8827" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts117" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8827'));
+        var myChart = echarts.init(document.getElementById('echarts117'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -223,13 +223,13 @@
 <div style="width:800px;height:10px;"></div>
     
 <pre><code>        总结：
-            9月9号-9月30：
+            9月9号-9月30号：
                 LXL 减重：1.7斤
                 LJX 减重：3.3斤
-            10月1号-10月31：
+            10月1号-10月31号：
                 LXL 减重：5.4斤
                 LJX 减重：9.6斤
-            11月1号-11月19：
+            11月1号-11月19号：
                 LXL 减重：2.4斤
                 LJX 减重：6.1斤
 </code></pre>
