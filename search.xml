@@ -21,10 +21,10 @@
   }
 </script>
 
-<div id="echarts2184" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts5249" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2184'));
+        var myChart = echarts.init(document.getElementById('echarts5249'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -232,7 +232,6 @@
         LXL 减重：2.4斤
         LJX 减重：6.1斤
 </code></pre>
-<p>3-？</p>
 ]]></content>
       <categories>
         <category>体重</category>
