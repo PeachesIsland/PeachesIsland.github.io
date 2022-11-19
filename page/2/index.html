@@ -183,6 +183,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/02/golang/go-xie-cheng-xie-cheng-guan-li-qi-chan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/02/golang/go-xie-cheng-xie-cheng-guan-li-qi-chan/" class="post-title-link" itemprop="url">go 协程 协程管理器sync chan</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-02 11:34:00 / 修改时间：15:56:53" itemprop="dateCreated datePublished" datetime="2022-11-02T11:34:00+08:00">2022-11-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="golang-sync-WaitGroup-协程管理器-需要地址传参"><a href="#golang-sync-WaitGroup-协程管理器-需要地址传参" class="headerlink" title="golang sync.WaitGroup  协程管理器 需要地址传参"></a>golang sync.WaitGroup  协程管理器 需要地址传参</h2><p>有缓冲区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 有缓冲区</span><br><span class="line">	c1 := make(chan int, 1)</span><br><span class="line">	c1 &lt;- 100</span><br><span class="line">	fmt.Println(&lt;-c1)// 100</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>无缓冲区,会死锁 报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 无缓冲区</span><br><span class="line">	c1 := make(chan int)</span><br><span class="line">	c1 &lt;- 100</span><br><span class="line">	fmt.Println(&lt;-c1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// fatal error: all goroutines are asleep - deadlock!</span><br><span class="line">                                                  </span><br><span class="line">// goroutine 1 [chan send]:                          </span><br><span class="line">//  main.main()                                       </span><br><span class="line">//        D:/go_pro/go_test/main.go:35 +0x65        </span><br><span class="line">// <span class="built_in">exit</span> status 2      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>无缓冲区异步执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 无缓冲区, + 协程执行</span><br><span class="line">	c1 := make(chan int)</span><br><span class="line">	go <span class="function"><span class="title">func</span></span>() &#123;</span><br><span class="line">		c1 &lt;- 100</span><br><span class="line">	&#125;()</span><br><span class="line">	fmt.Println(&lt;-c1) //100</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>参考视频: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vf4y1S75t?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">【golang教学】第十一章：golang的并发神器goroutine  和 channel （1010工作室出品）</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/02/golang/go-xie-cheng-xie-cheng-guan-li-qi-sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1057,105 +1134,6 @@ Go语言中new和make都是用来内存分配的原语（allocation primitives�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/" class="post-title-link" itemprop="url">linux 常用操作和命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-05 14:06:10 / 修改时间：14:43:01" itemprop="dateCreated datePublished" datetime="2022-10-05T14:06:10+08:00">2022-10-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>linux 常用操作和命令</p>
-<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
-<h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
-<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br><span class="line"><span class="built_in">cat</span> aa.log <span class="comment">#查看aa.log 文件内容</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
-    |
-&lt;-hjkl-&gt;
-   |
-   V
-</code></pre>
-<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
-        编辑模式 《====》 正常模式 《====》 命令模式
-    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
-                                          ：q 退出
-                                          ：q！不保存退出
-                                          ：w 保存
-</code></pre>
-<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
-p 拷贝当前复制，
-dd 删除当前行，5dd 删除当前光标下的5行
-:set nu  显示行号
-:set nonu 不显示行号
-G 跳转到末行
-gg 跳转到首行
-/xx 回车 查找xx
-n: 查找下一个
-Shift + g :200 跳转到第200行 
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1225,7 +1203,7 @@ Shift + g :200 跳转到第200行
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
