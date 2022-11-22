@@ -183,6 +183,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/16/golang/go-gou-jian-jian-dan-de-web/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/16/golang/go-gou-jian-jian-dan-de-web/" class="post-title-link" itemprop="url">go 构建简单的web</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-16 13:57:20 / 修改时间：14:53:42" itemprop="dateCreated datePublished" datetime="2022-11-16T13:57:20+08:00">2022-11-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>golang</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/bbb&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world bbb&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.ListenAndServe(<span class="string">&quot;localhost:8080&quot;</span>, nil)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="localhost-8080"><a href="#localhost-8080" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb"><a href="#localhost-8080-x2F-bbb" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3><p>http.Handle 的使用 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> helloHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (m *helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> aboutHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (a *aboutHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;about&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Welcome(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;Welcome&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">	mh := helloHandler&#123;&#125;</span><br><span class="line">	a := aboutHandler&#123;&#125;</span><br><span class="line"></span><br><span class="line">	server := http.Server&#123;</span><br><span class="line">		Addr:    <span class="string">&quot;localhost:8080&quot;</span>,</span><br><span class="line">		Handler: nil,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	http.Handle(<span class="string">&quot;/hello&quot;</span>, &amp;mh)</span><br><span class="line">	http.Handle(<span class="string">&quot;/about&quot;</span>, &amp;a)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/home&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;home&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/welcome&quot;</span>, Welcome)</span><br><span class="line"></span><br><span class="line">	server.ListenAndServe()</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="localhost-8080-1"><a href="#localhost-8080-1" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb-1"><a href="#localhost-8080-x2F-bbb-1" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/16/shenghuo/zui-jin-xin-tai-hen-chai-20221116/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/16/shenghuo/zui-jin-xin-tai-hen-chai-20221116/" class="post-title-link" itemprop="url">最近心态很差-20221116</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-16 11:12:34 / 修改时间：11:20:30" itemprop="dateCreated datePublished" datetime="2022-11-16T11:12:34+08:00">2022-11-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="20221116"><a href="#20221116" class="headerlink" title="20221116"></a>20221116</h2><h3 id="最近心态很差"><a href="#最近心态很差" class="headerlink" title="最近心态很差"></a>最近心态很差</h3><p>最近心态很差</p>
+<p>有很强的挫败感，就像是快被深渊吸入，吞噬。</p>
+<p>很疲惫，身心疲惫。</p>
+<p>身体很累，很困。心情也很差。想逃离，但是不知道该去哪里。</p>
+<p>很确认，身体、心态都出现了问题。哪哪都不对劲。</p>
+<p>怎么办</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/07/golang/go-tong-guo-http-fa-song-get-post-qing-qiu-bing-du-qu-fan-hui-shu-ju/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -986,150 +1130,6 @@ Go语言中new和make都是用来内存分配的原语（allocation primitives�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/12/shenghuo/ji-jian/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/12/shenghuo/ji-jian/" class="post-title-link" itemprop="url">20221012</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-12 15:41:36 / 修改时间：15:43:07" itemprop="dateCreated datePublished" datetime="2022-10-12T15:41:36+08:00">2022-10-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>极简 不是数量少，而是够用</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/11/shenghuo/jin-tian-mou-ren-de-ge-bo-bei-nao-liao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/11/shenghuo/jin-tian-mou-ren-de-ge-bo-bei-nao-liao/" class="post-title-link" itemprop="url">今天某人的胳膊被挠了</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-10-11 17:55:37" itemprop="dateCreated datePublished" datetime="2022-10-11T17:55:37+08:00">2022-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-19 15:16:30" itemprop="dateModified" datetime="2022-11-19T15:16:30+08:00">2022-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="20221011"><a href="#20221011" class="headerlink" title="20221011"></a>20221011</h2><h3 id="今天某人的胳膊被挠了"><a href="#今天某人的胳膊被挠了" class="headerlink" title="今天某人的胳膊被挠了"></a>今天某人的胳膊被挠了</h3><p>胳膊被挠了，说是自己挠的，但是看着不像是自己挠的</p>
-<p>如果是别人挠的，那这可不是个好苗头啊，要出轨啦</p>
-<p>如果是自己挠的，这也太蠢了吧！无法想象</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1199,20 +1199,20 @@ Go语言中new和make都是用来内存分配的原语（allocation primitives�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
