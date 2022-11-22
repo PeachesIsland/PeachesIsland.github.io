@@ -183,6 +183,313 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/19/shenghuo/weight/echart-2022-jian-fei-jian-fei/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/19/shenghuo/weight/echart-2022-jian-fei-jian-fei/" class="post-title-link" itemprop="url">2022 减肥减肥</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-11-19 09:45:26" itemprop="dateCreated datePublished" datetime="2022-11-19T09:45:26+08:00">2022-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-22 10:05:47" itemprop="dateModified" datetime="2022-11-22T10:05:47+08:00">2022-11-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%93%E9%87%8D/" itemprop="url" rel="index"><span itemprop="name">体重</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script>
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="main" style="width: 800px;height:30px;"></div>
+<script type="text/javascript">
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+  // 指定图表的配置项和数据
+  var option = {
+    ...
+  };
+  // 使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+  // 刷新调整
+  window.onresize = function () {
+    myChart.resize();
+  }
+</script>
+
+<div id="echarts3205" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts3205'));
+
+        // 指定图表的配置项和数据
+        var option = option = {
+  color: [
+    'rgb(255, 153, 255,1)',
+    'rgb(255, 153, 255,1)',
+    'rgb(204, 242, 255,0.5)',
+    'rgb(204, 242, 255,0.5)'
+  ],
+  title: {
+    text: '2022',
+    textStyle: {
+      //文字颜色
+      color: '#999',
+      //字体风格,'normal','italic','oblique'
+      fontStyle: 'normal',
+      //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+      fontWeight: 'bold',
+      //字体系列
+      fontFamily: 'sans-serif',
+      //字体大小
+      fontSize: 18
+    }
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    textStyle: {
+      fontSize: 18, //字体大小
+      color: '#999' //字体颜色
+    },
+    data: ['LXL', 'LJX', 'LXLBase', 'LJXBase']
+  },
+  dataZoom: [
+    {
+      type: 'slider',
+      show: true, //flase直接隐藏图形
+      xAxisIndex: [0],
+      left: '6%', //滚动条靠左侧的百分比
+      bottom: -5,
+      start: 60, //滚动条的起始位置
+      end: 100 //滚动条的截止位置（按比例分割你的柱状图x轴长度）
+    }
+  ],
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '4%',
+    right: '3%',
+    bottom: '4%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: [
+'2022-09-09','2022-09-11','2022-09-11','2022-09-12','2022-09-13','2022-09-14','2022-09-15','2022-09-16','2022-09-17','2022-09-18','2022-09-19','2022-09-20','2022-09-21','2022-09-22','2022-09-23','2022-09-24','2022-09-25','2022-09-26','2022-09-27','2022-09-28','2022-09-29','2022-09-30','2022-10-01','2022-10-02','2022-10-03','2022-10-04','2022-10-05','2022-10-06','2022-10-07','2022-10-08','2022-10-09','2022-10-10','2022-10-11','2022-10-12','2022-10-13','2022-10-14','2022-10-15','2022-10-16','2022-10-17','2022-10-18','2022-10-19','2022-10-20','2022-10-21','2022-10-22','2022-10-23','2022-10-24','2022-10-25','2022-10-26','2022-10-27','2022-10-28','2022-10-29','2022-10-30','2022-10-31','2022-11-01','2022-11-02','2022-11-03','2022-11-04','2022-11-05','2022-11-06','2022-11-07','2022-11-08','2022-11-09','2022-11-10','2022-11-11','2022-11-12','2022-11-13','2022-11-14','2022-11-15','2022-11-16','2022-11-17','2022-11-18','2022-11-19','2022-11-20','2022-11-21','2022-11-22',
+      ]
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      interval: 5, // 步长
+      min: 90, // 起始
+      max: 160 // 终止
+    }
+  ],
+  series: [
+    {
+      name: 'LXL',
+      type: 'line',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      smooth: true,
+      itemStyle: {
+        normal: {
+          lineStyle: {
+            color: 'rgb(255, 153, 255,1)'
+          },
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              fontSize: 8,
+              color: '#000'
+            }
+          }
+        }
+      },
+      data: [
+        127.0,127.0,127.0,127.6,128.3,127.4,127.4,127.8,126.4,126.7,127.9,128.3,128.3,127.9,127.6,127.0,127.0,126.4,126.6,126.3,125.7,125.3,125.2,124.9,125.7,125.7,124.7,124.9,124.9,125.9,125.9,125.0,125.2,124.0,124.3,124.6,125.1,124.2,123.3,123.9,122.8,123.7,123.5,123.2,122.7,121.9,121.7,121.5,121.6,121.3,120.6,120.3,119.8,119.4,119.7,120.1,120.2,120.3,120.0,119.8,119.4,119.6,119.5,119.5,119.0,118.3,118.2,118.6,119.2,118.5,117.7,117.0,116.4,116.7,115.9,
+      ]
+    },
+    {
+      name: 'LXLBase',
+      type: 'line',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      smooth: true,
+      itemStyle: {
+        normal: {
+          lineStyle: {
+            color: 'rgb(255, 153, 255,1)'
+          },
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              fontSize: 8,
+              color: '#000'
+            }
+          }
+        }
+      },
+      data: [
+       100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+      ]
+    },
+    {
+      name: 'LJX',
+      type: 'line',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      smooth: true,
+      itemStyle: {
+        normal: {
+          lineStyle: {
+            color: 'rgb(128, 222, 255,1)'
+          },
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              fontSize: 8,
+              color: '#000'
+            }
+          }
+        }
+      },
+      data: [
+        156.2,156.2,156.2,156.2,156.2,156.2,156.2,156.2,156.2,156.2,155.2,155.1,154.8,154.6,154.4,154.2,153.4,153.7,155.4,154.5,153.9,152.9,152.6,152.8,152.0,151.3,150.5,151.1,150.1,150.0,149.9,149.5,149.0,149.1,149.4,148.7,149.7,148.2,147.4,148.3,147.1,146.8,146.7,146.4,145.5,145.2,145.3,145.0,144.4,144.6,144.5,143.2,143.0,143.3,143.3,142.7,142.7,141.6,140.3,140.9,141.4,141.0,140.5,140.2,140.1,138.8,138.3,138.9,138.3,138.0,138.0,137.2,136.8,136.5,137.7,
+      ]
+    },
+    {
+      name: 'LJXBase',
+      type: 'line',
+      areaStyle: {},
+      emphasis: {
+        focus: 'series'
+      },
+      smooth: true,
+      itemStyle: {
+        normal: {
+          lineStyle: {
+            color: 'rgb(128, 222, 255,1)'
+          },
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              fontSize: 8,
+              color: '#000'
+            }
+          }
+        }
+      },
+      data: [
+        130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,130,
+      ]
+    }
+  ]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<div style="width:800px;height:10px;"></div>
+    
+<pre><code>        总结：
+            09月22号收到新的瑜伽垫正式开始减肥，
+            希望元旦（2023年01月01）前能瘦到 110 以内 
+            过年回家（2023年01月22）前能瘦到 105 以内 
+            
+            9月9号-9月30号：
+                LXL 减重：1.7斤
+                LJX 减重：3.3斤
+            10月1号-10月31号：
+                LXL 减重：5.4斤
+                LJX 减重：9.6斤
+            11月1号-11月22号：
+                LXL 减重：3.5斤
+                LJX 减重：5.6斤
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/18/shenghuo/bu-jue-you-zhu-yu-xin-qing-hui-fu-20221118/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -908,83 +1215,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/16/go-mian-shi/go-mian-shi-ti/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/16/go-mian-shi/go-mian-shi-ti/" class="post-title-link" itemprop="url">go 面试题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-16 09:39:37 / 修改时间：09:47:20" itemprop="dateCreated datePublished" datetime="2022-10-16T09:39:37+08:00">2022-10-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="x3D-和-x3D-的区别？"><a href="#x3D-和-x3D-的区别？" class="headerlink" title="&#x3D; 和 :&#x3D; 的区别？"></a>&#x3D; 和 :&#x3D; 的区别？</h3><pre><code>=是赋值变量，:=是定义变量并赋值
-</code></pre>
-<h3 id="new和make的区别"><a href="#new和make的区别" class="headerlink" title="new和make的区别"></a>new和make的区别</h3><pre><code>=是赋值变量，:=是定义变量并赋值
-Go语言中new和make都是用来内存分配的原语（allocation primitives）。
-简单的说，new只分配内存，make用于slice，map，和channel的初始化。
-</code></pre>
-<h3 id="new和make的区别-1"><a href="#new和make的区别-1" class="headerlink" title="new和make的区别"></a>new和make的区别</h3><pre><code>=是赋值变量，:=是定义变量并赋值
-Go语言中new和make都是用来内存分配的原语（allocation primitives）。
-简单的说，new只分配内存，make用于slice，map，和channel的初始化。
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/15/golang/go-gin-fen-pian-shang-chuan-wen-jian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1214,7 +1444,7 @@ Go语言中new和make都是用来内存分配的原语（allocation primitives�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
