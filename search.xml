@@ -368,10 +368,10 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
   }
 </script>
 
-<div id="echarts8205" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts7872" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8205'));
+        var myChart = echarts.init(document.getElementById('echarts7872'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -580,7 +580,7 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
             10月1号-10月31号：
                 LXL 减重：5.4斤
                 LJX 减重：9.6斤
-            11月1号-11月22号：
+            11月1号-11月23号：
                 LXL 减重：3.6斤
                 LJX 减重：6.4斤
 </code></pre>
