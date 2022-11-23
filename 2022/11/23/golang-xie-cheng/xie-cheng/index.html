@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1. Redis 待梳理问题1.1. redis 主从模式是什么？和集群模式的区别是什么？">
+  <meta name="description" content="1. 并发并行的区别1.1. 并行多核cpu 要求cpu具备多核计算的能力  1.2. 并发不要求多核cpu，不要求cpu具备多核计算的能力  2. csp 并发模型2.1. 通信顺序进程模型2.2. go语言中有两种并发模型 线程与锁的并发模型 CSP同学顺序进程模型  3. 内存分类-内核级空间,用户级空间3.1. 内核空间3.2. 用户空间4. 线程分类，线程是操作系统能够调度的最小单位4.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis 待梳理问题">
-<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-dai-shu-li-wen-ti/index.html">
+<meta property="og:title" content="协程">
+<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/23/golang-xie-cheng/xie-cheng/index.html">
 <meta property="og:site_name" content="Peaches Island">
-<meta property="og:description" content="1. Redis 待梳理问题1.1. redis 主从模式是什么？和集群模式的区别是什么？">
+<meta property="og:description" content="1. 并发并行的区别1.1. 并行多核cpu 要求cpu具备多核计算的能力  1.2. 并发不要求多核cpu，不要求cpu具备多核计算的能力  2. csp 并发模型2.1. 通信顺序进程模型2.2. go语言中有两种并发模型 线程与锁的并发模型 CSP同学顺序进程模型  3. 内存分类-内核级空间,用户级空间3.1. 内核空间3.2. 用户空间4. 线程分类，线程是操作系统能够调度的最小单位4.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-03T06:24:33.087Z">
-<meta property="article:modified_time" content="2022-10-03T06:31:58.905Z">
+<meta property="article:published_time" content="2022-11-23T03:17:50.717Z">
+<meta property="article:modified_time" content="2022-11-23T06:15:36.151Z">
 <meta property="article:author" content="Peaches">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-dai-shu-li-wen-ti/">
+<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/23/golang-xie-cheng/xie-cheng/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Redis 待梳理问题 | Peaches Island</title>
+  <title>协程 | Peaches Island</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-dai-shu-li-wen-ti/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/23/golang-xie-cheng/xie-cheng/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Redis 待梳理问题
+          协程
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-10-03 14:24:33 / 修改时间：14:31:58" itemprop="dateCreated datePublished" datetime="2022-10-03T14:24:33+08:00">2022-10-03</time>
+              <time title="创建时间：2022-11-23 11:17:50 / 修改时间：14:15:36" itemprop="dateCreated datePublished" datetime="2022-11-23T11:17:50+08:00">2022-11-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,7 +221,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
                 </span>
             </span>
 
@@ -236,7 +236,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-Redis-待梳理问题"><a href="#1-Redis-待梳理问题" class="headerlink" title="1. Redis 待梳理问题"></a>1. Redis 待梳理问题</h2><h3 id="1-1-redis-主从模式是什么？和集群模式的区别是什么？"><a href="#1-1-redis-主从模式是什么？和集群模式的区别是什么？" class="headerlink" title="1.1. redis 主从模式是什么？和集群模式的区别是什么？"></a>1.1. redis 主从模式是什么？和集群模式的区别是什么？</h3>
+        <h3 id="1-并发并行的区别"><a href="#1-并发并行的区别" class="headerlink" title="1. 并发并行的区别"></a>1. 并发并行的区别</h3><h4 id="1-1-并行"><a href="#1-1-并行" class="headerlink" title="1.1. 并行"></a>1.1. 并行</h4><pre><code>多核cpu
+要求cpu具备多核计算的能力
+</code></pre>
+<h4 id="1-2-并发"><a href="#1-2-并发" class="headerlink" title="1.2. 并发"></a>1.2. 并发</h4><pre><code>不要求多核cpu，不要求cpu具备多核计算的能力
+</code></pre>
+<h3 id="2-csp-并发模型"><a href="#2-csp-并发模型" class="headerlink" title="2. csp 并发模型"></a>2. csp 并发模型</h3><h4 id="2-1-通信顺序进程模型"><a href="#2-1-通信顺序进程模型" class="headerlink" title="2.1. 通信顺序进程模型"></a>2.1. 通信顺序进程模型</h4><h4 id="2-2-go语言中有两种并发模型"><a href="#2-2-go语言中有两种并发模型" class="headerlink" title="2.2. go语言中有两种并发模型"></a>2.2. go语言中有两种并发模型</h4><ol>
+<li>线程与锁的并发模型</li>
+<li>CSP同学顺序进程模型</li>
+</ol>
+<h3 id="3-内存分类-内核级空间-用户级空间"><a href="#3-内存分类-内核级空间-用户级空间" class="headerlink" title="3. 内存分类-内核级空间,用户级空间"></a>3. 内存分类-内核级空间,用户级空间</h3><h4 id="3-1-内核空间"><a href="#3-1-内核空间" class="headerlink" title="3.1. 内核空间"></a>3.1. 内核空间</h4><h4 id="3-2-用户空间"><a href="#3-2-用户空间" class="headerlink" title="3.2. 用户空间"></a>3.2. 用户空间</h4><h3 id="4-线程分类，线程是操作系统能够调度的最小单位"><a href="#4-线程分类，线程是操作系统能够调度的最小单位" class="headerlink" title="4. 线程分类，线程是操作系统能够调度的最小单位"></a>4. 线程分类，线程是操作系统能够调度的最小单位</h3><h4 id="4-1-用户线程（无法被cpu感知）"><a href="#4-1-用户线程（无法被cpu感知）" class="headerlink" title="4.1. 用户线程（无法被cpu感知）"></a>4.1. 用户线程（无法被cpu感知）</h4><p><strong>用户空间</strong>的代码创建，管理，销毁</p>
+<h4 id="4-2-内核线程"><a href="#4-2-内核线程" class="headerlink" title="4.2. 内核线程"></a>4.2. 内核线程</h4><p>由<strong>操作系统</strong>创建，管理，调度</p>
+<h3 id="5-线程模型"><a href="#5-线程模型" class="headerlink" title="5. 线程模型"></a>5. 线程模型</h3><h4 id="5-1-用户级线程模型"><a href="#5-1-用户级线程模型" class="headerlink" title="5.1. 用户级线程模型"></a>5.1. 用户级线程模型</h4><p>一个进程对应一个内核线程</p>
+<h4 id="5-2-内核级线程模型"><a href="#5-2-内核级线程模型" class="headerlink" title="5.2. 内核级线程模型"></a>5.2. 内核级线程模型</h4><p>进程中每个线程都会对应一个内核线程</p>
+<h4 id="5-3-两级线程模型"><a href="#5-3-两级线程模型" class="headerlink" title="5.3. 两级线程模型"></a>5.3. 两级线程模型</h4><p>相当于用户及线程喝内核级线程的结合</p>
+
     </div>
 
     
@@ -245,7 +259,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/redis/" rel="tag"># redis</a>
+              <a href="/tags/golang/" rel="tag"># golang</a>
           </div>
 
         
@@ -254,13 +268,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/10/03/util/github-tian-jia-sshkey/" rel="prev" title="GitHub 添加 sshkey">
-      <i class="fa fa-chevron-left"></i> GitHub 添加 sshkey
+    <a href="/2022/11/22/golang-rpc/golang-rpc-jian-dan-diao-yong/" rel="prev" title="golang 简单rpc 调用">
+      <i class="fa fa-chevron-left"></i> golang 简单rpc 调用
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/10/03/mysql/mysql-dai-shu-li-wen-ti/" rel="next" title="Mysql 待梳理问题">
-      Mysql 待梳理问题 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -319,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Redis-%E5%BE%85%E6%A2%B3%E7%90%86%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">1. Redis 待梳理问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-redis-%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%92%8C%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. redis 主从模式是什么？和集群模式的区别是什么？</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6%E5%8F%91%E5%B9%B6%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">1. 并发并行的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E5%B9%B6%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 并行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E5%B9%B6%E5%8F%91"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 并发</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-csp-%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">2. csp 并发模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E9%80%9A%E4%BF%A1%E9%A1%BA%E5%BA%8F%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 通信顺序进程模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-go%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%9C%89%E4%B8%A4%E7%A7%8D%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. go语言中有两种并发模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%86%85%E5%AD%98%E5%88%86%E7%B1%BB-%E5%86%85%E6%A0%B8%E7%BA%A7%E7%A9%BA%E9%97%B4-%E7%94%A8%E6%88%B7%E7%BA%A7%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">3. 内存分类-内核级空间,用户级空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 内核空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 用户空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%BA%BF%E7%A8%8B%E5%88%86%E7%B1%BB%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%98%AF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%A4%9F%E8%B0%83%E5%BA%A6%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8D%95%E4%BD%8D"><span class="nav-number">4.</span> <span class="nav-text">4. 线程分类，线程是操作系统能够调度的最小单位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B%EF%BC%88%E6%97%A0%E6%B3%95%E8%A2%ABcpu%E6%84%9F%E7%9F%A5%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">4.1. 用户线程（无法被cpu感知）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B"><span class="nav-number">4.2.</span> <span class="nav-text">4.2. 内核线程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">5. 线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-%E7%94%A8%E6%88%B7%E7%BA%A7%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.1.</span> <span class="nav-text">5.1. 用户级线程模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-%E5%86%85%E6%A0%B8%E7%BA%A7%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.2.</span> <span class="nav-text">5.2. 内核级线程模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-%E4%B8%A4%E7%BA%A7%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.3.</span> <span class="nav-text">5.3. 两级线程模型</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
