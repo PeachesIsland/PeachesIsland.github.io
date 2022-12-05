@@ -21,10 +21,10 @@
   }
 </script>
 
-<div id="echarts5558" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts2103" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5558'));
+        var myChart = echarts.init(document.getElementById('echarts2103'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -72,7 +72,7 @@
       xAxisIndex: [0],
       left: '6%', //滚动条靠左侧的百分比
       bottom: -5,
-      start: 95, //滚动条的起始位置
+      start: 99, //滚动条的起始位置
       end: 100 //滚动条的截止位置（按比例分割你的柱状图x轴长度）
     }
   ],
