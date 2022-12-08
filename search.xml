@@ -257,6 +257,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Clash for Android 使用教程</title>
+    <url>/2022/12/08/shenghuo/shenghuochangshi/clash/</url>
+    <content><![CDATA[<p><a href="https://wikibos.com/index.php/kb/clash-for-android/">https://wikibos.com/index.php/kb/clash-for-android/</a><br>app 下载网站 :<a href="https://github.com/Kr328/ClashForAndroid">https://github.com/Kr328/ClashForAndroid</a></p>
+]]></content>
+      <categories>
+        <category>Clash</category>
+      </categories>
+      <tags>
+        <tag>Clash</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue 目录结构</title>
     <url>/2022/12/07/vue/vue-mu-lu-jie-gou/</url>
     <content><![CDATA[<h3 id="1-Vue-目录结构"><a href="#1-Vue-目录结构" class="headerlink" title="1. Vue 目录结构"></a>1. Vue 目录结构</h3><h4 id="1-1-node-modules"><a href="#1-1-node-modules" class="headerlink" title="1.1. node_modules"></a>1.1. node_modules</h4><pre><code>存放项目安装的依赖 
