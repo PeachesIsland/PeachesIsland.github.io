@@ -21,10 +21,10 @@
   }
 </script>
 
-<div id="echarts7103" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts3838" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7103'));
+        var myChart = echarts.init(document.getElementById('echarts3838'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -227,7 +227,7 @@
 <div style="width:800px;height:10px;"></div>
     
 <pre><code>        总结：
-            09月22号收到新的瑜伽垫正式开始减肥，
+            09月22号收到新的瑜伽垫正式开始减肥，今天第 79 天 
             希望元旦（2023年01月01）前能瘦到 110 以内 
             过年回家（2023年01月22）前能瘦到 105 以内 
             
