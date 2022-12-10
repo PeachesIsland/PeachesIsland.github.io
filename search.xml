@@ -22,10 +22,10 @@
 </script>
 
 <p>正数为增长值，负数为减重值</p>
-<div id="echarts4131" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts1310" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4131'));
+        var myChart = echarts.init(document.getElementById('echarts1310'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -97,7 +97,7 @@
       type: 'value',
       interval: 0.5, // 步长
       min: -2, // 起始
-      max: 3 // 终止
+      max: 2 // 终止
     }
   ],
   series: [
