@@ -183,6 +183,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/23/golang-xie-cheng/xian-cheng-bing-fa-mo-xing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/23/golang-xie-cheng/xian-cheng-bing-fa-mo-xing/" class="post-title-link" itemprop="url">协程，线程，并发模型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-23 11:17:50 / 修改时间：14:47:43" itemprop="dateCreated datePublished" datetime="2022-11-23T11:17:50+08:00">2022-11-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-并发并行的区别"><a href="#1-并发并行的区别" class="headerlink" title="1. 并发并行的区别"></a>1. 并发并行的区别</h3><h4 id="1-1-并行"><a href="#1-1-并行" class="headerlink" title="1.1. 并行"></a>1.1. 并行</h4><pre><code>多核cpu
+要求cpu具备多核计算的能力
+</code></pre>
+<h4 id="1-2-并发"><a href="#1-2-并发" class="headerlink" title="1.2. 并发"></a>1.2. 并发</h4><pre><code>不要求多核cpu，不要求cpu具备多核计算的能力
+</code></pre>
+<h3 id="2-csp-并发模型"><a href="#2-csp-并发模型" class="headerlink" title="2. csp 并发模型"></a>2. csp 并发模型</h3><h4 id="2-1-通信顺序进程模型"><a href="#2-1-通信顺序进程模型" class="headerlink" title="2.1. 通信顺序进程模型"></a>2.1. 通信顺序进程模型</h4><h4 id="2-2-go语言中有两种并发模型"><a href="#2-2-go语言中有两种并发模型" class="headerlink" title="2.2. go语言中有两种并发模型"></a>2.2. go语言中有两种并发模型</h4><ol>
+<li>线程与锁的并发模型</li>
+<li>CSP同学顺序进程模型</li>
+</ol>
+<h3 id="3-内存分类-内核级空间-用户级空间"><a href="#3-内存分类-内核级空间-用户级空间" class="headerlink" title="3. 内存分类-内核级空间,用户级空间"></a>3. 内存分类-内核级空间,用户级空间</h3><h4 id="3-1-内核空间"><a href="#3-1-内核空间" class="headerlink" title="3.1. 内核空间"></a>3.1. 内核空间</h4><h4 id="3-2-用户空间"><a href="#3-2-用户空间" class="headerlink" title="3.2. 用户空间"></a>3.2. 用户空间</h4><h3 id="4-线程分类，线程是操作系统能够调度的最小单位"><a href="#4-线程分类，线程是操作系统能够调度的最小单位" class="headerlink" title="4. 线程分类，线程是操作系统能够调度的最小单位"></a>4. 线程分类，线程是操作系统能够调度的最小单位</h3><h4 id="4-1-用户线程（无法被cpu感知）"><a href="#4-1-用户线程（无法被cpu感知）" class="headerlink" title="4.1. 用户线程（无法被cpu感知）"></a>4.1. 用户线程（无法被cpu感知）</h4><p><strong>用户空间</strong>的代码创建，管理，销毁</p>
+<h4 id="4-2-内核线程"><a href="#4-2-内核线程" class="headerlink" title="4.2. 内核线程"></a>4.2. 内核线程</h4><p>由<strong>操作系统</strong>创建，管理，调度</p>
+<h3 id="5-线程模型"><a href="#5-线程模型" class="headerlink" title="5. 线程模型"></a>5. 线程模型</h3><h4 id="5-1-用户级线程模型"><a href="#5-1-用户级线程模型" class="headerlink" title="5.1. 用户级线程模型"></a>5.1. 用户级线程模型</h4><pre><code>一个进程（一个进程有多个线程）对应一个内核线程
+优点：进程内的多线程管理由用户代码完成，所以这里的线程的创建，管理，同步等工作显得一场轻量级和高效
+缺点： 
+    1 进程内的多线程无法很好的利用CPU多核运算的优势，只能通过分时复用的方式轮换执行
+    2 如果进程内有线程阻塞，很可能造成阻塞
+</code></pre>
+<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/75168473cc0eb514.png"></p>
+<h4 id="5-2-内核级线程模型"><a href="#5-2-内核级线程模型" class="headerlink" title="5.2. 内核级线程模型"></a>5.2. 内核级线程模型</h4><pre><code>进程中每个线程都会对应一个内核线程
+优点： 
+    多线程可以充分利用CPU的多核并行计算能力，
+    进程内某个线程的堵塞并不会影响程序的运行
+缺点：
+    线程的管理和调度由操作系统负责，
+    会导致每次线程切换上下文的时候从用户态到内核态，产生不小的资源消耗
+    同时创建线程的梳理受限于可创建内核线程的数量
+</code></pre>
+<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/b262f7b9593e3bd9.png"></p>
+<h5 id="5-2-1-一个进程可以创建多少个线程？"><a href="#5-2-1-一个进程可以创建多少个线程？" class="headerlink" title="5.2.1. 一个进程可以创建多少个线程？"></a>5.2.1. 一个进程可以创建多少个线程？</h5><p><img src="https://s3.uuu.ovh/imgs/2022/11/23/61075f1b275ea374.png"></p>
+<h4 id="5-3-两级线程模型"><a href="#5-3-两级线程模型" class="headerlink" title="5.3. 两级线程模型"></a>5.3. 两级线程模型</h4><pre><code>相当于用户及线程喝内核级线程的结合
+一个进程会对应多个内核级线程，由 进程内的调度器 来觉得进程内线程与内核线程的对应
+用户线程的调度与管理由用户空间的进程对应的调度去负责，而内核线程的调度由操作系统负责
+优点：
+    既能有效的降低线程创建对应资源的管理和消耗，又能够很好的提供线程并行计算的能力
+</code></pre>
+<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/d1c5ff52cb5602f5.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/22/golang-rpc/golang-rpc-jian-dan-diao-yong/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -945,91 +1048,6 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/19/shenghuo/shenghuochangshi/yun-dong-de-jian-fei-fang-an/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/19/shenghuo/shenghuochangshi/yun-dong-de-jian-fei-fang-an/" class="post-title-link" itemprop="url">运动的减肥方案（丁勇老师）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-19 14:11:35" itemprop="dateCreated datePublished" datetime="2022-11-19T14:11:35+08:00">2022-11-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-10 17:27:01" itemprop="dateModified" datetime="2022-12-10T17:27:01+08:00">2022-12-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="运动的减肥方案"><a href="#运动的减肥方案" class="headerlink" title="运动的减肥方案"></a>运动的减肥方案</h2><p>1 标准运动方案5-10分钟关节活动，韧带拉伸。肌肉准备，可减少运动损伤<br>2 无氧运动， 10-15分钟，每周2-3次，大肌群运动<br>3 有氧运动，每天30-40分钟，慢跑，游泳，骑车，舞蹈，快走<br>4 整理拉伸 10-15分钟，拉伸肌群和韧带，缓解肌肉酸痛</p>
-<p>减肥运动方案</p>
-<p>120-150之间是完美的减肥运动</p>
-<p>真正好的运动是中等强度运动，尽量达到220-年龄的心率的80%以上，重度强度会导致乳酸堆积＋运动损伤＋增肌（撸铁）</p>
-<p>有氧运动是最佳方式，指吸入的氧气完全够用，非气喘吁吁，</p>
-<p>每周150分钟-250分钟运动可预防体重增加，即每天有氧运动半小时可保持身材</p>
-<p>每周大于250分钟的运动可达到减重效果，即每天40分钟有氧运动</p>
-<p>再加上每周3次的无氧运动，即每次10分钟大强度的肌肉阻抗运动，增肌</p>
-<p>防止运动定型，换多种运动做，举例每月换运动，</p>
-<p>顺序：</p>
-<p>必须做准备运动，然后先做无氧运动5-10分钟以提高心率（无氧会增食欲），再有氧40分钟（比如慢到走路的跑步，快慢结合看心率），最后肌肉拉伸10分钟</p>
-<p>减肥是饮食控制第一位，辅助有氧无氧运动</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1099,20 +1117,20 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
