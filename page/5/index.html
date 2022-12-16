@@ -845,7 +845,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/06/util/postman-apipost-yu-lan-jie-kou-shu-ju/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/06/util/tu-chuang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -859,7 +859,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/06/util/postman-apipost-yu-lan-jie-kou-shu-ju/" class="post-title-link" itemprop="url">postman、apipost 预览接口数据</a>
+            <a href="/2022/10/06/util/tu-chuang/" class="post-title-link" itemprop="url">免费 图床</a>
         </h2>
 
         <div class="post-meta">
@@ -892,10 +892,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
-<p>ps：早知道这个功能能省事好多啊</p>
-<p>在此记录一下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+          <p>免费 图床 <a target="_blank" rel="noopener" href="https://www.imgurl.org/vip/manage">https://www.imgurl.org/vip/manage</a></p>
 
       
     </div>
