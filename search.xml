@@ -493,10 +493,10 @@
 <p><img src="/image-20220709073749310.png" alt="image-20220709073749310"></p>
 <p>以<code>页28</code>为例，它对应<code>目录项2</code> ，这个目录项中包含着该页的<code>页号28</code>以及该页中用户记录的<code>最小主键值 5</code><br>。我们只需要把几个目录项在物理存储器上连续存储（比如：数组），就可以实现根据主键值快速查找某条记录的功能了。<code>比如：查找主键值为 20 的记录，具体查找过程分两步：</code></p>
 <ol>
-<li>先从目录项中根据二分法快速确定出<code>主键值为20的记录在目录项3中</code>（因为 12 ≤ 20 &lt; 209 ），<code>对应页9</code>。</li>
+<li>先从目录项中根据二分法快速确定出 <code>主键值为20的记录在目录项3中</code>（因为 12 ≤ 20 &lt; 209 ），<code>对应页9</code>。</li>
 <li>再到页9中根据二分法快速定位到主键值为 20 的用户记录。</li>
 </ol>
-<p>至此，针对数据页做的简易目录就搞定了。这个目录有一个别名，称为<code>索引</code> 。</p>
+<p>至此，针对数据页做的简易目录就搞定了。这个目录有一个别名，称为 <code>索引</code> 。</p>
 <h4 id="InnoDB中的索引方案"><a href="#InnoDB中的索引方案" class="headerlink" title="InnoDB中的索引方案"></a>InnoDB中的索引方案</h4><p>我们新分配一个编号为30的页来专门存储<code>目录项记录</code>，页10、28、9、20专门存储<code>用户记录</code>：</p>
 <p><img src="/image-20220709074801215.png" alt="image-20220709073749310"></p>
 <p><img src="/1557565-20220429110413866-1755798300.png" alt="img"></p>
@@ -904,7 +904,7 @@
 <p>#5.7默认1024字节</p>
 <p>#8.0默认4096字节</p>
 <p>l<br>但是如果设的太高，数据总容量超出sort_buffer_size的概率就增大，明显症状是高的磁盘I&#x2F;O活动和低的处理器使用率。如果需要返回的列的总长度大于max_length_for_sort_data，使用双路算法，否则使用单路算法。1024-8192字节之间调整</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="044-group-by-分组和order-by在索引使用上有什么区别？"><a href="#044-group-by-分组和order-by在索引使用上有什么区别？" class="headerlink" title="044  		group by 分组和order by在索引使用上有什么区别？"></a>044  		group by 分组和order by在索引使用上有什么区别？</h4><p>group by 使用索引的原则几乎跟order by一致 ，唯一区别：</p>
+<h4 id><a href="#" class="headerlink" title></a></h4><h4 id="044-group-by-分组和order-by在索引使用上有什么区别？"><a href="#044-group-by-分组和order-by在索引使用上有什么区别？" class="headerlink" title="044  		group by 分组和order by在索引使用上有什么区别？"></a>044  		group by 分组和order by在索引使用上有什么区别？</h4><p>group by 使用索引的原则几乎跟order by一致 ，唯一区别：</p>
 <ul>
 <li>group by 先排序再分组，遵照索引建的最佳左前缀法则</li>
 <li>group by没有过滤条件，也可以用上索引。Order By 必须有过滤条件才能使用上索引。</li>
@@ -1005,7 +1005,7 @@
 <p><strong>接下来，</strong><code>MySQL解析器通过关键字将SQL语句进行解析，并生成一棵对应的解析树，</code><br>解析器使用MySQL语法规则验证和解析SQL语句。例如，它将验证是否使用了错误的关键字，或者使用关键字的顺序是否正确，引号能否前后匹配等；<code>预处理器则根据MySQL规则进一步检查解析树是否合法，</code><br>例如，这里将检查数据表和数据列是否存在，还会解析名字和别名，看是否有歧义等。<code>然后预处理器会进行查询重写，生成一棵新解析树。</code></p>
 <p><strong>接下来，</strong><code>查询优化器将解析树转化成执行计划。</code><br>MySQL优化程序会对我们的语句做一些优化，如子查询转换为连接、表达式简化等等。优化的结果就是生成一个执行计划，这个执行计划表明了应该使用哪些索引执行查询，以及表之间的连接顺序是啥样，等等。我们可以使用EXPLAIN语句来查看某个语句的执行计划。</p>
 <p><strong>最后，</strong><code>进入执行器阶段。</code>完成查询优化后，<code>查询执行引擎</code><br>会按照生成的执行计划调用存储引擎提供的接口执行SQL查询并将结果返回给客户端。在MySQL8以下的版本，如果设置了查询缓存，这时会将查询结果进行缓存，再返回给客户端。</p>
-<img src="b44f857a9bdedcd6a2d53a3971fae7db.png" alt="img" />
+<img src="/PeachesIsland/PeachesIsland.github.io/2022/12/20/mysql/mysql-zhi-shi-dian-zong-jie/mysql-mian-shi-ti/b44f857a9bdedcd6a2d53a3971fae7db.png" alt="img">
 
 <h4 id="052-MySQL-提示“不存在此列”是执行到哪个节点报出的？"><a href="#052-MySQL-提示“不存在此列”是执行到哪个节点报出的？" class="headerlink" title="052 MySQL 提示“不存在此列”是执行到哪个节点报出的？"></a>052 MySQL 提示“不存在此列”是执行到哪个节点报出的？</h4><p>是在Parser：解析器 分析sql语法的时候检查的列。</p>
 <h3 id="053-如果一张表创建了多个索引，在哪个阶段或模块进行的索引选择？"><a href="#053-如果一张表创建了多个索引，在哪个阶段或模块进行的索引选择？" class="headerlink" title="053 如果一张表创建了多个索引，在哪个阶段或模块进行的索引选择？"></a>053 如果一张表创建了多个索引，在哪个阶段或模块进行的索引选择？</h3><p>在优化器阶段<strong>Optimizer：查询优化器：</strong></p>
@@ -1094,7 +1094,7 @@
 </ul>
 <p>官方文档：</p>
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-storage-engine.html">https://dev.mysql.com/doc/refman/8.0/en/innodb-storage-engine.html</a></p>
-<h4 id="057-能否单独为一张表设置存储引擎？"><a href="#057-能否单独为一张表设置存储引擎？" class="headerlink" title="057 	能否单独为一张表设置存储引擎？"></a>057 	能否单独为一张表设置存储引擎？</h4><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><p><code>方法1：</code></p>
+<h4 id="057-能否单独为一张表设置存储引擎？"><a href="#057-能否单独为一张表设置存储引擎？" class="headerlink" title="057 	能否单独为一张表设置存储引擎？"></a>057 	能否单独为一张表设置存储引擎？</h4><h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><p><code>方法1：</code></p>
 <p>设置默认存储引擎：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span> DEFAULT_STORAGE_ENGINE <span class="operator">=</span> MyISAM;</span><br></pre></td></tr></table></figure>
 
@@ -1185,7 +1185,7 @@
 <p><strong>保存</strong> 吃到肚子里</p>
 <p>也称永久性，指一个事务一旦提交，它对数据库中的数据的改变就应该是永久性的。接下来的其它操作或故障不应该对其执行结果有任何影响。</p>
 <h3 id="063-并发事务会有哪些问题？"><a href="#063-并发事务会有哪些问题？" class="headerlink" title="063 并发事务会有哪些问题？"></a>063 并发事务会有哪些问题？</h3><p>多个事务并发执行一定会产生相互争夺资源的问题</p>
-<h4 id="064什么是脏读-065丢失修改-066不可重复读-067幻读"><a href="#064什么是脏读-065丢失修改-066不可重复读-067幻读" class="headerlink" title="064	什么是脏读    065	丢失修改    066	不可重复读 067	幻读"></a>064	什么是脏读    065	丢失修改    066	不可重复读 067	幻读</h4><h4 id="-2"><a href="#-2" class="headerlink" title=""></a></h4><p><strong>脏读（Dirty read）</strong></p>
+<h4 id="064什么是脏读-065丢失修改-066不可重复读-067幻读"><a href="#064什么是脏读-065丢失修改-066不可重复读-067幻读" class="headerlink" title="064	什么是脏读    065	丢失修改    066	不可重复读 067	幻读"></a>064	什么是脏读    065	丢失修改    066	不可重复读 067	幻读</h4><h4 id="-2"><a href="#-2" class="headerlink" title></a></h4><p><strong>脏读（Dirty read）</strong></p>
 <p>是一个事务在处理过程中读取了另外一个事务未提交的数据</p>
 <p>当一个事务正在访问数据并且对其进行了修改，但是还没提交事务，这时另外一个事务也访问了这个数据，然后使用了这个数据，因为这个数据的修改还没提交到数据库，所以另外一个事务读取的数据就是“**<br>脏数据<strong>”，这种行为就是“</strong>脏读<strong>”，依据“</strong>脏数据**”所做的操作可能是会出现问题的。</p>
 <p><strong>修改丢失（Lost of modify）</strong></p>
@@ -1197,7 +1197,7 @@
 <p><strong>幻读（Phantom read）</strong></p>
 <p>是指同一个事务内多次查询返回的结果集总数不一样（比如增加了或者减少了行记录）。</p>
 <p>幻读与不可重复读类似，幻读是指一个事务<strong>读取了几行数据</strong>，这个事务还没结束，接着另外一个事务<strong>插入了一些数据</strong><br>，在随后的查询中，第一个事务读取到的数据就会<strong>比原本读取到的多</strong>，就好像发生了幻觉一样，所以称为**幻读**。</p>
-<h4 id="-3"><a href="#-3" class="headerlink" title=""></a></h4><h4 id="068-不可重复读和幻读有什么区别？"><a href="#068-不可重复读和幻读有什么区别？" class="headerlink" title="068 不可重复读和幻读有什么区别？"></a>068 不可重复读和幻读有什么区别？</h4><p>不可重复读 针对的是一份数据的修改</p>
+<h4 id="-3"><a href="#-3" class="headerlink" title></a></h4><h4 id="068-不可重复读和幻读有什么区别？"><a href="#068-不可重复读和幻读有什么区别？" class="headerlink" title="068 不可重复读和幻读有什么区别？"></a>068 不可重复读和幻读有什么区别？</h4><p>不可重复读 针对的是一份数据的修改</p>
 <p>幻读 针对的是行数修改</p>
 <h3 id="069-Mysql是如何避免事务并发问题的？"><a href="#069-Mysql是如何避免事务并发问题的？" class="headerlink" title="069 Mysql是如何避免事务并发问题的？"></a>069 Mysql是如何避免事务并发问题的？</h3><p>避免事务并发问题是需要付出性能代价的，此时和分布式系统设计一样（CAP定理及base理论），为了保证一致性就一定会牺牲性能，要做取舍</p>
 <p>在mysql内部通过加锁的方式实现好了解决方案可供选择，就是配置事务隔离级别</p>
@@ -1712,7 +1712,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">a)   mysqldumpslow --help</span><br><span class="line"></span><br><span class="line">·    -a: 将数字抽象成N，字符串抽象成S</span><br><span class="line"></span><br><span class="line">·    -s: 是表示按照何种方式排序；</span><br><span class="line"></span><br><span class="line"> c: 访问次数</span><br><span class="line"></span><br><span class="line"> l: 锁定时间</span><br><span class="line"></span><br><span class="line"> r: 返回记录</span><br><span class="line"></span><br><span class="line"> **t:** **查询时间**</span><br><span class="line"></span><br><span class="line"> al:平均锁定时间</span><br><span class="line"></span><br><span class="line"> ar:平均返回记录数</span><br><span class="line"></span><br><span class="line"> at:平均查询时间</span><br><span class="line"></span><br><span class="line">·    -t: 即为返回前面多少条的数据；</span><br><span class="line"></span><br><span class="line">·    -g: 后边搭配一个正则匹配模式，大小写不敏感的；</span><br><span class="line"></span><br><span class="line">  得到返回记录集最多的10个SQL  mysqldumpslow  -s r -t 10 /var/lib/mysql/localhost-slow.log  得到访问次数最多的10个SQL  mysqldumpslow  -s c -t 10 /var/lib/mysql/localhost-slow.log  得到按照时间排序的前10条里面含有左连接的查询语句  mysqldumpslow  -s t -t 10 -g  &quot;left join&quot;  /var/lib/mysql/localhost-slow.log  另外建议在使用这些命令时结合 | 和more 使用 ，否则有可能出现爆屏情况  mysqldumpslow  -s r -t 10 /var/lib/mysql/localhost-slow.log | more  </span><br></pre></td></tr></table></figure>
 
 <h4 id="130如何查看当前sql使用了哪个索引？"><a href="#130如何查看当前sql使用了哪个索引？" class="headerlink" title="130		如何查看当前sql使用了哪个索引？"></a>130		如何查看当前sql使用了哪个索引？</h4><p>可以使用EXPLAIN，选择索引过程可以使用 optimizer_trace</p>
-<h4 id="131索引如何进行分析和调优？"><a href="#131索引如何进行分析和调优？" class="headerlink" title="131	索引如何进行分析和调优？"></a>131	索引如何进行分析和调优？</h4><h4 id="132EXPLAIN关键字中的重要指标有哪些？"><a href="#132EXPLAIN关键字中的重要指标有哪些？" class="headerlink" title="132	EXPLAIN关键字中的重要指标有哪些？"></a>132	EXPLAIN关键字中的重要指标有哪些？</h4><h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><h3 id="EXPLAIN是什么"><a href="#EXPLAIN是什么" class="headerlink" title="EXPLAIN是什么"></a>EXPLAIN是什么</h3><p>使用EXPLAIN关键字可以<code>模拟优化器执行SQL查询语句</code><br>，从而知道MySQL是如何处理你的SQL语句的。<code>分析你的查询语句或是表结构的性能瓶颈</code>。</p>
+<h4 id="131索引如何进行分析和调优？"><a href="#131索引如何进行分析和调优？" class="headerlink" title="131	索引如何进行分析和调优？"></a>131	索引如何进行分析和调优？</h4><h4 id="132EXPLAIN关键字中的重要指标有哪些？"><a href="#132EXPLAIN关键字中的重要指标有哪些？" class="headerlink" title="132	EXPLAIN关键字中的重要指标有哪些？"></a>132	EXPLAIN关键字中的重要指标有哪些？</h4><h2 id="-4"><a href="#-4" class="headerlink" title></a></h2><h3 id="EXPLAIN是什么"><a href="#EXPLAIN是什么" class="headerlink" title="EXPLAIN是什么"></a>EXPLAIN是什么</h3><p>使用EXPLAIN关键字可以<code>模拟优化器执行SQL查询语句</code><br>，从而知道MySQL是如何处理你的SQL语句的。<code>分析你的查询语句或是表结构的性能瓶颈</code>。</p>
 <h3 id="EXPLAIN的用法"><a href="#EXPLAIN的用法" class="headerlink" title="EXPLAIN的用法"></a>EXPLAIN的用法</h3><p><strong>用法：</strong></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">EXPLAIN <span class="operator">+</span> <span class="keyword">SQL</span>语句</span><br></pre></td></tr></table></figure>
 
