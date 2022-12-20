@@ -183,6 +183,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/13/go-es8/wei-fu-wu-jia-gou-she-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/13/go-es8/wei-fu-wu-jia-gou-she-ji/" class="post-title-link" itemprop="url">微服务架构设计</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-13 16:36:08" itemprop="dateCreated datePublished" datetime="2022-12-13T16:36:08+08:00">2022-12-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-12-14 15:18:26" itemprop="dateModified" datetime="2022-12-14T15:18:26+08:00">2022-12-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" itemprop="url" rel="index"><span itemprop="name">微服务</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>微服务是什么？<br>可以参考这篇文章，讲的很好。<br><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2022/04/microservice.html">阮一峰的网络日志</a></p>
+<p>本人需要知道的要点：<br>微服务中每个服务是部署在不同的服务器上的。<br>不同的服务可以用不同的语言，如go php java c++，没有了语言的限制<br>大概20年前开始有一种 ”面向服务架构“的开发模式，每个服务部署在单独的服务器上。<br>直到2014年，docker的兴起，可以让不同的程序运行在不同的容器里，而且只占用极少的资源。<br>可以让每个服务不再占用一个服务器，而只占用服务器中极少的部分系统资源，这样就不需要多台服务器了。<br>最简单的情况下，本机运行多个容器，只用一台服务器就实现了面向服务架构，这在以前是做不到的。这种实现方式就叫做微服务。<br>也就是说一个服务器运行一个docker，一个docker里面运行很多个服务这种操作，也是微服务的常用操作。</p>
+<pre><code>简单说，微服务就是采用容器技术的面向服务架构。它依然使用&quot;服务&quot;作为功能单元，但是变成了轻量级实现，不需要新增服务器，只需要新建容器（一个进程），所以才叫做&quot;微服务&quot;。
+
+一个微服务就是一个独立的进程。 这个进程可以运行在本机，也可以运行在别的服务器，或者在云端（比如云服务和云函数 FaaS）。
+</code></pre>
+<h3 id="1-架构的设计原则？"><a href="#1-架构的设计原则？" class="headerlink" title="1. 架构的设计原则？"></a>1. 架构的设计原则？</h3><h4 id="1-1-避免过度设计"><a href="#1-1-避免过度设计" class="headerlink" title="1.1. 避免过度设计"></a>1.1. 避免过度设计</h4><h4 id="1-2-优先使用成熟的技术"><a href="#1-2-优先使用成熟的技术" class="headerlink" title="1.2. 优先使用成熟的技术"></a>1.2. 优先使用成熟的技术</h4><h4 id="1-3-可扩展原则"><a href="#1-3-可扩展原则" class="headerlink" title="1.3. 可扩展原则"></a>1.3. 可扩展原则</h4><h4 id="1-4-高可用设计原则"><a href="#1-4-高可用设计原则" class="headerlink" title="1.4. 高可用设计原则"></a>1.4. 高可用设计原则</h4><h4 id="1-5-隔离"><a href="#1-5-隔离" class="headerlink" title="1.5. 隔离"></a>1.5. 隔离</h4><h4 id="1-6-自动化驱动原则"><a href="#1-6-自动化驱动原则" class="headerlink" title="1.6. 自动化驱动原则"></a>1.6. 自动化驱动原则</h4><h3 id="2-什么时候应该拆分微服务？"><a href="#2-什么时候应该拆分微服务？" class="headerlink" title="2. 什么时候应该拆分微服务？"></a>2. 什么时候应该拆分微服务？</h3><h4 id="2-1-产品初期可以先使用单体架构"><a href="#2-1-产品初期可以先使用单体架构" class="headerlink" title="2.1. 产品初期可以先使用单体架构"></a>2.1. 产品初期可以先使用单体架构</h4><h4 id="2-2-微服务化是业务发展到一定阶段被迫去做的"><a href="#2-2-微服务化是业务发展到一定阶段被迫去做的" class="headerlink" title="2.2. 微服务化是业务发展到一定阶段被迫去做的"></a>2.2. 微服务化是业务发展到一定阶段被迫去做的</h4><h4 id="2-3-确保基础设施及公共基础服务已经准备好了"><a href="#2-3-确保基础设施及公共基础服务已经准备好了" class="headerlink" title="2.3. 确保基础设施及公共基础服务已经准备好了"></a>2.3. 确保基础设施及公共基础服务已经准备好了</h4><h3 id="3-拆分粒度以及如何衡量？"><a href="#3-拆分粒度以及如何衡量？" class="headerlink" title="3. 拆分粒度以及如何衡量？"></a>3. 拆分粒度以及如何衡量？</h3><p>三个人负责一个微服务</p>
+<h3 id="4-拆分原则及问题？"><a href="#4-拆分原则及问题？" class="headerlink" title="4. 拆分原则及问题？"></a>4. 拆分原则及问题？</h3><h3 id="5-微服务的隔离"><a href="#5-微服务的隔离" class="headerlink" title="5. 微服务的隔离"></a>5. 微服务的隔离</h3><h4 id="5-1-线程级别的隔离"><a href="#5-1-线程级别的隔离" class="headerlink" title="5.1. 线程级别的隔离"></a>5.1. 线程级别的隔离</h4><pre><code>线程池，共享变量
+</code></pre>
+<h4 id="5-2-进程级别的隔离"><a href="#5-2-进程级别的隔离" class="headerlink" title="5.2. 进程级别的隔离"></a>5.2. 进程级别的隔离</h4><pre><code>进程级别的隔离就是拆分到不同的服务中实现
+</code></pre>
+<h5 id="5-2-1-进程间的通信方式有哪些？"><a href="#5-2-1-进程间的通信方式有哪些？" class="headerlink" title="5.2.1. 进程间的通信方式有哪些？"></a>5.2.1. 进程间的通信方式有哪些？</h5><pre><code>1 不同机器上需要经过远程调用 如rpc restapi 消息队列 套接字等等
+2 相同机器上需要 通过共享内存，管道，消息来通信
+</code></pre>
+<h4 id="5-3-资源隔离-docker"><a href="#5-3-资源隔离-docker" class="headerlink" title="5.3. 资源隔离 docker"></a>5.3. 资源隔离 docker</h4><h4 id="5-4-快慢隔离-处理速度快的和慢的分别处理"><a href="#5-4-快慢隔离-处理速度快的和慢的分别处理" class="headerlink" title="5.4. 快慢隔离 处理速度快的和慢的分别处理"></a>5.4. 快慢隔离 处理速度快的和慢的分别处理</h4><h4 id="5-5-热点隔离"><a href="#5-5-热点隔离" class="headerlink" title="5.5. 热点隔离"></a>5.5. 热点隔离</h4><pre><code>读操作 写操作
+</code></pre>
+<h4 id="5-6-读写分离"><a href="#5-6-读写分离" class="headerlink" title="5.6. 读写分离"></a>5.6. 读写分离</h4><h4 id="5-7-应用隔离"><a href="#5-7-应用隔离" class="headerlink" title="5.7. 应用隔离"></a>5.7. 应用隔离</h4><h4 id="5-8-物理隔离-服务器机房等隔离"><a href="#5-8-物理隔离-服务器机房等隔离" class="headerlink" title="5.8. 物理隔离 服务器机房等隔离"></a>5.8. 物理隔离 服务器机房等隔离</h4><h3 id="6-微服务的限流"><a href="#6-微服务的限流" class="headerlink" title="6. 微服务的限流"></a>6. 微服务的限流</h3><pre><code>在一段时间内可以处理或接受多少个请求
+</code></pre>
+<h4 id="6-1-在哪些地方限流？"><a href="#6-1-在哪些地方限流？" class="headerlink" title="6.1. 在哪些地方限流？"></a>6.1. 在哪些地方限流？</h4><pre><code>请求入口处
+业务入口处
+公共基础服务入口
+</code></pre>
+<h4 id="6-2-分布式限流？"><a href="#6-2-分布式限流？" class="headerlink" title="6.2. 分布式限流？"></a>6.2. 分布式限流？</h4><pre><code>令牌桶和漏桶算法只能针对单个节点
+针对每个用户的限流控制是十分有必要的
+分布式限流控制的是整个应用全局的流量
+分布式限流一般使用 redis 实现 
+</code></pre>
+<h4 id="6-3-如何确定流量的阈值？"><a href="#6-3-如何确定流量的阈值？" class="headerlink" title="6.3. 如何确定流量的阈值？"></a>6.3. 如何确定流量的阈值？</h4><pre><code>普通压测
+全链路压测     
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/12/shenghuo/shenghuochangshi/zuo-tian-you-chao-jia-liao-20221212/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -845,73 +948,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/08/golang-2022/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/08/golang-2022/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" class="post-title-link" itemprop="url">golang的内存分配机制是怎样的</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-08 15:20:22 / 修改时间：15:25:44" itemprop="dateCreated datePublished" datetime="2022-12-08T15:20:22+08:00">2022-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="关于内存分配可以好好聊聊GMP模型，这才是重点"><a href="#关于内存分配可以好好聊聊GMP模型，这才是重点" class="headerlink" title="关于内存分配可以好好聊聊GMP模型，这才是重点"></a>关于内存分配可以好好聊聊GMP模型，这才是重点</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -981,7 +1017,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
