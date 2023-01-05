@@ -183,6 +183,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/08/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/08/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" class="post-title-link" itemprop="url">http为什么要三次握手，为什么四次挥手</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-08 15:21:47 / 修改时间：15:21:58" itemprop="dateCreated datePublished" datetime="2022-12-08T15:21:47+08:00">2022-12-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/08/golang-2022/tcp-he-udp-de-qu-bie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -881,85 +948,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/11/23/golang-xie-cheng/golang-de-mpg-mo-xing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/23/golang-xie-cheng/golang-de-mpg-mo-xing/" class="post-title-link" itemprop="url">Golang的MPG模型</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-23 14:48:43 / 修改时间：15:42:34" itemprop="dateCreated datePublished" datetime="2022-11-23T14:48:43+08:00">2022-11-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-mpg-模型"><a href="#1-mpg-模型" class="headerlink" title="1. mpg 模型"></a>1. mpg 模型</h3><h4 id="1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系"><a href="#1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系" class="headerlink" title="1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系"></a>1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</h4><ol>
-<li>M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射</li>
-<li>P：processor（处理器）。一个p代表执行go代码所需要的上下文环境</li>
-<li>G：goroutine（协程）。是一个代码片段，相当于用户级线程</li>
-<li>go func aaa(){} ,这里的aaa 相当于 一个用户级线程</li>
-</ol>
-<h6 id="1-1-1-goroutine和coroutine的区别"><a href="#1-1-1-goroutine和coroutine的区别" class="headerlink" title="1.1.1. goroutine和coroutine的区别"></a>1.1.1. goroutine和coroutine的区别</h6><pre><code>  goroutine 可能发生并行执行；
-  但 coroutine 始终顺序执行。
-  http://c.biancheng.net/view/96.html
-</code></pre>
-<p>MPG：<br>每个M都会与一个内核级线程绑定，在运行时，一个M同时只能绑定一个内核线程</p>
-<p>…<br>琅琊百晓生</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1029,7 +1017,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

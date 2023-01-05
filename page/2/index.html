@@ -183,6 +183,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/14/go-es8/go-ji-cheng-chang-yong-de-zhong-jian-jian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/14/go-es8/go-ji-cheng-chang-yong-de-zhong-jian-jian/" class="post-title-link" itemprop="url">go集成常用的中间件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-12-14 17:16:24 / 修改时间：17:32:49" itemprop="dateCreated datePublished" datetime="2022-12-14T17:16:24+08:00">2022-12-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-go集成常用的中间件"><a href="#1-go集成常用的中间件" class="headerlink" title="1. go集成常用的中间件"></a>1. go集成常用的中间件</h3><p>es<br>mysql<br>mongodb<br>redis<br>kafka<br>promethues<br>还有比如 协程池</p>
+<h3 id="2-项目中使用Go集成各种中间件需要考虑哪些？"><a href="#2-项目中使用Go集成各种中间件需要考虑哪些？" class="headerlink" title="2. 项目中使用Go集成各种中间件需要考虑哪些？"></a>2. 项目中使用Go集成各种中间件需要考虑哪些？</h3><pre><code>防止直接删库删表
+阻止异常操作，如不戴where es 查询条件过多，或深层嵌套
+</code></pre>
+<h4 id="2-1-监控上报"><a href="#2-1-监控上报" class="headerlink" title="2.1. 监控上报"></a>2.1. 监控上报</h4><h4 id="2-2-多客户端支持"><a href="#2-2-多客户端支持" class="headerlink" title="2.2. 多客户端支持"></a>2.2. 多客户端支持</h4><h4 id="2-3-与原生操作一致，减少学习成本"><a href="#2-3-与原生操作一致，减少学习成本" class="headerlink" title="2.3. 与原生操作一致，减少学习成本"></a>2.3. 与原生操作一致，减少学习成本</h4><h4 id="2-4-对参数的优雅处理"><a href="#2-4-对参数的优雅处理" class="headerlink" title="2.4. 对参数的优雅处理"></a>2.4. 对参数的优雅处理</h4><h4 id="2-5-单元测试和使用样例"><a href="#2-5-单元测试和使用样例" class="headerlink" title="2.5. 单元测试和使用样例"></a>2.5. 单元测试和使用样例</h4><h3 id="3-各种场景引入消息中间件应该如何选择？"><a href="#3-各种场景引入消息中间件应该如何选择？" class="headerlink" title="3. 各种场景引入消息中间件应该如何选择？"></a>3. 各种场景引入消息中间件应该如何选择？</h3><h4 id="3-1-消息中间件使用场景"><a href="#3-1-消息中间件使用场景" class="headerlink" title="3.1. 消息中间件使用场景"></a>3.1. 消息中间件使用场景</h4><pre><code>异步数据处理
+流量控制（业务流量削峰）
+系统应用解耦
+</code></pre>
+<h3 id="4-Golang使用kafka的正确姿势"><a href="#4-Golang使用kafka的正确姿势" class="headerlink" title="4. Golang使用kafka的正确姿势"></a>4. Golang使用kafka的正确姿势</h3><h3 id="5-Go操作ES的一些技巧和注意事项"><a href="#5-Go操作ES的一些技巧和注意事项" class="headerlink" title="5. Go操作ES的一些技巧和注意事项"></a>5. Go操作ES的一些技巧和注意事项</h3><h3 id="6-生产环境中Go集成mysql需要重点解决哪些问题？"><a href="#6-生产环境中Go集成mysql需要重点解决哪些问题？" class="headerlink" title="6. 生产环境中Go集成mysql需要重点解决哪些问题？"></a>6. 生产环境中Go集成mysql需要重点解决哪些问题？</h3><h3 id="7-Go中如何正确使用Redis？"><a href="#7-Go中如何正确使用Redis？" class="headerlink" title="7. Go中如何正确使用Redis？"></a>7. Go中如何正确使用Redis？</h3><h3 id="8-Go集成MongoDB细节揭秘（一）"><a href="#8-Go集成MongoDB细节揭秘（一）" class="headerlink" title="8. Go集成MongoDB细节揭秘（一）"></a>8. Go集成MongoDB细节揭秘（一）</h3><h3 id="9-Go集成Promethues细节揭秘-一"><a href="#9-Go集成Promethues细节揭秘-一" class="headerlink" title="9. Go集成Promethues细节揭秘(一)"></a>9. Go集成Promethues细节揭秘(一)</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/14/shenghuo/shenghuochangshi/gan-mou-yi-miao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -884,73 +959,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/08/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/08/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" class="post-title-link" itemprop="url">http为什么要三次握手，为什么四次挥手</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-12-08 15:21:47 / 修改时间：15:21:58" itemprop="dateCreated datePublished" datetime="2022-12-08T15:21:47+08:00">2022-12-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1020,7 +1028,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
