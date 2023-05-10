@@ -540,22 +540,6 @@ handle off
       </tags>
   </entry>
   <entry>
-    <title>golang GMP goroutinue 的执行过程</title>
-    <url>/2022/12/10/golang-2022/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/</url>
-    <content><![CDATA[<h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
-<p>全局变量G0 就是主协程对应的G </p>
-<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
-<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
-<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>http为什么要三次握手，为什么四次挥手</title>
     <url>/2022/12/10/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/</url>
     <content><![CDATA[<h3 id><a href="#" class="headerlink" title></a></h3>]]></content>
@@ -2778,10 +2762,10 @@ null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL
 </script>
 
 <p>正数为增长值，负数为减重值</p>
-<div id="echarts8556" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts965" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8556'));
+        var myChart = echarts.init(document.getElementById('echarts965'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -2952,10 +2936,10 @@ null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL
   }
 </script>
 
-<div id="echarts663" style="width: 90%;height: 800px;margin: 0 auto"></div>
+<div id="echarts8070" style="width: 90%;height: 800px;margin: 0 auto"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts663'));
+        var myChart = echarts.init(document.getElementById('echarts8070'));
 
         // 指定图表的配置项和数据
         var option = option = {
@@ -3708,43 +3692,6 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
       </tags>
   </entry>
   <entry>
-    <title>洪堡科技笔记整理</title>
-    <url>/2023/02/02/bi-ji-zheng-li-2019-2022/hong-bao-ke-ji/</url>
-    <content><![CDATA[<h2 id="资产管理系统"><a href="#资产管理系统" class="headerlink" title="资产管理系统"></a>资产管理系统</h2><pre><code>固定资产
-    资产编码自动生成，小写字母自动转大写
-    维保到期自动折旧。
-    资产信息导入导出excel。
-    资产信息一键复制功能。
-    资产历史（领用，退还，维修）
-
-资产分类
-    递归方法，无限极分类
-
-资产调拨
-资产维修
-固定资产报废
-</code></pre>
-<h2 id="广告系统"><a href="#广告系统" class="headerlink" title="广告系统"></a>广告系统</h2><pre><code>广告组,广告系列（广告计划），
-否定关键字
-</code></pre>
-<h2 id="运营管理系统"><a href="#运营管理系统" class="headerlink" title="运营管理系统"></a>运营管理系统</h2><pre><code>发货指令管理
-调拨单管理
-自发货调拨单管理
-调拨单据流转管理
-</code></pre>
-<h2 id="供应链系统"><a href="#供应链系统" class="headerlink" title="供应链系统"></a>供应链系统</h2><pre><code>发货指令管理B2B
-调拨单管理B2B
-组织间交易管理（采购订单，采购入库单，销售订单，销售出库单，商品列表）
-</code></pre>
-]]></content>
-      <categories>
-        <category>笔记记录</category>
-      </categories>
-      <tags>
-        <tag>工作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022总结</title>
     <url>/2023/02/02/shenghuo/2023-nian-ji-lu/2023-kai-shi-bu-mai-nian/</url>
     <content><![CDATA[<h2 id="2023年开始不买年"><a href="#2023年开始不买年" class="headerlink" title="2023年开始不买年"></a>2023年开始不买年</h2><p>不买的品类：<br>护肤品（水，乳液，身体乳，面膜，把现在的用完）<br>化妆品（眉笔，口红用完）<br>洗护类用品（洗衣液，年初35元买的超能3.5kg，应该可以用大半年，用完了再补）<br>衣服（冬天，春天，秋天的衣服确定不用再买了。夏天的衣服应该还有至少五套可以外出的，可以不买。）<br>鞋子（两双运动鞋加一双凉鞋，可能夏天会再加一双凉鞋，尽量不买）<br>帽子（没有习惯，不用买）<br>包包（买包的话可以把黑色的包丢掉然后买新包包）<br>家具用品（厨房用品）<br>本子（还有一个全新加一个剩很多页的本子没有用完，需要整理用完的本子然后扔掉，还有部分草稿纸今年够用）<br>首饰（没有佩戴习惯，不用买）</p>
@@ -3838,6 +3785,96 @@ BMI&lt;18.5	18.5≤BMI&lt;24	 24≤BMI&lt;28	28≤BMI
       </categories>
       <tags>
         <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang GMP goroutinue 的执行过程</title>
+    <url>/2022/12/10/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/</url>
+    <content><![CDATA[<h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
+<p>全局变量G0 就是主协程对应的G </p>
+<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
+<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
+<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang GMP goroutinue 的执行过程</title>
+    <url>/2023/02/23/golang-gmp/chatgpt-de-hui-da/</url>
+    <content><![CDATA[<h3 id="golang-中的-gmp-调度器模型有什么缺点？"><a href="#golang-中的-gmp-调度器模型有什么缺点？" class="headerlink" title="golang 中的 gmp 调度器模型有什么缺点？"></a>golang 中的 gmp 调度器模型有什么缺点？</h3><p>Go语言中的调度器采用了Goroutine Multiplexer (GMP) 模型，该模型使用了三个主要组件：M (Machine), P (Processor), G (Goroutine)。虽然GMP模型在实践中表现出色，但它仍然存在一些缺点，包括：</p>
+<p>内存占用较大：每个Goroutine都需要占用2KB的栈空间，如果有大量的Goroutine同时存在，就会导致内存占用较大。</p>
+<p>无法在多核CPU上充分利用硬件资源：GMP模型中的P数量是固定的，并不能根据当前的CPU核心数动态调整，因此在多核CPU上可能无法充分利用硬件资源。</p>
+<p>可能会导致偏差：GMP模型的调度器采用了抢占式调度策略，可能会导致某些Goroutine的执行时间较长，而其他Goroutine则被迫等待，从而导致偏差。</p>
+<p>非常依赖操作系统调度器：GMP模型的实现依赖于操作系统的调度器，这使得它不太适合在嵌入式设备或其他不具备完整操作系统的环境中使用。</p>
+<p>可能会存在死锁：由于Goroutine的调度是由Go运行时系统控制的，因此如果某个Goroutine持有某个锁，但是在等待某个事件发生时发生阻塞，可能会导致整个程序死锁。</p>
+<p>尽管存在这些缺点，GMP模型仍然是Go语言的核心组件，它可以轻松地管理大量的Goroutine，并为开发人员提供强大的并发和并行编程能力。</p>
+<h3 id="微服务有哪些缺点？"><a href="#微服务有哪些缺点？" class="headerlink" title="微服务有哪些缺点？"></a>微服务有哪些缺点？</h3><p>尽管微服务架构在许多方面都具有优点，但它仍然有一些缺点，包括：</p>
+<p>增加了部署和管理的复杂性：微服务架构涉及到多个服务，每个服务都需要独立部署和管理。这增加了部署和管理的复杂性，需要更多的工作量和资源。</p>
+<p>增加了运维成本：由于微服务架构涉及多个服务，每个服务都需要独立维护和监控。这意味着需要更多的运维成本和工作量，包括配置管理、日志管理、监控、报警等。</p>
+<p>增加了网络通信的延迟和复杂性：在微服务架构中，服务之间通过网络进行通信，这会增加网络通信的延迟和复杂性。此外，服务之间的通信可能会因为网络故障、负载不均衡等问题而发生故障。</p>
+<p>增加了开发复杂性：微服务架构中的每个服务都需要独立开发和测试，这增加了开发的复杂性。此外，由于服务之间的依赖关系，开发人员必须考虑如何处理服务之间的错误和故障。</p>
+<p>需要更多的测试工作：微服务架构中的每个服务都需要独立测试，这增加了测试的工作量。此外，由于服务之间的依赖关系，测试人员必须考虑如何处理服务之间的错误和故障。</p>
+<p>可能会导致服务之间的耦合：微服务架构中的服务之间存在依赖关系，这可能会导致服务之间的耦合。此外，服务之间的通信可能会因为数据格式、接口版本等问题而产生冲突。</p>
+<p>总之，微服务架构虽然可以带来一些好处，但是也会增加部署、管理、开发、测试和维护的复杂性，需要开发人员和运维人员进行更多的工作。因此，在使用微服务架构时，需要仔细评估其优缺点，并确保有足够的资源和技能来支持其部署和管理。</p>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HongBao笔记整理</title>
+    <url>/2023/02/02/bi-ji-zheng-li-2019-2022/hongbao/</url>
+    <content><![CDATA[<h2 id="资产管理系统"><a href="#资产管理系统" class="headerlink" title="资产管理系统"></a>资产管理系统</h2><pre><code>固定资产
+    资产编码自动生成，小写字母自动转大写
+    维保到期自动折旧。
+    资产信息导入导出excel。
+    资产信息一键复制功能。
+    资产历史（领用，退还，维修）
+
+资产分类
+    递归方法，无限极分类
+
+资产调拨
+资产维修
+固定资产报废
+</code></pre>
+<h2 id="广告系统"><a href="#广告系统" class="headerlink" title="广告系统"></a>广告系统</h2><pre><code>广告组,广告系列（广告计划），
+否定关键字
+</code></pre>
+<h2 id="运营管理系统"><a href="#运营管理系统" class="headerlink" title="运营管理系统"></a>运营管理系统</h2><pre><code>发货指令管理
+调拨单管理
+自发货调拨单管理
+调拨单据流转管理
+</code></pre>
+<h2 id="供应链系统"><a href="#供应链系统" class="headerlink" title="供应链系统"></a>供应链系统</h2><pre><code>发货指令管理B2B
+调拨单管理B2B
+组织间交易管理（采购订单，采购入库单，销售订单，销售出库单，商品列表）
+</code></pre>
+]]></content>
+      <categories>
+        <category>笔记记录</category>
+      </categories>
+      <tags>
+        <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>potplayer 视频播放器</title>
+    <url>/2023/02/08/shenghuo/2023-nian-ji-lu/win-shi-pin-bo-fang-qi/</url>
+    <content><![CDATA[<h2 id="https-potplayer-daum-net"><a href="#https-potplayer-daum-net" class="headerlink" title="https://potplayer.daum.net/"></a><a href="https://potplayer.daum.net/">https://potplayer.daum.net/</a></h2>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
 </search>
