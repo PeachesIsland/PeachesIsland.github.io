@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-xie-cheng/xian-cheng-bing-fa-mo-xing/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/16/shenghuo/wei-sheng-su/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-xie-cheng/xian-cheng-bing-fa-mo-xing/" class="post-title-link" itemprop="url">协程，线程，并发模型</a>
+            <a href="/2022/10/16/shenghuo/wei-sheng-su/" class="post-title-link" itemprop="url">维生素</a>
         </h2>
 
         <div class="post-meta">
@@ -206,8 +206,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-16 11:59:57 / 修改时间：15:13:00" itemprop="dateCreated datePublished" datetime="2022-10-16T11:59:57+08:00">2022-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +216,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
                 </span>
             </span>
 
@@ -230,42 +231,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-并发并行的区别"><a href="#1-并发并行的区别" class="headerlink" title="1. 并发并行的区别"></a>1. 并发并行的区别</h3><h4 id="1-1-并行"><a href="#1-1-并行" class="headerlink" title="1.1. 并行"></a>1.1. 并行</h4><pre><code>多核cpu
-要求cpu具备多核计算的能力
+          <h2 id="维生素A"><a href="#维生素A" class="headerlink" title="维生素A"></a>维生素A</h2><pre><code>来源：动物肝脏，深色水果，类胡萝卜素转化成维生素A（转化效率不高）
+缺乏表现：严重缺乏的话会得夜盲症，轻度缺乏有干眼症、皮肤粗糙、皮肤干燥
 </code></pre>
-<h4 id="1-2-并发"><a href="#1-2-并发" class="headerlink" title="1.2. 并发"></a>1.2. 并发</h4><pre><code>不要求多核cpu，不要求cpu具备多核计算的能力
-</code></pre>
-<h3 id="2-csp-并发模型"><a href="#2-csp-并发模型" class="headerlink" title="2. csp 并发模型"></a>2. csp 并发模型</h3><h4 id="2-1-通信顺序进程模型"><a href="#2-1-通信顺序进程模型" class="headerlink" title="2.1. 通信顺序进程模型"></a>2.1. 通信顺序进程模型</h4><h4 id="2-2-go语言中有两种并发模型"><a href="#2-2-go语言中有两种并发模型" class="headerlink" title="2.2. go语言中有两种并发模型"></a>2.2. go语言中有两种并发模型</h4><ol>
-<li>线程与锁的并发模型</li>
-<li>CSP同学顺序进程模型</li>
-</ol>
-<h3 id="3-内存分类-内核级空间-用户级空间"><a href="#3-内存分类-内核级空间-用户级空间" class="headerlink" title="3. 内存分类-内核级空间,用户级空间"></a>3. 内存分类-内核级空间,用户级空间</h3><h4 id="3-1-内核空间"><a href="#3-1-内核空间" class="headerlink" title="3.1. 内核空间"></a>3.1. 内核空间</h4><h4 id="3-2-用户空间"><a href="#3-2-用户空间" class="headerlink" title="3.2. 用户空间"></a>3.2. 用户空间</h4><h3 id="4-线程分类，线程是操作系统能够调度的最小单位"><a href="#4-线程分类，线程是操作系统能够调度的最小单位" class="headerlink" title="4. 线程分类，线程是操作系统能够调度的最小单位"></a>4. 线程分类，线程是操作系统能够调度的最小单位</h3><h4 id="4-1-用户线程（无法被cpu感知）"><a href="#4-1-用户线程（无法被cpu感知）" class="headerlink" title="4.1. 用户线程（无法被cpu感知）"></a>4.1. 用户线程（无法被cpu感知）</h4><p><strong>用户空间</strong>的代码创建，管理，销毁</p>
-<h4 id="4-2-内核线程"><a href="#4-2-内核线程" class="headerlink" title="4.2. 内核线程"></a>4.2. 内核线程</h4><p>由<strong>操作系统</strong>创建，管理，调度</p>
-<h3 id="5-线程模型"><a href="#5-线程模型" class="headerlink" title="5. 线程模型"></a>5. 线程模型</h3><h4 id="5-1-用户级线程模型"><a href="#5-1-用户级线程模型" class="headerlink" title="5.1. 用户级线程模型"></a>5.1. 用户级线程模型</h4><pre><code>一个进程（一个进程有多个线程）对应一个内核线程
-优点：进程内的多线程管理由用户代码完成，所以这里的线程的创建，管理，同步等工作显得一场轻量级和高效
-缺点： 
-    1 进程内的多线程无法很好的利用CPU多核运算的优势，只能通过分时复用的方式轮换执行
-    2 如果进程内有线程阻塞，很可能造成阻塞
-</code></pre>
-<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/75168473cc0eb514.png"></p>
-<h4 id="5-2-内核级线程模型"><a href="#5-2-内核级线程模型" class="headerlink" title="5.2. 内核级线程模型"></a>5.2. 内核级线程模型</h4><pre><code>进程中每个线程都会对应一个内核线程
-优点： 
-    多线程可以充分利用CPU的多核并行计算能力，
-    进程内某个线程的堵塞并不会影响程序的运行
-缺点：
-    线程的管理和调度由操作系统负责，
-    会导致每次线程切换上下文的时候从用户态到内核态，产生不小的资源消耗
-    同时创建线程的梳理受限于可创建内核线程的数量
-</code></pre>
-<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/b262f7b9593e3bd9.png"></p>
-<h5 id="5-2-1-一个进程可以创建多少个线程？"><a href="#5-2-1-一个进程可以创建多少个线程？" class="headerlink" title="5.2.1. 一个进程可以创建多少个线程？"></a>5.2.1. 一个进程可以创建多少个线程？</h5><p><img src="https://s3.uuu.ovh/imgs/2022/11/23/61075f1b275ea374.png"></p>
-<h4 id="5-3-两级线程模型"><a href="#5-3-两级线程模型" class="headerlink" title="5.3. 两级线程模型"></a>5.3. 两级线程模型</h4><pre><code>相当于用户及线程喝内核级线程的结合
-一个进程会对应多个内核级线程，由 进程内的调度器 来觉得进程内线程与内核线程的对应
-用户线程的调度与管理由用户空间的进程对应的调度去负责，而内核线程的调度由操作系统负责
-优点：
-    既能有效的降低线程创建对应资源的管理和消耗，又能够很好的提供线程并行计算的能力
-</code></pre>
-<p><img src="https://s3.uuu.ovh/imgs/2022/11/23/d1c5ff52cb5602f5.png"></p>
+<h2 id="维生素B"><a href="#维生素B" class="headerlink" title="维生素B"></a>维生素B</h2><h2 id="维生素C"><a href="#维生素C" class="headerlink" title="维生素C"></a>维生素C</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/13/util/git-che-xiao-add-commit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/13/util/git-che-xiao-add-commit/" class="post-title-link" itemprop="url">git 撤销 add commit</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-13 21:16:26" itemprop="dateCreated datePublished" datetime="2022-10-13T21:16:26+08:00">2022-10-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="git-撤销-add-commit"><a href="#git-撤销-add-commit" class="headerlink" title="git 撤销 add commit"></a>git 撤销 add commit</h2><h3 id="git-撤销-add"><a href="#git-撤销-add" class="headerlink" title="git 撤销 add"></a>git 撤销 add</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-撤销-commit"><a href="#git-撤销-commit" class="headerlink" title="git 撤销 commit"></a>git 撤销 commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -285,7 +322,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-xie-cheng/golang-de-mpg-mo-xing/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -299,7 +336,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-xie-cheng/golang-de-mpg-mo-xing/" class="post-title-link" itemprop="url">Golang的MPG模型</a>
+            <a href="/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/" class="post-title-link" itemprop="url">linux 常用操作和命令</a>
         </h2>
 
         <div class="post-meta">
@@ -308,8 +345,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-05 14:06:10 / 修改时间：14:43:01" itemprop="dateCreated datePublished" datetime="2022-10-05T14:06:10+08:00">2022-10-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,85 +355,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-mpg-模型"><a href="#1-mpg-模型" class="headerlink" title="1. mpg 模型"></a>1. mpg 模型</h3><h4 id="1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系"><a href="#1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系" class="headerlink" title="1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系"></a>1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</h4><ol>
-<li>M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射</li>
-<li>P：processor（处理器）。一个p代表执行go代码所需要的上下文环境</li>
-<li>G：goroutine（协程）。是一个代码片段，相当于用户级线程</li>
-<li>go func aaa(){} ,这里的aaa 相当于 一个用户级线程</li>
-</ol>
-<h6 id="1-1-1-goroutine和coroutine的区别"><a href="#1-1-1-goroutine和coroutine的区别" class="headerlink" title="1.1.1. goroutine和coroutine的区别"></a>1.1.1. goroutine和coroutine的区别</h6><pre><code>  goroutine 可能发生并行执行；
-  但 coroutine 始终顺序执行。
-  http://c.biancheng.net/view/96.html
-</code></pre>
-<p>MPG：<br>每个M都会与一个内核级线程绑定，在运行时，一个M同时只能绑定一个内核线程</p>
-<p>…<br>琅琊百晓生</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-rpc/golang-rpc-jian-dan-diao-yong/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang-rpc/golang-rpc-jian-dan-diao-yong/" class="post-title-link" itemprop="url">golang 简单rpc 调用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
                 </span>
             </span>
 
@@ -411,11 +371,37 @@
 
       
           <p>linux 常用操作和命令</p>
-<h4 id="1-server-文件夹-main-go"><a href="#1-server-文件夹-main-go" class="headerlink" title="1. server 文件夹 main.go"></a>1. server 文件夹 main.go</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;net&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;net/rpc&quot;</span></span><br><span class="line">	<span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Server struct &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	NumOne int</span><br><span class="line">	NumTwo int</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">type</span> Res struct &#123;</span><br><span class="line">	Num int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (s *Server) Add(req Req, res *Res) error &#123;</span><br><span class="line">	time.Sleep(5 * time.Second)</span><br><span class="line">	res.Num = req.NumOne + req.NumTwo</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	rpc.Register(new(Server))</span><br><span class="line">	rpc.HandleHTTP()</span><br><span class="line">	l, e := net.Listen(<span class="string">&quot;tcp&quot;</span>, <span class="string">&quot;:8888&quot;</span>)</span><br><span class="line">	fmt.Println(l, e)</span><br><span class="line">	http.Serve(l, nil)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-client-文件夹-main-go"><a href="#2-client-文件夹-main-go" class="headerlink" title="2. client 文件夹 main.go"></a>2. client 文件夹 main.go</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/rpc&quot;</span></span><br><span class="line">	<span class="string">&quot;time&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	NumOne int</span><br><span class="line">	NumTwo int</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">type</span> Res struct &#123;</span><br><span class="line">	Num int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	req := Req&#123;</span><br><span class="line">		NumOne: 10,</span><br><span class="line">		NumTwo: 20,</span><br><span class="line">	&#125;</span><br><span class="line">	var res Res</span><br><span class="line">	client, err := rpc.DialHTTP(<span class="string">&quot;tcp&quot;</span>, <span class="string">&quot;localhost:8888&quot;</span>)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		log.Fatalln(<span class="string">&quot;dialing 失败:&quot;</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">	//err2 := client.Call(<span class="string">&quot;Server.Add&quot;</span>, req, &amp;res)</span><br><span class="line">	ca := client.Go(<span class="string">&quot;Server.Add&quot;</span>, req, &amp;res, nil)</span><br><span class="line"></span><br><span class="line">	//call := &lt;-ca.Done</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		select &#123;</span><br><span class="line">		<span class="keyword">case</span> &lt;-ca.Done:</span><br><span class="line">			fmt.Println(res)</span><br><span class="line">			<span class="built_in">return</span></span><br><span class="line">		default:</span><br><span class="line">			time.Sleep(1 * time.Second)</span><br><span class="line">			fmt.Println(<span class="string">&quot;我在这里可以做好多事情，哈哈哈&quot;</span>)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(req)</span><br><span class="line">	fmt.Println(&amp;res)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
+<h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
+<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br><span class="line"><span class="built_in">cat</span> aa.log <span class="comment">#查看aa.log 文件内容</span></span><br></pre></td></tr></table></figure>
 
-<p>先启动服务，再启动客户端请求</p>
+<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
+    |
+&lt;-hjkl-&gt;
+   |
+   V
+</code></pre>
+<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
+        编辑模式 《====》 正常模式 《====》 命令模式
+    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
+                                          ：q 退出
+                                          ：q！不保存退出
+                                          ：w 保存
+</code></pre>
+<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
+p 拷贝当前复制，
+dd 删除当前行，5dd 删除当前光标下的5行
+:set nu  显示行号
+:set nonu 不显示行号
+G 跳转到末行
+gg 跳转到首行
+/xx 回车 查找xx
+n: 查找下一个
+Shift + g :200 跳转到第200行 
+</code></pre>
 
       
     </div>
@@ -435,7 +421,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-high/golang-dai-shu-li-wen-ti/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/05/mq/si-xin-dui-lie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -449,7 +435,83 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-high/golang-dai-shu-li-wen-ti/" class="post-title-link" itemprop="url">Golang 待梳理问题</a>
+            <a href="/2022/10/05/mq/si-xin-dui-lie/" class="post-title-link" itemprop="url">死信队列</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-05 13:32:53 / 修改时间：13:53:02" itemprop="dateCreated datePublished" datetime="2022-10-05T13:32:53+08:00">2022-10-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
+达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，
+此时CMQ 不会立刻将消息丢弃，而是将其发送到该消费者对应的特殊队列中，这个特殊队列就是DLQ。
+</code></pre>
+<h3 id="2-常见用途"><a href="#2-常见用途" class="headerlink" title="2. 常见用途"></a>2. 常见用途</h3><pre><code>发送消息十分钟后发送给用户
+未支付订单取消订单
+下单后收到支付系统消息
+规定每天固定发送消息
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/" class="post-title-link" itemprop="url">mysql 为什么使用 B+ 树</a>
         </h2>
 
         <div class="post-meta">
@@ -459,14 +521,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-03 15:22:48" itemprop="dateCreated datePublished" datetime="2022-10-03T15:22:48+08:00">2022-10-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-15 22:35:06" itemprop="dateModified" datetime="2022-12-15T22:35:06+08:00">2022-12-15</time>
+                <time title="修改时间：2022-10-05 13:58:51" itemprop="dateModified" datetime="2022-10-05T13:58:51+08:00">2022-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -474,7 +536,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
                 </span>
             </span>
 
@@ -489,87 +551,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-Golang-待梳理问题"><a href="#1-Golang-待梳理问题" class="headerlink" title="1. Golang 待梳理问题"></a>1. Golang 待梳理问题</h2><h3 id="1-1-Gin-如何让做参数校验？"><a href="#1-1-Gin-如何让做参数校验？" class="headerlink" title="1.1. Gin 如何让做参数校验？"></a>1.1. Gin 如何让做参数校验？</h3><h3 id="1-2-如何通过字符串调用函数？"><a href="#1-2-如何通过字符串调用函数？" class="headerlink" title="1.2. 如何通过字符串调用函数？"></a>1.2. 如何通过字符串调用函数？</h3><h3 id="1-3-go-的-chan-关闭后还可以发送数据吗-？"><a href="#1-3-go-的-chan-关闭后还可以发送数据吗-？" class="headerlink" title="1.3. go 的 chan 关闭后还可以发送数据吗 ？"></a>1.3. go 的 chan 关闭后还可以发送数据吗 ？</h3><h3 id="1-4-什么是内存逃逸？-什么时候会发生内存逃逸？"><a href="#1-4-什么是内存逃逸？-什么时候会发生内存逃逸？" class="headerlink" title="1.4. 什么是内存逃逸？ 什么时候会发生内存逃逸？"></a>1.4. 什么是内存逃逸？ 什么时候会发生内存逃逸？</h3><h3 id="1-5-new-和-make-的区别是什么"><a href="#1-5-new-和-make-的区别是什么" class="headerlink" title="1.5. new 和 make 的区别是什么"></a>1.5. new 和 make 的区别是什么</h3><p>相同点:<br>make和new都是golang用来分配内存的內建函数，且在堆上分配内存。<br>不同点：<br>make既分配内存，也初始化内存。<br>new只是将内存清零，并没有初始化内存。<br>make返回的还是引用类型本身；而new返回的是指向类型的指针。<br>make只能用来分配及初始化类型为slice，map，channel的数据；new可以分配任意类型的数据。</p>
-<h3 id="1-6-结构体是传指针还是值-？"><a href="#1-6-结构体是传指针还是值-？" class="headerlink" title="1.6. 结构体是传指针还是值 ？"></a>1.6. 结构体是传指针还是值 ？</h3><h3 id="1-7-G一直占用资源，GMP怎么解决？"><a href="#1-7-G一直占用资源，GMP怎么解决？" class="headerlink" title="1.7. G一直占用资源，GMP怎么解决？"></a>1.7. G一直占用资源，GMP怎么解决？</h3><h3 id="1-8-GMP，G什么时候阻塞，G阻塞，调度器如何解决？G有集中状态？"><a href="#1-8-GMP，G什么时候阻塞，G阻塞，调度器如何解决？G有集中状态？" class="headerlink" title="1.8. GMP，G什么时候阻塞，G阻塞，调度器如何解决？G有集中状态？"></a>1.8. GMP，G什么时候阻塞，G阻塞，调度器如何解决？G有集中状态？</h3><h3 id="1-9-线程有几种状态？-自旋和非自旋"><a href="#1-9-线程有几种状态？-自旋和非自旋" class="headerlink" title="1.9. 线程有几种状态？ 自旋和非自旋"></a>1.9. 线程有几种状态？ 自旋和非自旋</h3><h3 id="1-10-Go的tag-原理-反射原理-？"><a href="#1-10-Go的tag-原理-反射原理-？" class="headerlink" title="1.10. Go的tag 原理? 反射原理 ？"></a>1.10. Go的tag 原理? 反射原理 ？</h3><h3 id="1-11-线程有多大？携程有多大-？-线程2M，协程2KB"><a href="#1-11-线程有多大？携程有多大-？-线程2M，协程2KB" class="headerlink" title="1.11. 线程有多大？携程有多大 ？ 线程2M，协程2KB"></a>1.11. 线程有多大？携程有多大 ？ 线程2M，协程2KB</h3><h3 id="1-12-一个线程发生OOM？"><a href="#1-12-一个线程发生OOM？" class="headerlink" title="1.12. 一个线程发生OOM？"></a>1.12. 一个线程发生OOM？</h3><h3 id="1-13-携程发生OOM？"><a href="#1-13-携程发生OOM？" class="headerlink" title="1.13. 携程发生OOM？"></a>1.13. 携程发生OOM？</h3><h3 id="1-14-错误处理如何解决-？是否统一处理-？"><a href="#1-14-错误处理如何解决-？是否统一处理-？" class="headerlink" title="1.14. 错误处理如何解决 ？是否统一处理 ？"></a>1.14. 错误处理如何解决 ？是否统一处理 ？</h3><h3 id="1-15-CPU多核如何保持不冲突-？"><a href="#1-15-CPU多核如何保持不冲突-？" class="headerlink" title="1.15. CPU多核如何保持不冲突 ？"></a>1.15. CPU多核如何保持不冲突 ？</h3><h3 id="1-16-Go的Mutex的-底层实现-？"><a href="#1-16-Go的Mutex的-底层实现-？" class="headerlink" title="1.16. Go的Mutex的 底层实现 ？"></a>1.16. Go的Mutex的 底层实现 ？</h3><h3 id="1-17-饥饿模式和正常模式的区别是什么-？"><a href="#1-17-饥饿模式和正常模式的区别是什么-？" class="headerlink" title="1.17. 饥饿模式和正常模式的区别是什么 ？"></a>1.17. 饥饿模式和正常模式的区别是什么 ？</h3><h3 id="1-18-多个G中一个G出错如何处理？"><a href="#1-18-多个G中一个G出错如何处理？" class="headerlink" title="1.18. 多个G中一个G出错如何处理？"></a>1.18. 多个G中一个G出错如何处理？</h3><h3 id="1-19-空-struct-的使用场景-？空结构体增加方法"><a href="#1-19-空-struct-的使用场景-？空结构体增加方法" class="headerlink" title="1.19. 空 struct 的使用场景 ？空结构体增加方法"></a>1.19. 空 struct 的使用场景 ？空结构体增加方法</h3><h3 id="1-20-字符串转字节数组是否发生内存拷贝？"><a href="#1-20-字符串转字节数组是否发生内存拷贝？" class="headerlink" title="1.20. 字符串转字节数组是否发生内存拷贝？"></a>1.20. 字符串转字节数组是否发生内存拷贝？</h3><h3 id="1-21-如何不发生内存拷贝？"><a href="#1-21-如何不发生内存拷贝？" class="headerlink" title="1.21. 如何不发生内存拷贝？"></a>1.21. 如何不发生内存拷贝？</h3><h3 id="1-22-如何高效的拼接字符串？"><a href="#1-22-如何高效的拼接字符串？" class="headerlink" title="1.22. 如何高效的拼接字符串？"></a>1.22. 如何高效的拼接字符串？</h3><p>strings.Join ≈ strings.Builder &gt; bytes.Buffer &gt; “+” &gt; fmt.Sprintf</p>
-<h3 id="1-23-如何设计RPC框架-？"><a href="#1-23-如何设计RPC框架-？" class="headerlink" title="1.23. 如何设计RPC框架 ？"></a>1.23. 如何设计RPC框架 ？</h3><h3 id="1-24-TCP-粘包问题-？-包序列号-，长度？"><a href="#1-24-TCP-粘包问题-？-包序列号-，长度？" class="headerlink" title="1.24. TCP 粘包问题 ？ 包序列号 ，长度？"></a>1.24. TCP 粘包问题 ？ 包序列号 ，长度？</h3><h3 id="1-25-请你讲一下Go的面向对象是如何实现的？"><a href="#1-25-请你讲一下Go的面向对象是如何实现的？" class="headerlink" title="1.25. 请你讲一下Go的面向对象是如何实现的？"></a>1.25. 请你讲一下Go的面向对象是如何实现的？</h3><p>Go 实现面向对象的两个关键是 struct 喝interface<br>封装：对于同一个包，对象包内的文件可见，对不同的包，需要将对象以大写开头才是可见的。<br>继承：继承是编译时特征，在struct内假如所需要继承的类即可<br>多态：多态是运行时特征。Go多态通过interface 来实现。类型和接口是松耦合的，某个类型的实例可以赋给它所实现的任意接口类型的变量。<br>Go支持多重继承，就是在类型中嵌入所有毕业的父类型</p>
-<h3 id="1-26-二维切片如何初始化"><a href="#1-26-二维切片如何初始化" class="headerlink" title="1.26. 二维切片如何初始化"></a>1.26. 二维切片如何初始化</h3><p>使用make 对二维切片进行初始化。<br>要使用二维切片保存数据时候还要对对应的一维切片进行初始化。</p>
-<h3 id="1-27-uint-型变量-a-x3D-1，-b-x3D-2，-a-b-是多少-？"><a href="#1-27-uint-型变量-a-x3D-1，-b-x3D-2，-a-b-是多少-？" class="headerlink" title="1.27. uint 型变量 a &#x3D; 1， b &#x3D; 2， a-b 是多少 ？"></a>1.27. uint 型变量 a &#x3D; 1， b &#x3D; 2， a-b 是多少 ？</h3><p>结果会溢出，如果是32位系统，结果是2^32-1，如果是64位系统，结果2^64-1</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line"><span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="string">&quot;math&quot;</span></span><br><span class="line"><span class="string">&quot;strconv&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">var a uint = 1</span><br><span class="line">var b uint = 2</span><br><span class="line"></span><br><span class="line">	fmt.Println(strconv.Itoa(math.MaxUint8))</span><br><span class="line">	fmt.Println(a - b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-28-1-27"><a href="#1-28-1-27" class="headerlink" title="1.28. 1.27."></a>1.28. 1.27.</h3><h3 id="1-29-1-28"><a href="#1-29-1-28" class="headerlink" title="1.29. 1.28."></a>1.29. 1.28.</h3><h3 id="1-30-1-29"><a href="#1-30-1-29" class="headerlink" title="1.30. 1.29."></a>1.30. 1.29.</h3><h3 id="1-31-1-30"><a href="#1-31-1-30" class="headerlink" title="1.31. 1.30."></a>1.31. 1.30.</h3><h3 id="1-32-1-31"><a href="#1-32-1-31" class="headerlink" title="1.32. 1.31."></a>1.32. 1.31.</h3><h3 id="1-33-1-32"><a href="#1-33-1-32" class="headerlink" title="1.33. 1.32."></a>1.33. 1.32.</h3><h3 id="1-34-1-33"><a href="#1-34-1-33" class="headerlink" title="1.34. 1.33."></a>1.34. 1.33.</h3><h3 id="1-35-1-34"><a href="#1-35-1-34" class="headerlink" title="1.35. 1.34."></a>1.35. 1.34.</h3><h3 id="1-36-1-35"><a href="#1-36-1-35" class="headerlink" title="1.36. 1.35."></a>1.36. 1.35.</h3><h3 id="1-37-1-36"><a href="#1-37-1-36" class="headerlink" title="1.37. 1.36."></a>1.37. 1.36.</h3><h3 id="1-38"><a href="#1-38" class="headerlink" title="1.38."></a>1.38.</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-high/gmp-de-she-ji-ce-lue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang-high/gmp-de-she-ji-ce-lue/" class="post-title-link" itemprop="url">GMP 的设计策略</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-GMP-的设计策略"><a href="#1-GMP-的设计策略" class="headerlink" title="1. GMP 的设计策略"></a>1. GMP 的设计策略</h2><h3 id="1-1-复用线程"><a href="#1-1-复用线程" class="headerlink" title="1.1. 复用线程"></a>1.1. 复用线程</h3><pre><code>偷取G
-handle off
+          <p>mysql 为什么使用 B+ 树</p>
+<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
+一个节点可以存多个元素，元素也排序了 
 </code></pre>
-<h3 id="1-2-抢占"><a href="#1-2-抢占" class="headerlink" title="1.2. 抢占"></a>1.2. 抢占</h3><pre><code>每个G只执行10ms，到期会被抢走P
+<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
+叶子节点之间有指针（底层-&gt; 叶子）
+非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
 </code></pre>
-<h3 id="1-3-全局队列"><a href="#1-3-全局队列" class="headerlink" title="1.3. 全局队列"></a>1.3. 全局队列</h3><pre><code>M 没有 G 的时候从全局队列取G
+<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
+而B+树是通过对数据进行排序来提升查询速度的
+B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
+所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
+所以两千万条数据以上的表需要做分库分表，无法通过索引优化
 </code></pre>
-<h3 id="1-4-利用并行"><a href="#1-4-利用并行" class="headerlink" title="1.4. 利用并行"></a>1.4. 利用并行</h3><pre><code>MaxProcess P = cpu/2
+<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
+如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
+查询过程是回表操作，索引会慢
 </code></pre>
 
       
@@ -590,7 +588,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-2022/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-shi-yong-chang-jing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -604,7 +602,7 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-2022/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/" class="post-title-link" itemprop="url">字符串在内存里怎么存</a>
+            <a href="/2022/10/03/redis/redis-shi-yong-chang-jing/" class="post-title-link" itemprop="url">redis 使用场景</a>
         </h2>
 
         <div class="post-meta">
@@ -613,8 +611,9 @@ handle off
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-03 15:10:58 / 修改时间：15:13:52" itemprop="dateCreated datePublished" datetime="2022-10-03T15:10:58+08:00">2022-10-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -622,7 +621,7 @@ handle off
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%86%85%E5%AD%98/" itemprop="url" rel="index"><span itemprop="name">内存</span></a>
+                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
                 </span>
             </span>
 
@@ -637,13 +636,146 @@ handle off
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>bit 只能表示 0 或者 1<br>8bit 就是可以表示 00000000 - 11111111 即 0-255<br>16bit 就是可以表示 0000000000000000 - 1111111111111111 即 0-65535</p>
-<p>bit 转 bytes 需要除以 8<br>8 bit &#x3D; 1 byte </p>
-<p>所以 1 byte 即 1 个字节可以表示 256个数字（加上 0 值）<br>     2 byte 即 2 个字节可以表示 65536个数字（加上 0 值）</p>
-<p>那么 字母可以用编号存<br>如 A &#x3D;》 65 &#x3D;》0100 0001</p>
-<p>go 语言中，认为字符串是不会被修改的，所以字符串是存在只读内存段。<br>字符串变量是可以共用底层字符串内容的。被另一个变量修改了，另外一个也会被修改。</p>
-<p>如果非要修改，可以直接给变量赋值新值，这样这个变量存储的地址就会指向新的内容。</p>
-<p>也可以把变量强制修改成字节slice切片，这样会为切片重新分配一段内存，并且拷贝原来字符串的内容。</p>
+          <h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/" class="post-title-link" itemprop="url">redis 使用场景</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-03 15:04:26 / 修改时间：15:11:10" itemprop="dateCreated datePublished" datetime="2022-10-03T15:04:26+08:00">2022-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-redis-与数据库缓存一致性问题"><a href="#1-redis-与数据库缓存一致性问题" class="headerlink" title="1. redis 与数据库缓存一致性问题"></a>1. redis 与数据库缓存一致性问题</h2><h3 id="1-1-延时双删"><a href="#1-1-延时双删" class="headerlink" title="1.1. 延时双删"></a>1.1. 延时双删</h3><h3 id="1-2-先写库，再删除缓存"><a href="#1-2-先写库，再删除缓存" class="headerlink" title="1.2. 先写库，再删除缓存"></a>1.2. 先写库，再删除缓存</h3><pre><code>引入MQ
+    MQ mysql，失败可重试
+    MQ 更新 redis
+闹正原子操作
+</code></pre>
+<h3 id="1-3-热点数据永不过期，保证若一致性"><a href="#1-3-热点数据永不过期，保证若一致性" class="headerlink" title="1.3. 热点数据永不过期，保证若一致性"></a>1.3. 热点数据永不过期，保证若一致性</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/docker/docker-chang-yong-cao-zuo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/03/docker/docker-chang-yong-cao-zuo/" class="post-title-link" itemprop="url">docker 常用操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-03 14:55:47 / 修改时间：14:59:36" itemprop="dateCreated datePublished" datetime="2022-10-03T14:55:47+08:00">2022-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-docker-命令"><a href="#1-docker-命令" class="headerlink" title="1. docker 命令"></a>1. docker 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器名/id     <span class="comment">#开始运行容器</span></span><br><span class="line">docker stop 容器名/id      <span class="comment">#停止运行容器</span></span><br><span class="line">docker ps       <span class="comment">#列出正在运行的容器</span></span><br><span class="line">docker run      <span class="comment">#构建容器</span></span><br><span class="line">docker build    <span class="comment">#创建镜像</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -663,7 +795,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/golang/beego-chang-yong-cao-zuo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -677,7 +809,7 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-2022/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" class="post-title-link" itemprop="url">http为什么要三次握手，为什么四次挥手</a>
+            <a href="/2022/10/03/golang/beego-chang-yong-cao-zuo/" class="post-title-link" itemprop="url">beego 常用操作</a>
         </h2>
 
         <div class="post-meta">
@@ -686,140 +818,9 @@ handle off
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id><a href="#" class="headerlink" title></a></h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-2022/tcp-he-udp-de-qu-bie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang-2022/tcp-he-udp-de-qu-bie/" class="post-title-link" itemprop="url">tcp和udp的区别</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="tcp和udp的区别"><a href="#tcp和udp的区别" class="headerlink" title="tcp和udp的区别"></a>tcp和udp的区别</h3><h3 id="什么时候用tcp，什么时候用udp"><a href="#什么时候用tcp，什么时候用udp" class="headerlink" title="什么时候用tcp，什么时候用udp"></a>什么时候用tcp，什么时候用udp</h3><h3 id="udp消息丢了怎么样？"><a href="#udp消息丢了怎么样？" class="headerlink" title="udp消息丢了怎么样？"></a>udp消息丢了怎么样？</h3><h3 id="什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？"><a href="#什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？" class="headerlink" title="什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？"></a>什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-2022/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang-2022/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" class="post-title-link" itemprop="url">golang的内存分配机制是怎样的</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-03 14:46:42 / 修改时间：14:55:47" itemprop="dateCreated datePublished" datetime="2022-10-03T14:46:42+08:00">2022-10-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -842,7 +843,16 @@ handle off
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="关于内存分配可以好好聊聊GMP模型，这才是重点"><a href="#关于内存分配可以好好聊聊GMP模型，这才是重点" class="headerlink" title="关于内存分配可以好好聊聊GMP模型，这才是重点"></a>关于内存分配可以好好聊聊GMP模型，这才是重点</h3>
+          <h3 id="1-bee-命令"><a href="#1-bee-命令" class="headerlink" title="1. bee 命令"></a>1. bee 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bee new xxx <span class="comment"># 创建一个新项目</span></span><br><span class="line">bee api xxx <span class="comment"># 创建一个api项目</span></span><br><span class="line">bee run <span class="comment"># 运行 beego 项目</span></span><br><span class="line">bee pack <span class="comment"># 上线时用来打包beego文件的，打包完成的文件在bin文件中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-beego-过滤器"><a href="#2-beego-过滤器" class="headerlink" title="2. beego 过滤器"></a>2. beego 过滤器</h3><pre><code>安全验证，如IP屏蔽，token 验证，访问地址屏蔽
+</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ne 不等于</span><br><span class="line">lt 小于</span><br><span class="line">gt 大于</span><br><span class="line">le 小于等于</span><br><span class="line">ge 大于等于</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-beego-通过orm-操作数据库"><a href="#3-beego-通过orm-操作数据库" class="headerlink" title="3. beego 通过orm 操作数据库"></a>3. beego 通过orm 操作数据库</h3><pre><code>在关系型数据库和对象之间做一个映射
+在操作数据库时，不需要写复杂的sql语句，只需要操作对象即可对对应的数据进行操作
+</code></pre>
+
       
     </div>
 
@@ -861,7 +871,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/10/03/golang/go-init-han-shu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -875,7 +885,7 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/" class="post-title-link" itemprop="url">golang GMP goroutinue 的执行过程</a>
+            <a href="/2022/10/03/golang/go-init-han-shu/" class="post-title-link" itemprop="url">go init 函数</a>
         </h2>
 
         <div class="post-meta">
@@ -884,8 +894,9 @@ handle off
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+              <time title="创建时间：2022-10-03 14:36:49 / 修改时间：14:45:40" itemprop="dateCreated datePublished" datetime="2022-10-03T14:36:49+08:00">2022-10-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -908,11 +919,19 @@ handle off
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
-<p>全局变量G0 就是主协程对应的G </p>
-<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
-<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
-<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
+          <h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>先于main函数执行，实现包级别的一些初始化操作
+每个包可以包含多个 init 函数
+所有编译器发现的函数都会被安排在main函数之前执行
+init 函数没有输入参数，返回值会且仅会导入一次
+</code></pre>
+<h3 id="2-主要作用"><a href="#2-主要作用" class="headerlink" title="2. 主要作用"></a>2. 主要作用</h3><pre><code>初始化不能采用初始化表达式初始化的变量
+程序运行前的注册
+实现 sync.Once 功能
+</code></pre>
+<h3 id="3-init-执行顺序"><a href="#3-init-执行顺序" class="headerlink" title="3. init 执行顺序"></a>3. init 执行顺序</h3><pre><code>单个包中init执行顺序 初始化变量 &gt; init 函数 &gt; main 函数
+单个包中多个init 执行是顺序的
+相互以来的包之间的init 函数，按照递归的顺序执行
+</code></pre>
 
       
     </div>
@@ -931,7 +950,7 @@ handle off
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -997,14 +1016,14 @@ handle off
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
