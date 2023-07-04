@@ -183,151 +183,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-base/go-xie-cheng-xie-cheng-guan-li-qi-chan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang/go-base/go-xie-cheng-xie-cheng-guan-li-qi-chan/" class="post-title-link" itemprop="url">go 协程 协程管理器sync chan</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="golang-sync-WaitGroup-协程管理器-需要地址传参"><a href="#golang-sync-WaitGroup-协程管理器-需要地址传参" class="headerlink" title="golang sync.WaitGroup  协程管理器 需要地址传参"></a>golang sync.WaitGroup  协程管理器 需要地址传参</h2><p>有缓冲区</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 有缓冲区</span><br><span class="line">	c1 := make(chan int, 1)</span><br><span class="line">	c1 &lt;- 100</span><br><span class="line">	fmt.Println(&lt;-c1)// 100</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>无缓冲区,会死锁 报错</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 无缓冲区</span><br><span class="line">	c1 := make(chan int)</span><br><span class="line">	c1 &lt;- 100</span><br><span class="line">	fmt.Println(&lt;-c1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// fatal error: all goroutines are asleep - deadlock!</span><br><span class="line">                                                  </span><br><span class="line">// goroutine 1 [chan send]:                          </span><br><span class="line">//  main.main()                                       </span><br><span class="line">//        D:/go_pro/go_test/main.go:35 +0x65        </span><br><span class="line">// <span class="built_in">exit</span> status 2      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>无缓冲区异步执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	// 无缓冲区, + 协程执行</span><br><span class="line">	c1 := make(chan int)</span><br><span class="line">	go <span class="function"><span class="title">func</span></span>() &#123;</span><br><span class="line">		c1 &lt;- 100</span><br><span class="line">	&#125;()</span><br><span class="line">	fmt.Println(&lt;-c1) //100</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p>参考视频: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vf4y1S75t?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">【golang教学】第十一章：golang的并发神器goroutine  和 channel （1010工作室出品）</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-base/go-xie-cheng-xie-cheng-guan-li-qi-sync/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Peaches">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Peaches Island">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/10/golang/go-base/go-xie-cheng-xie-cheng-guan-li-qi-sync/" class="post-title-link" itemprop="url">go 协程 协程管理器sync chan</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="golang-sync-WaitGroup-协程管理器-需要地址传参"><a href="#golang-sync-WaitGroup-协程管理器-需要地址传参" class="headerlink" title="golang sync.WaitGroup  协程管理器 需要地址传参"></a>golang sync.WaitGroup  协程管理器 需要地址传参</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sync&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	//go Run()</span><br><span class="line">	//time.Sleep(1 * time.Second)</span><br><span class="line">	//i := 0</span><br><span class="line">	//for i &lt; 10 &#123;</span><br><span class="line">	//	i++</span><br><span class="line">	//	fmt.Println(i)</span><br><span class="line">	//&#125;</span><br><span class="line"></span><br><span class="line">	// 协程管理器 需要地址传参</span><br><span class="line">	var wg sync.WaitGroup</span><br><span class="line">	wg.Add(1)</span><br><span class="line">	go Run(&amp;wg)</span><br><span class="line">	wg.Wait()</span><br><span class="line"></span><br><span class="line">	// chan 协程之间通讯的工具</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Run(wg *sync.WaitGroup) &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;我跑起来了&quot;</span>)</span><br><span class="line">	wg.Done()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>参考视频: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Vf4y1S75t?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">【golang教学】第十一章：golang的并发神器goroutine  和 channel （1010工作室出品）</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-base/go-chang-yong-biao-zhun-ku-01-os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,7 +371,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/xian-cheng-bing-fa-mo-xing/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/xian-cheng-bing-fa-mo-xing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -530,7 +385,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang/golang-gmp/xian-cheng-bing-fa-mo-xing/" class="post-title-link" itemprop="url">协程，线程，并发模型</a>
+            <a href="/2022/12/10/golang/go-gmp/xian-cheng-bing-fa-mo-xing/" class="post-title-link" itemprop="url">协程，线程，并发模型</a>
         </h2>
 
         <div class="post-meta">
@@ -618,7 +473,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/golang-de-mpg-mo-xing/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -632,7 +487,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang/golang-gmp/golang-de-mpg-mo-xing/" class="post-title-link" itemprop="url">Golang的MPG模型</a>
+            <a href="/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/" class="post-title-link" itemprop="url">Golang的MPG模型</a>
         </h2>
 
         <div class="post-meta">
@@ -696,7 +551,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/gmp-de-she-ji-ce-lue/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/gmp-de-she-ji-ce-lue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -710,7 +565,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/golang/golang-gmp/gmp-de-she-ji-ce-lue/" class="post-title-link" itemprop="url">GMP 的设计策略</a>
+            <a href="/2022/12/10/golang/go-gmp/gmp-de-she-ji-ce-lue/" class="post-title-link" itemprop="url">GMP 的设计策略</a>
         </h2>
 
         <div class="post-meta">
@@ -771,7 +626,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/operating-system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -785,7 +640,7 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/operating-system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/" class="post-title-link" itemprop="url">字符串在内存里怎么存</a>
+            <a href="/2022/12/10/system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/" class="post-title-link" itemprop="url">字符串在内存里怎么存</a>
         </h2>
 
         <div class="post-meta">
@@ -844,7 +699,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/network/tcp-he-udp-de-qu-bie/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/http/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -858,7 +713,73 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/network/tcp-he-udp-de-qu-bie/" class="post-title-link" itemprop="url">tcp和udp的区别</a>
+            <a href="/2022/12/10/http/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" class="post-title-link" itemprop="url">http为什么要三次握手，为什么四次挥手</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id><a href="#" class="headerlink" title></a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/http/tcp-he-udp-de-qu-bie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/10/http/tcp-he-udp-de-qu-bie/" class="post-title-link" itemprop="url">tcp和udp的区别</a>
         </h2>
 
         <div class="post-meta">
@@ -910,7 +831,7 @@ handle off
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/network/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -924,7 +845,7 @@ handle off
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/12/10/network/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" class="post-title-link" itemprop="url">http为什么要三次握手，为什么四次挥手</a>
+            <a href="/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" class="post-title-link" itemprop="url">golang的内存分配机制是怎样的</a>
         </h2>
 
         <div class="post-meta">
@@ -942,7 +863,7 @@ handle off
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
                 </span>
             </span>
 
@@ -957,7 +878,78 @@ handle off
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id><a href="#" class="headerlink" title></a></h3>
+          <h3 id="关于内存分配可以好好聊聊GMP模型，这才是重点"><a href="#关于内存分配可以好好聊聊GMP模型，这才是重点" class="headerlink" title="关于内存分配可以好好聊聊GMP模型，这才是重点"></a>关于内存分配可以好好聊聊GMP模型，这才是重点</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Peaches">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peaches Island">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/12/10/golang/go-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/" class="post-title-link" itemprop="url">golang GMP goroutinue 的执行过程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-10 21:54:32" itemprop="dateCreated datePublished" datetime="2022-12-10T21:54:32+08:00">2022-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
+<p>全局变量G0 就是主协程对应的G </p>
+<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
+<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
+<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
+
       
     </div>
 
@@ -1041,20 +1033,20 @@ handle off
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

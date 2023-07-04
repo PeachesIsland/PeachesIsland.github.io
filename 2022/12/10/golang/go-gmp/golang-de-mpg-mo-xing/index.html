@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="http为什么要三次握手，为什么四次挥手">
-<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/network/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/index.html">
+  <meta name="description" content="1. mpg 模型1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系 M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射 P：processor（处理器）。一个p代表执行go代码所需要的上下文环境 G：goroutine（协程）。是一个代码片段，相当于用户级线程 go func">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang的MPG模型">
+<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/index.html">
 <meta property="og:site_name" content="Peaches Island">
+<meta property="og:description" content="1. mpg 模型1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系 M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射 P：processor（处理器）。一个p代表执行go代码所需要的上下文环境 G：goroutine（协程）。是一个代码片段，相当于用户级线程 go func">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-10T13:54:32.814Z">
-<meta property="article:modified_time" content="2022-12-10T13:54:32.814Z">
+<meta property="article:published_time" content="2022-12-10T13:54:32.832Z">
+<meta property="article:modified_time" content="2022-12-10T13:54:32.832Z">
 <meta property="article:author" content="Peaches">
 <meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/network/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
+<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,7 @@
   };
 </script>
 
-  <title>http为什么要三次握手，为什么四次挥手 | Peaches Island</title>
+  <title>Golang的MPG模型 | Peaches Island</title>
   
 
 
@@ -187,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/network/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          http为什么要三次握手，为什么四次挥手
+          Golang的MPG模型
         </h1>
 
         <div class="post-meta">
@@ -218,7 +220,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
+                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
                 </span>
             </span>
 
@@ -233,7 +235,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id><a href="#" class="headerlink" title></a></h3>
+        <h3 id="1-mpg-模型"><a href="#1-mpg-模型" class="headerlink" title="1. mpg 模型"></a>1. mpg 模型</h3><h4 id="1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系"><a href="#1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系" class="headerlink" title="1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系"></a>1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</h4><ol>
+<li>M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射</li>
+<li>P：processor（处理器）。一个p代表执行go代码所需要的上下文环境</li>
+<li>G：goroutine（协程）。是一个代码片段，相当于用户级线程</li>
+<li>go func aaa(){} ,这里的aaa 相当于 一个用户级线程</li>
+</ol>
+<h6 id="1-1-1-goroutine和coroutine的区别"><a href="#1-1-1-goroutine和coroutine的区别" class="headerlink" title="1.1.1. goroutine和coroutine的区别"></a>1.1.1. goroutine和coroutine的区别</h6><pre><code>  goroutine 可能发生并行执行；
+  但 coroutine 始终顺序执行。
+  http://c.biancheng.net/view/96.html
+</code></pre>
+<p>MPG：<br>每个M都会与一个内核级线程绑定，在运行时，一个M同时只能绑定一个内核线程</p>
+<p>…<br>琅琊百晓生</p>
+
     </div>
 
     
@@ -251,12 +265,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" rel="prev" title="golang的内存分配机制是怎样的">
-      <i class="fa fa-chevron-left"></i> golang的内存分配机制是怎样的
+    <a href="/2022/12/10/golang/go-gmp/gmp-de-she-ji-ce-lue/" rel="prev" title="GMP 的设计策略">
+      <i class="fa fa-chevron-left"></i> GMP 的设计策略
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/12/10/network/tcp-he-udp-de-qu-bie/" rel="next" title="tcp和udp的区别">
-      tcp和udp的区别 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/12/10/golang/go-gmp/xian-cheng-bing-fa-mo-xing/" rel="next" title="协程，线程，并发模型">
+      协程，线程，并发模型 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -316,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-mpg-%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">1. mpg 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-go-%E8%AF%AD%E8%A8%80%E7%9A%84-mpg-%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%B8%80%E7%A7%8D%E7%89%B9%E6%AE%8A%E7%9A%84%E4%B8%A4%E7%BA%A7%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%AE%83%E5%B0%86CPU%EF%BC%8C%E5%86%85%E6%A0%B8%E7%BA%BF%E7%A8%8B%EF%BC%8C%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AE%A1%E7%90%86%EF%BC%8C%E6%8F%8F%E8%BF%B0%E4%B8%BA-M%E3%80%81P%E3%80%81G%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-1-goroutine%E5%92%8Ccoroutine%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1.1.1. goroutine和coroutine的区别</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -330,20 +344,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

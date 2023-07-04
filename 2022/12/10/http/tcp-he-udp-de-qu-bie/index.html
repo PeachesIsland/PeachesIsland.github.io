@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="golang GMP goroutinue 的执行过程go 语言中 协程对应的数据结构是 runtime.g         工作线程对应的数据结构是 runtime.m         逻辑处理器P，对应的数据结构是 runtime.p         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq 全局变量">
+  <meta name="description" content="tcp和udp的区别什么时候用tcp，什么时候用udpudp消息丢了怎么样？什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="golang GMP goroutinue 的执行过程">
-<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/index.html">
+<meta property="og:title" content="tcp和udp的区别">
+<meta property="og:url" content="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/http/tcp-he-udp-de-qu-bie/index.html">
 <meta property="og:site_name" content="Peaches Island">
-<meta property="og:description" content="golang GMP goroutinue 的执行过程go 语言中 协程对应的数据结构是 runtime.g         工作线程对应的数据结构是 runtime.m         逻辑处理器P，对应的数据结构是 runtime.p         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq 全局变量">
+<meta property="og:description" content="tcp和udp的区别什么时候用tcp，什么时候用udpudp消息丢了怎么样？什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-10T13:54:32.813Z">
-<meta property="article:modified_time" content="2022-12-10T13:54:32.813Z">
+<meta property="article:published_time" content="2022-12-10T13:54:32.814Z">
+<meta property="article:modified_time" content="2022-12-10T13:54:32.815Z">
 <meta property="article:author" content="Peaches">
 <meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/">
+<link rel="canonical" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/http/tcp-he-udp-de-qu-bie/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>golang GMP goroutinue 的执行过程 | Peaches Island</title>
+  <title>tcp和udp的区别 | Peaches Island</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/golang/golang-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/PeachesIsland/PeachesIsland.github.io/2022/12/10/http/tcp-he-udp-de-qu-bie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          golang GMP goroutinue 的执行过程
+          tcp和udp的区别
         </h1>
 
         <div class="post-meta">
@@ -220,7 +220,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/http/" itemprop="url" rel="index"><span itemprop="name">http</span></a>
                 </span>
             </span>
 
@@ -235,12 +235,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
-<p>全局变量G0 就是主协程对应的G </p>
-<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
-<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
-<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
-
+        <h3 id="tcp和udp的区别"><a href="#tcp和udp的区别" class="headerlink" title="tcp和udp的区别"></a>tcp和udp的区别</h3><h3 id="什么时候用tcp，什么时候用udp"><a href="#什么时候用tcp，什么时候用udp" class="headerlink" title="什么时候用tcp，什么时候用udp"></a>什么时候用tcp，什么时候用udp</h3><h3 id="udp消息丢了怎么样？"><a href="#udp消息丢了怎么样？" class="headerlink" title="udp消息丢了怎么样？"></a>udp消息丢了怎么样？</h3><h3 id="什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？"><a href="#什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？" class="headerlink" title="什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？"></a>什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？</h3>
     </div>
 
     
@@ -258,12 +253,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/10/operating-system/ram-nei-cun-tiao-shi-zen-me-cun-shu-ju-de/" rel="prev" title="RAM内存条是怎么存数据的">
-      <i class="fa fa-chevron-left"></i> RAM内存条是怎么存数据的
+    <a href="/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" rel="prev" title="golang的内存分配机制是怎样的">
+      <i class="fa fa-chevron-left"></i> golang的内存分配机制是怎样的
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/" rel="next" title="golang的内存分配机制是怎样的">
-      golang的内存分配机制是怎样的 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/12/10/http/http-wei-shi-me-yao-san-ci-wo-shou-wei-shi-me-si-ci-hui-shou/" rel="next" title="http为什么要三次握手，为什么四次挥手">
+      http为什么要三次握手，为什么四次挥手 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -323,7 +318,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#golang-GMP-goroutinue-%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">golang GMP goroutinue 的执行过程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tcp%E5%92%8Cudp%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">tcp和udp的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8tcp%EF%BC%8C%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8udp"><span class="nav-number">2.</span> <span class="nav-text">什么时候用tcp，什么时候用udp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#udp%E6%B6%88%E6%81%AF%E4%B8%A2%E4%BA%86%E6%80%8E%E4%B9%88%E6%A0%B7%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">udp消息丢了怎么样？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%87%E7%94%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%EF%BC%8C%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什么是滑动窗口，为什么要采用滑动窗口，什么时候使用滑动窗口？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -337,20 +332,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
