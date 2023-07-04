@@ -67,7 +67,11 @@
   <entry>
     <title>什么是tcp四次挥手，为什么需要四次？</title>
     <url>/2023/07/04/http/shi-me-shi-tcp-si-ci-hui-shou-wei-shi-me-xu-yao-si-ci/</url>
-    <content><![CDATA[<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>挥手是为了终止连接<br>客户端或服务端都可主动发送挥手信号<br>TCP连接必须经过2MSL后才能真正释放</p>
+    <content><![CDATA[<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
+<li>挥手是为了终止连接</li>
+<li>客户端或服务端都可主动发送挥手信号</li>
+<li>TCP连接必须经过2MSL后才能真正释放</li>
+</ol>
 <p>以下为客户端主动发起终止请求：</p>
 <p>第一次挥手（FIN）：客户端 —-&gt;（发送带有FIN标志的TCP报文）  —-&gt; 服务端； （客户端进入FIN_WAIT_1状态）</p>
 <p>第二次挥手（ACK）：服务端 —-&gt;（发送带有ACK标志的TCP报文）  —-&gt; 客户端；（服务端进入<strong>CLOSE_WAIT</strong>状态，客户端进入FIN_WAIT_2状态）</p>
