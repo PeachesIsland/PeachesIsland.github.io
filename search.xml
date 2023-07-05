@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>socket是什么？</title>
+    <url>/2023/07/05/http/socket-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="socket是什么？"><a href="#socket是什么？" class="headerlink" title="socket是什么？"></a>socket是什么？</h3><p>socket 是对tcp&#x2F;ip协议的抽象，是操作系统对外开放的接口</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Http和https的区别是什么？</title>
+    <url>/2023/07/05/http/http-he-https-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="https是什么？"><a href="#https是什么？" class="headerlink" title="https是什么？"></a>https是什么？</h3><p>https 在 http 的基础上 加了 ssl或tls，可以理解为安全版的http协议</p>
+<h3 id="ssl是什么？如何保证了数据安全？"><a href="#ssl是什么？如何保证了数据安全？" class="headerlink" title="ssl是什么？如何保证了数据安全？"></a>ssl是什么？如何保证了数据安全？</h3><p>采用身份验证和数据加密保证网络通信的安全和数据的完整性</p>
+<h3 id="Http和https的区别是什么？"><a href="#Http和https的区别是什么？" class="headerlink" title="Http和https的区别是什么？"></a>Http和https的区别是什么？</h3><p>https 需要到ca申请证书 http不需要</p>
+<p>https 密文传输，http 明文传输</p>
+<p>https 默认使用443端口，http使用80端口</p>
+<p>https&#x3D; http + 加密 + 认证</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cookie和Session的区别是什么？</title>
+    <url>/2023/07/05/http/cookie-he-session-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="cookie简述："><a href="#cookie简述：" class="headerlink" title="cookie简述："></a>cookie简述：</h3><p>cookie是服务器打给客户端的特殊信息，以文本的形式存在客户端</p>
+<p>客户端再次亲求的时候会把cookie回发</p>
+<p>服务端接收后，会解析cookie生成与客户端相对应的内容</p>
+<h3 id="session-简述："><a href="#session-简述：" class="headerlink" title="session 简述："></a>session 简述：</h3><p>服务器端的机制，在服务器上保存的信息</p>
+<p>解析客户端请求并操作session_id，按需保存状态信息</p>
+<h3 id="session-的实现方式？"><a href="#session-的实现方式？" class="headerlink" title="session 的实现方式？"></a>session 的实现方式？</h3><ol>
+<li>使用cookie来实现</li>
+<li>使用url回写来实现</li>
+</ol>
+<h3 id="Cookie和Session的区别是什么？"><a href="#Cookie和Session的区别是什么？" class="headerlink" title="Cookie和Session的区别是什么？"></a>Cookie和Session的区别是什么？</h3><p>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在<br>集群、数据库、文件中。<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现<br>Session的一种方式。</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GET请求和POST请求的区别是什么？</title>
+    <url>/2023/07/05/http/get-qing-qiu-he-post-qing-qiu-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="GET请求和POST请求的区别是什么？"><a href="#GET请求和POST请求的区别是什么？" class="headerlink" title="GET请求和POST请求的区别是什么？"></a>GET请求和POST请求的区别是什么？</h3><ol>
+<li>使用场景 GET用来获取资源 POST用来传输实体主体</li>
+<li>参数 GET在 url 中，post 在 实体中</li>
+<li>安全性 get 是安全的，不会改变服务器状态，post 是不安全的</li>
+<li>幂等性 get 是幂等的，post 不是</li>
+<li>可缓存 get 是可缓存的，可被存储的 post 不可以</li>
+</ol>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>http是什么？</title>
+    <url>/2023/07/05/http/http-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="http是什么？"><a href="#http是什么？" class="headerlink" title="http是什么？"></a>http是什么？</h3><p>http 是超文本传输协议 ，是一个应用层的协议</p>
+<p>主要特点：</p>
+<ol>
+<li>支持客户&#x2F;服务器模式</li>
+<li>简单快速</li>
+<li>灵活</li>
+<li>无连接，http1.0 使用短链接，http1.1（目前主流） 起默认使用长连接（<strong>keep-alive</strong>）。</li>
+<li>无状态</li>
+</ol>
+<h3 id="http请求结构有哪些？"><a href="#http请求结构有哪些？" class="headerlink" title="http请求结构有哪些？"></a>http请求结构有哪些？</h3><ol>
+<li>请求行（Request Line），包含请求方法、请求的URL和HTTP协议的版本。</li>
+<li>请求头（Request Headers）包含一系列的键值对，用于描述请求的各种属性和要求。常见的请求头包括：</li>
+</ol>
+<ul>
+<li>Host：指定服务器的域名或IP地址。</li>
+<li>User-Agent：标识发送请求的用户代理（通常是浏览器）。</li>
+<li>Accept：指定可接受的响应内容的MIME类型。</li>
+<li>Content-Type：指定请求体的MIME类型（仅适用于POST、PUT等包含请求体的方法）。</li>
+<li>Authorization：用于身份验证的凭证信息</li>
+</ul>
+<ol start="3">
+<li>空行：请求头和请求体之间必须有一个空行。</li>
+<li>请求体（Request Body）：可选项，包含发送给服务器的数据，通常用于POST、PUT等需要提交数据的请求方法</li>
+</ol>
+<h3 id="http响应报文有哪些？"><a href="#http响应报文有哪些？" class="headerlink" title="http响应报文有哪些？"></a>http响应报文有哪些？</h3><ol>
+<li>状态行（Status Line） 包含HTTP协议版本、<strong>状态码</strong>和对应的状态信息，示例：HTTP&#x2F;1.1 200 OK</li>
+<li>响应头（Response Headers）</li>
+<li>空行：响应头和响应体之间必须有一个空行。</li>
+<li>响应体（Response Body）</li>
+</ol>
+<h3 id="常见http状态码有哪些？"><a href="#常见http状态码有哪些？" class="headerlink" title="常见http状态码有哪些？"></a>常见http状态码有哪些？</h3><p>200：ok，正常返回信息</p>
+<p>400：客户端请求语法错误</p>
+<p>403：重定向</p>
+<p>404：客户端请求的资源不存在</p>
+<p>500：服务器错误</p>
+<p>503：服务器错误</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tcp的滑动窗口是什么？</title>
     <url>/2023/07/04/http/tcp-de-hua-dong-chuang-kou-shi-shi-me/</url>
     <content><![CDATA[<h3 id="tcp的滑动窗口是什么？"><a href="#tcp的滑动窗口是什么？" class="headerlink" title="tcp的滑动窗口是什么？"></a>tcp的滑动窗口是什么？</h3><p>RTT：发送一个数据包到收到对应的ACK，所花费的时间</p>
