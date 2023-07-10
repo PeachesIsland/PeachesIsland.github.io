@@ -1,278 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>socket是什么？</title>
-    <url>/2023/07/05/http/socket-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="socket是什么？"><a href="#socket是什么？" class="headerlink" title="socket是什么？"></a>socket是什么？</h3><p>socket 是对tcp&#x2F;ip协议的抽象，是操作系统对外开放的接口</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Http和https的区别是什么？</title>
-    <url>/2023/07/05/http/http-he-https-de-qu-bie-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="https是什么？"><a href="#https是什么？" class="headerlink" title="https是什么？"></a>https是什么？</h3><p>https 在 http 的基础上 加了 ssl或tls，可以理解为安全版的http协议</p>
-<h3 id="ssl是什么？如何保证了数据安全？"><a href="#ssl是什么？如何保证了数据安全？" class="headerlink" title="ssl是什么？如何保证了数据安全？"></a>ssl是什么？如何保证了数据安全？</h3><p>采用身份验证和数据加密保证网络通信的安全和数据的完整性</p>
-<h3 id="Http和https的区别是什么？"><a href="#Http和https的区别是什么？" class="headerlink" title="Http和https的区别是什么？"></a>Http和https的区别是什么？</h3><p>https 需要到ca申请证书 http不需要</p>
-<p>https 密文传输，http 明文传输</p>
-<p>https 默认使用443端口，http使用80端口</p>
-<p>https&#x3D; http + 加密 + 认证</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cookie和Session的区别是什么？</title>
-    <url>/2023/07/05/http/cookie-he-session-de-qu-bie-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="cookie简述："><a href="#cookie简述：" class="headerlink" title="cookie简述："></a>cookie简述：</h3><p>cookie是服务器打给客户端的特殊信息，以文本的形式存在客户端</p>
-<p>客户端再次亲求的时候会把cookie回发</p>
-<p>服务端接收后，会解析cookie生成与客户端相对应的内容</p>
-<h3 id="session-简述："><a href="#session-简述：" class="headerlink" title="session 简述："></a>session 简述：</h3><p>服务器端的机制，在服务器上保存的信息</p>
-<p>解析客户端请求并操作session_id，按需保存状态信息</p>
-<h3 id="session-的实现方式？"><a href="#session-的实现方式？" class="headerlink" title="session 的实现方式？"></a>session 的实现方式？</h3><ol>
-<li>使用cookie来实现</li>
-<li>使用url回写来实现</li>
-</ol>
-<h3 id="Cookie和Session的区别是什么？"><a href="#Cookie和Session的区别是什么？" class="headerlink" title="Cookie和Session的区别是什么？"></a>Cookie和Session的区别是什么？</h3><p>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在<br>集群、数据库、文件中。<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现<br>Session的一种方式。</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GET请求和POST请求的区别是什么？</title>
-    <url>/2023/07/05/http/get-qing-qiu-he-post-qing-qiu-de-qu-bie-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="GET请求和POST请求的区别是什么？"><a href="#GET请求和POST请求的区别是什么？" class="headerlink" title="GET请求和POST请求的区别是什么？"></a>GET请求和POST请求的区别是什么？</h3><ol>
-<li>使用场景 GET用来获取资源 POST用来传输实体主体</li>
-<li>参数 GET在 url 中，post 在 实体中</li>
-<li>安全性 get 是安全的，不会改变服务器状态，post 是不安全的</li>
-<li>幂等性 get 是幂等的，post 不是</li>
-<li>可缓存 get 是可缓存的，可被存储的 post 不可以</li>
-</ol>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>http是什么？</title>
-    <url>/2023/07/05/http/http-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="http是什么？"><a href="#http是什么？" class="headerlink" title="http是什么？"></a>http是什么？</h3><p>http 是超文本传输协议 ，是一个应用层的协议</p>
-<p>主要特点：</p>
-<ol>
-<li>支持客户&#x2F;服务器模式</li>
-<li>简单快速</li>
-<li>灵活</li>
-<li>无连接，http1.0 使用短链接，http1.1（目前主流） 起默认使用长连接（<strong>keep-alive</strong>）。</li>
-<li>无状态</li>
-</ol>
-<h3 id="http请求结构有哪些？"><a href="#http请求结构有哪些？" class="headerlink" title="http请求结构有哪些？"></a>http请求结构有哪些？</h3><ol>
-<li>请求行（Request Line），包含请求方法、请求的URL和HTTP协议的版本。</li>
-<li>请求头（Request Headers）包含一系列的键值对，用于描述请求的各种属性和要求。常见的请求头包括：</li>
-</ol>
-<ul>
-<li>Host：指定服务器的域名或IP地址。</li>
-<li>User-Agent：标识发送请求的用户代理（通常是浏览器）。</li>
-<li>Accept：指定可接受的响应内容的MIME类型。</li>
-<li>Content-Type：指定请求体的MIME类型（仅适用于POST、PUT等包含请求体的方法）。</li>
-<li>Authorization：用于身份验证的凭证信息</li>
-</ul>
-<ol start="3">
-<li>空行：请求头和请求体之间必须有一个空行。</li>
-<li>请求体（Request Body）：可选项，包含发送给服务器的数据，通常用于POST、PUT等需要提交数据的请求方法</li>
-</ol>
-<h3 id="http响应报文有哪些？"><a href="#http响应报文有哪些？" class="headerlink" title="http响应报文有哪些？"></a>http响应报文有哪些？</h3><ol>
-<li>状态行（Status Line） 包含HTTP协议版本、<strong>状态码</strong>和对应的状态信息，示例：HTTP&#x2F;1.1 200 OK</li>
-<li>响应头（Response Headers）</li>
-<li>空行：响应头和响应体之间必须有一个空行。</li>
-<li>响应体（Response Body）</li>
-</ol>
-<h3 id="常见http状态码有哪些？"><a href="#常见http状态码有哪些？" class="headerlink" title="常见http状态码有哪些？"></a>常见http状态码有哪些？</h3><p>200：ok，正常返回信息</p>
-<p>400：客户端请求语法错误</p>
-<p>403：重定向</p>
-<p>404：客户端请求的资源不存在</p>
-<p>500：服务器错误</p>
-<p>503：服务器错误</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tcp的滑动窗口是什么？</title>
-    <url>/2023/07/04/http/tcp-de-hua-dong-chuang-kou-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="tcp的滑动窗口是什么？"><a href="#tcp的滑动窗口是什么？" class="headerlink" title="tcp的滑动窗口是什么？"></a>tcp的滑动窗口是什么？</h3><p>RTT：发送一个数据包到收到对应的ACK，所花费的时间</p>
-<p>RTO：重传时间间隔（RTO是根据RTT计算出来的，不是固定的）</p>
-<p>TCP使用滑动窗口做流量控制与乱序重排</p>
-<ol>
-<li>保证tcp的可靠性</li>
-<li>保证tcp的流控特性</li>
-</ol>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tcp和udp 的区别是什么？</title>
-    <url>/2023/07/04/http/tcp-he-udp-de-qu-bie-shi-shi-me/</url>
-    <content><![CDATA[<h3 id="tcp和udp-的区别是什么？"><a href="#tcp和udp-的区别是什么？" class="headerlink" title="tcp和udp 的区别是什么？"></a>tcp和udp 的区别是什么？</h3><p>tcp：面向连接，三次握手；可靠性；有序性；速度慢；重量级</p>
-<p>udp：无连接；可能会丢失；无序；速度快；轻量级</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么情况下服务器会出现大量close_wait,该如何解决？</title>
-    <url>/2023/07/04/http/shi-me-qing-kuang-xia-fu-wu-qi-hui-chu-xian-da-liang-close-wait-gai-ru-he-jie-jue/</url>
-    <content><![CDATA[<h3 id="什么情况下服务器会出现大量-close-wait-该如何解决？"><a href="#什么情况下服务器会出现大量-close-wait-该如何解决？" class="headerlink" title="什么情况下服务器会出现大量 close_wait,该如何解决？"></a>什么情况下服务器会出现大量 close_wait,该如何解决？</h3><p>基于tcp四次挥手的过程，close_wait 会出现在第二次挥手。<br>如果是服务器出现大量 close_wait，那么主动发起第一次挥手的就是客户端。</p>
-<p>这种情况一般是程序忘记执行第三次挥手，没有及时释放导致的，一般就是程序有bug</p>
-<p>解决方式：</p>
-<ol>
-<li>检查代码，特别是释放资源的代码</li>
-<li>检查配置，特别是处理请求的线程配置</li>
-</ol>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么情况下服务器会出现大量time_wait,该如何解决？</title>
-    <url>/2023/07/04/http/shi-me-qing-kuang-xia-fu-wu-qi-hui-chu-xian-da-liang-time-wait-gai-ru-he-jie-jue/</url>
-    <content><![CDATA[<h3 id="什么情况下服务器会出现大量-time-wait-该如何解决？"><a href="#什么情况下服务器会出现大量-time-wait-该如何解决？" class="headerlink" title="什么情况下服务器会出现大量 time_wait,该如何解决？"></a>什么情况下服务器会出现大量 time_wait,该如何解决？</h3><p>基于tcp四次挥手的过程，time_wait 会出现在第四次挥手。<br>如果是服务器出现大量 time_wait，那么主动发起第一次挥手的就是服务端。<br>主动方要处于 time_wait 状态。</p>
-<p>time_wait是正常的tcp连接断开的步骤，在等待2msl，2msl一般情况下是分钟或几分钟的时间，根据操作系统的设置而定。<br>到时间之后会进入CLOSED状态，即断开连接。<br>在短时间内服务器会出现大量 time_wait的话可能会导致服务器资源耗尽，这通常发生在短时间内建立大量的连接并快速关闭它们的情况下。</p>
-<p>解决方式：<br>    1 调整操作系统的TCP参数：可以通过调整操作系统的TCP连接超时时间和端口重用等参数来减少TIME_WAIT状态的持续时间。<br>    2 使用连接复用<br>    3 调整应用程序逻辑</p>
-<p>关闭处于TIME_WAIT状态的连接是由操作系统自动处理的，应用程序通常不需要显式地关闭这些连接。<br>TIME_WAIT状态是TCP协议的一部分，旨在保证可靠的连接关闭和数据传输。</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是tcp四次挥手，为什么需要四次？</title>
-    <url>/2023/07/04/http/shi-me-shi-tcp-si-ci-hui-shou-wei-shi-me-xu-yao-si-ci/</url>
-    <content><![CDATA[<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
-<li>挥手是为了终止连接</li>
-<li>客户端或服务端都可主动发送挥手信号</li>
-<li>TCP连接必须经过2MSL后才能真正释放</li>
-</ol>
-<p>以下为客户端主动发起终止请求：</p>
-<p>第一次挥手（FIN）：客户端 —-&gt;（发送带有FIN标志的TCP报文）  —-&gt; 服务端； （客户端进入FIN_WAIT_1状态）</p>
-<p>第二次挥手（ACK）：服务端 —-&gt;（发送带有ACK标志的TCP报文）  —-&gt; 客户端；（服务端进入<strong>CLOSE_WAIT</strong>状态，客户端进入FIN_WAIT_2状态）</p>
-<p>第三次挥手（FIN）：服务端 —-&gt;（发送带有FIN标志的TCP报文段） —-&gt; 客户端；（客户端进入LAST_ACK状态）</p>
-<p>第四次挥手（ACK）：客户端 —-&gt;（发送带有ACK标志的TCP报文）  —-&gt; 服务端；（客户端进入TIME_WAIT状态，等待一段时间后[时间：2MSL]进入CLOSED状态，服务端接收ACK后直接进入CLOSED状态）</p>
-<p>注意：</p>
-<p>CLOSE_WAIT：只会出现在第二次挥手后，被动接收放会进入 CLOSE_WAIT 状态</p>
-<p>TIME_WAIT：只会出现在第四次挥手后，主动发起方会进入 TIME_WAIT 状态</p>
-<h3 id="time-wait-等待时间为什么是-2MSL-？"><a href="#time-wait-等待时间为什么是-2MSL-？" class="headerlink" title="time_wait 等待时间为什么是 2MSL ？"></a>time_wait 等待时间为什么是 2MSL ？</h3><p>MSL：最大报文段生存时间（Maximum Segment Lifetime）。<br>MSL是指一个TCP报文在网络中的最长生存时间，它的值根据具体的实现和网络环境而定，一般被认为是2分钟（120秒）。<br>原因：<br>1 确保有足够的时间让对方收到ack包<br>2 避免新旧连接混淆</p>
-<p>小林coding提到：<br>在 Linux 系统里 2MSL 默认是 60 秒，那么一个 MSL 也就是 30 秒。Linux 系统停留在 TIME_WAIT 的时间为固定的 60 秒。</p>
-<h3 id="为什么需要四次挥手才能断开连接？"><a href="#为什么需要四次挥手才能断开连接？" class="headerlink" title="为什么需要四次挥手才能断开连接？"></a>为什么需要四次挥手才能断开连接？</h3><p>因为是全双工的，发送方和接收方都需要FIN报文和ACK报文。<br>发送方和接收放都各自需要两次挥手。<br>一方主动，一方被动，就看起来是四次挥手了。</p>
-]]></content>
-      <categories>
-        <category>http</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>potplayer 视频播放器</title>
-    <url>/2023/02/08/util/win-shi-pin-bo-fang-qi/</url>
-    <content><![CDATA[<h2 id="https-potplayer-daum-net"><a href="#https-potplayer-daum-net" class="headerlink" title="https://potplayer.daum.net/"></a><a href="https://potplayer.daum.net/">https://potplayer.daum.net/</a></h2>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang map相关</title>
-    <url>/2023/01/23/golang/go-base/golang-map-xiang-guan/</url>
-    <content><![CDATA[<h3 id="1-map-的-key-和-value有什么限制吗"><a href="#1-map-的-key-和-value有什么限制吗" class="headerlink" title="1. map 的 key 和 value有什么限制吗"></a>1. map 的 key 和 value有什么限制吗</h3><pre><code>没有，不限制
-key可以int，strin g，不可以是map，
-value 可以是任何值
-</code></pre>
-<h3 id="2-如何判断-map-中是否包含某个-key-？"><a href="#2-如何判断-map-中是否包含某个-key-？" class="headerlink" title="2. 如何判断 map 中是否包含某个 key ？"></a>2. 如何判断 map 中是否包含某个 key ？</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var sample map[int]int</span><br><span class="line">if _, ok := sample[10];ok&#123;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>windows 环境下 使用 docker 安装 mysql,并且挂载外部配置和数据</title>
+    <url>/2022/10/03/docker/windows-xia-shi-yong-docker-an-zhuang-mysql/</url>
+    <content><![CDATA[<h2 id="1-Docker-安装-MySQL"><a href="#1-Docker-安装-MySQL" class="headerlink" title="1. Docker 安装 MySQL"></a>1. Docker 安装 MySQL</h2><h3 id="1-1-查看可用的-MySQL-版本"><a href="#1-1-查看可用的-MySQL-版本" class="headerlink" title="1.1. 查看可用的 MySQL 版本"></a>1.1. 查看可用的 MySQL 版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-拉取-MySQL-镜像"><a href="#1-2-拉取-MySQL-镜像" class="headerlink" title="1.2. 拉取 MySQL 镜像"></a>1.2. 拉取 MySQL 镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mysql:latest</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-map-长啥样-？-map的底层实现"><a href="#3-map-长啥样-？-map的底层实现" class="headerlink" title="3. map 长啥样 ？ map的底层实现?"></a>3. map 长啥样 ？ map的底层实现?</h3><pre><code>哈希表，hash table
-map 是由 key-value 对组成的； key 只会出现一次。
-</code></pre>
-<p>和 map 相关的操作主要是：增删改查<br>使用 map 的原因是 各种增删改查的效率非常高</p>
-<pre><code>map的底层是 哈希查找表，并且使用链表解决哈希冲突
-</code></pre>
-<h3 id="4-map-的内存模型是什么样的-？"><a href="#4-map-的内存模型是什么样的-？" class="headerlink" title="4. map 的内存模型是什么样的 ？"></a>4. map 的内存模型是什么样的 ？</h3><pre><code>golang 中 map 的结构体是 hmap，它是 hashmap 的“缩写”。
-</code></pre>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> runtime</span><br><span class="line"><span class="comment">// A header for a Go map.</span></span><br><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// Note: the format of the hmap is also encoded in cmd/compile/internal/gc/reflect.go.</span></span><br><span class="line">	<span class="comment">// Make sure this stays in sync with the compiler&#x27;s definition.</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 元素个数，调用 len(map) 时，直接返回此值</span></span><br><span class="line">	count     <span class="type">int</span> <span class="comment">// # live cells == size of map.  Must be first (used by len() builtin)</span></span><br><span class="line">	flags     <span class="type">uint8</span></span><br><span class="line">	<span class="comment">// buckets 的对数 log_2</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// log_2 of # of buckets (can hold up to loadFactor * 2^B items)</span></span><br><span class="line">	<span class="comment">// overflow 的 bucket 近似数</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// approximate number of overflow buckets; see incrnoverflow for details</span></span><br><span class="line">	<span class="comment">// 计算 key 的哈希的时候会传入哈希函数</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// hash seed</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 指向 buckets 数组，大小为 2^B</span></span><br><span class="line">	<span class="comment">// 如果元素个数为0，就为 nil</span></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// array of 2^B Buckets. may be nil if count==0.</span></span><br><span class="line">	<span class="comment">// 扩容的时候，buckets 长度会是 oldbuckets 的两倍</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// previous bucket array of half the size, non-nil only when growing</span></span><br><span class="line">	<span class="comment">// 指示扩容进度，小于此地址的 buckets 迁移完成</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// progress counter for evacuation (buckets less than this have been evacuated)</span></span><br><span class="line"></span><br><span class="line">	extra *mapextra <span class="comment">// optional fields</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="1-3-查看本地镜像"><a href="#1-3-查看本地镜像" class="headerlink" title="1.3. 查看本地镜像"></a>1.3. 查看本地镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-运行容器"><a href="#1-4-运行容器" class="headerlink" title="1.4. 运行容器"></a>1.4. 运行容器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -itd --name mysql-test06 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test07 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test08 -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test09 -p 3309:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5-参数说明："><a href="#1-5-参数说明：" class="headerlink" title="1.5. 参数说明："></a>1.5. 参数说明：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--name 设置容器名</span><br><span class="line">-p ，设置端口映射，</span><br><span class="line">    3306:3306 ：主机 windows 3306 端口:容器内mysql 的 3306 端口，</span><br><span class="line">    外部主机可以直接通过 宿主机ip:3306 访问到 MySQL 的服务。</span><br><span class="line">    也可以改为 3307/3308/3309 等其他可用端口值</span><br><span class="line"></span><br><span class="line">-e 设置环境变量</span><br><span class="line">    MYSQL_ROOT_PASSWORD=123456：设置 MySQL 服务 root 用户的密码。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6-挂载外部配置和数据"><a href="#1-6-挂载外部配置和数据" class="headerlink" title="1.6. 挂载外部配置和数据"></a>1.6. 挂载外部配置和数据</h3><ul>
+<li>data: mysql的数据目录，包括数据库，表</li>
+<li>conf.d :存储自定义配置文件</li>
+<li>my.cnf :是默认配置文件</li>
+</ul>
+<h3 id="1-7-创建对应的文件夹和文件"><a href="#1-7-创建对应的文件夹和文件" class="headerlink" title="1.7. 创建对应的文件夹和文件"></a>1.7. 创建对应的文件夹和文件</h3><p>如下：<br><img src="https://s3.bmp.ovh/imgs/2022/09/28/9106e755438c0a34.png"></p>
+<h4 id="1-7-1-创建对应的文件夹"><a href="#1-7-1-创建对应的文件夹" class="headerlink" title="1.7.1. 创建对应的文件夹"></a>1.7.1. 创建对应的文件夹</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/data  </span><br><span class="line">d:/docker/mysql/conf.d</span><br></pre></td></tr></table></figure>
+<h4 id="1-7-2-创建对应的配置文件-my-cnf"><a href="#1-7-2-创建对应的配置文件-my-cnf" class="headerlink" title="1.7.2. 创建对应的配置文件 my.cnf"></a>1.7.2. 创建对应的配置文件 my.cnf</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/my.cnf</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-7-3-my-cnf添加如下内容"><a href="#1-7-3-my-cnf添加如下内容" class="headerlink" title="1.7.3. my.cnf添加如下内容"></a>1.7.3. my.cnf添加如下内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">user=mysql</span><br><span class="line">character-set-server=utf8</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">secure_file_priv=/var/lib/mysql</span><br><span class="line">expire_logs_days=7</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br><span class="line">max_connections=1000</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-8-创建容器，并后台启动"><a href="#1-8-创建容器，并后台启动" class="headerlink" title="1.8. 创建容器，并后台启动"></a>1.8. 创建容器，并后台启动</h3><p><strong>注意，这里如果在 windows 系统下 需要加上盘符，即绝对路径</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">示例一：</span><br><span class="line">docker run -v d:/docker/mysql/data/:/var/lib/mysql -v d:/docker/mysql/conf.d:/etc/mysql/conf.d -v d:/docker/mysql/my.cnf:/etc/mysql/my.cnf -p 3309:3306 --name mysql-test09 -e MYSQL_ROOT_PASSWORD=123456 -d 43fcfca0776d</span><br><span class="line">示例二：</span><br><span class="line">docker run -v d:/docker/mysql3306/data/:/var/lib/mysql -v d:/docker/mysql3306/conf.d:/etc/mysql/conf.d -v d:/docker/mysql3306/my.cnf:/etc/mysql/my.cnf -p 3306:3306 --name mysql-test06 -e MYSQL_ROOT_PASSWORD=123456 -d 43fcfca0776d</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="1-5-参数说明：-1"><a href="#1-5-参数说明：-1" class="headerlink" title="1.5. 参数说明："></a>1.5. 参数说明：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-v : --volume 绑定一个卷</span><br><span class="line">-d :后台运行容器，并返回容器ID</span><br></pre></td></tr></table></figure>
+
+<p>参考文章:<br>    <a href="https://www.runoob.com/docker/docker-install-mysql.html">菜鸟教程</a><br>    <a href="https://www.cnblogs.com/linjiqin/p/11465804.html">博客园</a></p>
+]]></content>
       <categories>
-        <category>golang</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>golang</tag>
-        <tag>map</tag>
+        <tag>docker</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>TCP协议和UDP协议</title>
-    <url>/2023/01/23/golang/go-base/tcp-xie-yi-he-udp-xie-yi/</url>
-    <content><![CDATA[<h3 id="1-tcp协议和udp协议的相同点是什么？"><a href="#1-tcp协议和udp协议的相同点是什么？" class="headerlink" title="1. tcp协议和udp协议的相同点是什么？"></a>1. tcp协议和udp协议的相同点是什么？</h3><p>都工作在传输层（应用层-&gt;传输层-&gt;网络层-&gt;数据链路层-&gt;物理层）<br>目标是在程序之间传输数据</p>
-<pre><code>数据可以是文本，可以是视频，可以是图片，这些文件对于tcp和udp文件来说都是一堆二进制数据，没有多大的区别
-</code></pre>
-<h3 id="2-tcp协议和udp协议-协议的区别是什么？"><a href="#2-tcp协议和udp协议-协议的区别是什么？" class="headerlink" title="2. tcp协议和udp协议 协议的区别是什么？"></a>2. tcp协议和udp协议 协议的区别是什么？</h3><p>参考视频：<a href="https://www.bilibili.com/video/BV1kV411j7hA?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">连接</a></p>
-<p>tcp 面向连接，udp 非面向连接<br>tcp是可靠的，有三次握手，四次挥手。udp 不可靠。</p>
-<p>为什么是三次握手？<br>三次握手解决了网络信道不可靠的问题。<br>比如只有两次握手，假如其中一次客户端向服务端发送syn包，由于网络延迟，客户端没接收到反馈，就又重试。<br>第二次重试成功，由于网络恢复，又重新被服务端接收，这样就导致服务端重复接收同一个请求，所以需要三次握手，服务端给客户端一个确认信号。<br>客户端再发送一个确认信号sck，才可以保证连接成功。<br>连接成功才可以进入客户端和服务端数据传输问题。</p>
-<p>为什么是四次挥手？<br>四次挥手实际上是<br>1 客户端发起fin包给服务端，客户端 客户端转变为 fin-wait-1 ，服务端状态变为 close-wait<br>2 服务端确认 ack  客户端转变为 fin-wait-2<br>3 服务端 发起 fin 给客户端， 服务端状态变为last-ack，客户端转变为 time-wait<br>4 客户端 发送 确认 ack 给 客户端 客户端转变为 close， 服务端状态变 close</p>
+    <title>docker 常用操作</title>
+    <url>/2022/10/03/docker/docker-chang-yong-cao-zuo/</url>
+    <content><![CDATA[<h3 id="1-docker-命令"><a href="#1-docker-命令" class="headerlink" title="1. docker 命令"></a>1. docker 命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker start 容器名/id     <span class="comment">#开始运行容器</span></span><br><span class="line">docker stop 容器名/id      <span class="comment">#停止运行容器</span></span><br><span class="line">docker ps       <span class="comment">#列出正在运行的容器</span></span><br><span class="line">docker run      <span class="comment">#构建容器</span></span><br><span class="line">docker build    <span class="comment">#创建镜像</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>http</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>http</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
-    <title>感冒疫苗</title>
-    <url>/2022/12/15/shenghuo/2022-nian-ji-lu/gan-mou-yi-miao/</url>
-    <content><![CDATA[<h2 id="关于感冒疫苗"><a href="#关于感冒疫苗" class="headerlink" title="关于感冒疫苗"></a>关于感冒疫苗</h2><p>适合在流感之前接种，一般在10月前，在9月，10月左右接种。</p>
-<p>可以接种三价疫苗或者四价疫苗。</p>
-<p>”四价流感疫苗覆盖更多病毒型别。但以国内现有的价格，三价流感疫苗性价比更高。<br>四价疫苗毕竟要翻一倍的价格了，成人剂型的四价疫苗现在140元左右，三价疫苗只要六七十元。多一个型别，但保护率并没有翻一倍。“</p>
-]]></content>
+    <title>Windows下 docker Vmmem 占用内存过多</title>
+    <url>/2022/10/03/docker/docker-vmmem-zhan-yong-nei-cun-guo-duo/</url>
+    <content><![CDATA[<h2 id="1-Windows下-docker-启动后，Vmmem-占用内存过多"><a href="#1-Windows下-docker-启动后，Vmmem-占用内存过多" class="headerlink" title="1. Windows下 docker 启动后，Vmmem 占用内存过多"></a>1. Windows下 docker 启动后，Vmmem 占用内存过多</h2><h3 id="1-1-如果是用的wsl模式的话，就可以关闭-hyper-v"><a href="#1-1-如果是用的wsl模式的话，就可以关闭-hyper-v" class="headerlink" title="1.1. 如果是用的wsl模式的话，就可以关闭 hyper-v"></a>1.1. 如果是用的wsl模式的话，就可以关闭 hyper-v</h3><h4 id="1-1-1-关闭方式-learn-microsoft-com"><a href="#1-1-1-关闭方式-learn-microsoft-com" class="headerlink" title="1.1.1. 关闭方式 learn.microsoft.com"></a>1.1.1. 关闭方式 <a href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v">learn.microsoft.com</a></h4><h3 id="1-2-然后设置-docker-的最大使用内存"><a href="#1-2-然后设置-docker-的最大使用内存" class="headerlink" title="1.2. 然后设置 docker 的最大使用内存"></a>1.2. 然后设置 docker 的最大使用内存</h3><h4 id="1-2-1-按下-Windows-R-键，输入-UserProfile-并运行进入用户文件夹"><a href="#1-2-1-按下-Windows-R-键，输入-UserProfile-并运行进入用户文件夹" class="headerlink" title="1.2.1. 按下 Windows+R 键，输入 %UserProfile% 并运行进入用户文件夹"></a>1.2.1. 按下 <code>Windows+R</code> 键，输入 <code>%UserProfile%</code> 并运行进入用户文件夹</h4><h4 id="1-2-2-新建文件-wslconfig-，然后记事本编辑"><a href="#1-2-2-新建文件-wslconfig-，然后记事本编辑" class="headerlink" title="1.2.2. 新建文件 .wslconfig ，然后记事本编辑"></a>1.2.2. 新建文件 <code>.wslconfig</code> ，然后记事本编辑</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line">memory=2GB</span><br><span class="line">swap=0</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-重启电脑和docker"><a href="#1-3-重启电脑和docker" class="headerlink" title="1.3. 重启电脑和docker"></a>1.3. 重启电脑和docker</h3>]]></content>
       <categories>
-        <category>生活</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>健康</tag>
+        <tag>docker</tag>
+        <tag>Vmmem</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES知识点总结</title>
+    <url>/2022/12/15/go-es8/es-zhi-shi-dian-zong-jie/</url>
+    <content><![CDATA[<h3 id="1-详细描述ES写入，更新，删除和查询的具体过程-？"><a href="#1-详细描述ES写入，更新，删除和查询的具体过程-？" class="headerlink" title="1. 详细描述ES写入，更新，删除和查询的具体过程 ？"></a>1. 详细描述ES写入，更新，删除和查询的具体过程 ？</h3><pre><code>数据路由的过程
+文档的修改和删除是怎么处理的
+副本同步机制
+数据落盘的过程
+</code></pre>
+]]></content>
+      <categories>
+        <category>ES</category>
+      </categories>
+      <tags>
+        <tag>ES</tag>
       </tags>
   </entry>
   <entry>
@@ -332,19 +137,181 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>ES知识点总结</title>
-    <url>/2022/12/15/go-es8/es-zhi-shi-dian-zong-jie/</url>
-    <content><![CDATA[<h3 id="1-详细描述ES写入，更新，删除和查询的具体过程-？"><a href="#1-详细描述ES写入，更新，删除和查询的具体过程-？" class="headerlink" title="1. 详细描述ES写入，更新，删除和查询的具体过程 ？"></a>1. 详细描述ES写入，更新，删除和查询的具体过程 ？</h3><pre><code>数据路由的过程
-文档的修改和删除是怎么处理的
-副本同步机制
-数据落盘的过程
+    <title>linux 常用操作和命令</title>
+    <url>/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/</url>
+    <content><![CDATA[<p>linux 常用操作和命令</p>
+<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
+<h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
+<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br><span class="line"><span class="built_in">cat</span> aa.log <span class="comment">#查看aa.log 文件内容</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
+    |
+&lt;-hjkl-&gt;
+   |
+   V
+</code></pre>
+<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
+        编辑模式 《====》 正常模式 《====》 命令模式
+    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
+                                          ：q 退出
+                                          ：q！不保存退出
+                                          ：w 保存
+</code></pre>
+<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
+p 拷贝当前复制，
+dd 删除当前行，5dd 删除当前光标下的5行
+:set nu  显示行号
+:set nonu 不显示行号
+G 跳转到末行
+gg 跳转到首行
+/xx 回车 查找xx
+n: 查找下一个
+Shift + g :200 跳转到第200行 
 </code></pre>
 ]]></content>
       <categories>
-        <category>ES</category>
+        <category>linux</category>
       </categories>
       <tags>
-        <tag>ES</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>死信队列</title>
+    <url>/2022/10/05/mq/si-xin-dui-lie/</url>
+    <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
+达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，
+此时CMQ 不会立刻将消息丢弃，而是将其发送到该消费者对应的特殊队列中，这个特殊队列就是DLQ。
+</code></pre>
+<h3 id="2-常见用途"><a href="#2-常见用途" class="headerlink" title="2. 常见用途"></a>2. 常见用途</h3><pre><code>发送消息十分钟后发送给用户
+未支付订单取消订单
+下单后收到支付系统消息
+规定每天固定发送消息
+</code></pre>
+]]></content>
+      <categories>
+        <category>mq</category>
+      </categories>
+      <tags>
+        <tag>mq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 为什么使用 B+ 树</title>
+    <url>/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/</url>
+    <content><![CDATA[<p>mysql 为什么使用 B+ 树</p>
+<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
+一个节点可以存多个元素，元素也排序了 
+</code></pre>
+<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
+叶子节点之间有指针（底层-&gt; 叶子）
+非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
+</code></pre>
+<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
+而B+树是通过对数据进行排序来提升查询速度的
+B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
+所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
+所以两千万条数据以上的表需要做分库分表，无法通过索引优化
+</code></pre>
+<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
+如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
+查询过程是回表操作，索引会慢
+</code></pre>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 优化</title>
+    <url>/2022/10/03/mysql/mysql-you-hua/</url>
+    <content><![CDATA[<p>mysql</p>
+<h3 id="1-mysql-优化的不同维度："><a href="#1-mysql-优化的不同维度：" class="headerlink" title="1. mysql 优化的不同维度："></a>1. mysql 优化的不同维度：</h3><pre><code>sql语句优化
+表优化（分表，加索引）
+库优化（分库，主从分离，读写分离）
+</code></pre>
+<h3 id="2-防sql注入："><a href="#2-防sql注入：" class="headerlink" title="2. 防sql注入："></a>2. 防sql注入：</h3><pre><code>限制权限
+过滤用户数据，参数化
+不使用原生sql
+</code></pre>
+<h3 id="3-explain-执行计划"><a href="#3-explain-执行计划" class="headerlink" title="3. explain 执行计划"></a>3. explain 执行计划</h3><pre><code>从优到劣依次为：
+null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL 
+</code></pre>
+<h3 id="4-mysql-优化"><a href="#4-mysql-优化" class="headerlink" title="4. mysql 优化"></a>4. mysql 优化</h3><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
+<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
+<p>区分度公式 ： </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-用户“性别”要不要建立索引-？"><a href="#4-2-用户“性别”要不要建立索引-？" class="headerlink" title="4.2. 用户“性别”要不要建立索引 ？"></a>4.2. 用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
+<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis 使用场景</title>
+    <url>/2022/10/03/redis/redis-shi-yong-chang-jing/</url>
+    <content><![CDATA[<h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis 使用场景</title>
+    <url>/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/</url>
+    <content><![CDATA[<h2 id="1-redis-与数据库缓存一致性问题"><a href="#1-redis-与数据库缓存一致性问题" class="headerlink" title="1. redis 与数据库缓存一致性问题"></a>1. redis 与数据库缓存一致性问题</h2><h3 id="1-1-延时双删"><a href="#1-1-延时双删" class="headerlink" title="1.1. 延时双删"></a>1.1. 延时双删</h3><h3 id="1-2-先写库，再删除缓存"><a href="#1-2-先写库，再删除缓存" class="headerlink" title="1.2. 先写库，再删除缓存"></a>1.2. 先写库，再删除缓存</h3><pre><code>引入MQ
+    MQ mysql，失败可重试
+    MQ 更新 redis
+闹正原子操作
+</code></pre>
+<h3 id="1-3-热点数据永不过期，保证若一致性"><a href="#1-3-热点数据永不过期，保证若一致性" class="headerlink" title="1.3. 热点数据永不过期，保证若一致性"></a>1.3. 热点数据永不过期，保证若一致性</h3>]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis</title>
+    <url>/2022/10/03/redis/redis/</url>
+    <content><![CDATA[<p>redis 所有的key 原则上都要设置过期时间！！！</p>
+<h2 id="1-常用数据类型"><a href="#1-常用数据类型" class="headerlink" title="1. 常用数据类型"></a>1. 常用数据类型</h2><h3 id="1-1-string-字符串"><a href="#1-1-string-字符串" class="headerlink" title="1.1. string 字符串"></a>1.1. string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-hash-哈希"><a href="#1-2-hash-哈希" class="headerlink" title="1.2. hash 哈希"></a>1.2. hash 哈希</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; hget </span><br><span class="line">&gt; hmget </span><br><span class="line">&gt; hset </span><br><span class="line">&gt; hmset </span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-list-链表"><a href="#1-3-list-链表" class="headerlink" title="1.3. list 链表"></a>1.3. list 链表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; lpush user zhangsan</span><br><span class="line">&gt; lpush user lisi</span><br><span class="line">&gt; lpush user wangwu</span><br><span class="line">&gt; rpop user </span><br><span class="line">&gt; lpop user </span><br><span class="line">&gt;lrange user 1 10</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-set-集合"><a href="#1-4-set-集合" class="headerlink" title="1.4. set 集合"></a>1.4. set 集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; sadd</span><br><span class="line">&gt; spop</span><br><span class="line">&gt; smembers</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-sort-set-有序集合"><a href="#1-5-sort-set-有序集合" class="headerlink" title="1.5. sort set 有序集合"></a>1.5. sort set 有序集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; zadd</span><br><span class="line">&gt; zrange</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
+        <tag>get</tag>
+        <tag>set</tag>
       </tags>
   </entry>
   <entry>
@@ -374,6 +341,99 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>维生素</title>
+    <url>/2022/10/16/shenghuo/wei-sheng-su/</url>
+    <content><![CDATA[<h2 id="维生素A"><a href="#维生素A" class="headerlink" title="维生素A"></a>维生素A</h2><pre><code>来源：动物肝脏，深色水果，类胡萝卜素转化成维生素A（转化效率不高）
+缺乏表现：严重缺乏的话会得夜盲症，轻度缺乏有干眼症、皮肤粗糙、皮肤干燥
+</code></pre>
+<h2 id="维生素B"><a href="#维生素B" class="headerlink" title="维生素B"></a>维生素B</h2><h2 id="维生素C"><a href="#维生素C" class="headerlink" title="维生素C"></a>维生素C</h2>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PowerShell一次执行多条命令</title>
+    <url>/2022/10/03/util/powershell-yi-ci-zhi-xing-duo-tiao-ming-ling/</url>
+    <content><![CDATA[<p>参考文章 <a href="https://blog.csdn.net/u011215669/article/details/81086097">csdn</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add . | git commit -m <span class="string">&quot;edit&quot;</span> | git push</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>git 撤销 add commit</title>
+    <url>/2022/10/13/util/git-che-xiao-add-commit/</url>
+    <content><![CDATA[<h2 id="git-撤销-add-commit"><a href="#git-撤销-add-commit" class="headerlink" title="git 撤销 add commit"></a>git 撤销 add commit</h2><h3 id="git-撤销-add"><a href="#git-撤销-add" class="headerlink" title="git 撤销 add"></a>git 撤销 add</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-撤销-commit"><a href="#git-撤销-commit" class="headerlink" title="git 撤销 commit"></a>git 撤销 commit</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>postman、apipost 预览接口数据</title>
+    <url>/2022/10/03/util/postman-apipost-yu-lan-jie-kou-shu-ju/</url>
+    <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
+<p>ps：早知道这个功能能省事好多啊</p>
+<p>在此记录一下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>免费 图床</title>
+    <url>/2022/10/03/util/tu-chuang/</url>
+    <content><![CDATA[<p>免费 图床 <a href="https://www.imgurl.org/vip/manage">https://www.imgurl.org/vip/manage</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub 添加 sshkey</title>
+    <url>/2022/10/03/util/github-tian-jia-sshkey/</url>
+    <content><![CDATA[<h2 id="1-GitHub-添加-sshkey"><a href="#1-GitHub-添加-sshkey" class="headerlink" title="1. GitHub 添加 sshkey"></a>1. GitHub 添加 sshkey</h2><h3 id="1-1-生成密钥-邮箱填自己的GitHub注册邮箱"><a href="#1-1-生成密钥-邮箱填自己的GitHub注册邮箱" class="headerlink" title="1.1. 生成密钥 邮箱填自己的GitHub注册邮箱"></a>1.1. 生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-2-生成密钥-邮箱填自己的GitHub注册邮箱"><a href="#1-2-生成密钥-邮箱填自己的GitHub注册邮箱" class="headerlink" title="1.2. 生成密钥 邮箱填自己的GitHub注册邮箱"></a>1.2. 生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-3-将生成的密钥添加到GitHub-SSH-keys-里面"><a href="#1-3-将生成的密钥添加到GitHub-SSH-keys-里面" class="headerlink" title="1.3. 将生成的密钥添加到GitHub SSH keys 里面"></a>1.3. 将生成的密钥添加到GitHub SSH keys 里面</h3><p>点击头像 &#x3D;》 <code>Settings</code> &#x3D;》 <code>SSH and GPG keys</code> &#x3D;》 点击 <code>New SSH key</code> 按钮 添加即可</p>
+<h3 id="1-4-测试是否添加成功"><a href="#1-4-测试是否添加成功" class="headerlink" title="1.4. 测试是否添加成功"></a>1.4. 测试是否添加成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com <span class="comment"># 回车 输入 yes即可 </span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 修改后 自动提交脚本</title>
+    <url>/2022/10/03/util/zi-dong-ti-jiao-jiao-ben/</url>
+    <content><![CDATA[<p>每次修改文章后都需要敲一串生成 和 提交github 的代码，研究了一下脚本，写了两种方式自动生成并且将原代码提交</p>
+<h3 id="为什么要写两种方式呢-？"><a href="#为什么要写两种方式呢-？" class="headerlink" title="为什么要写两种方式呢 ？"></a>为什么要写两种方式呢 ？</h3><h4 id="因为-bash-和-powershell-不是一种语言，在powershell-里执行-sh-脚本也可以，他会自动调用-bash，但是不方便查看输出内容"><a href="#因为-bash-和-powershell-不是一种语言，在powershell-里执行-sh-脚本也可以，他会自动调用-bash，但是不方便查看输出内容" class="headerlink" title="因为 bash 和 powershell 不是一种语言，在powershell 里执行 sh 脚本也可以，他会自动调用 bash，但是不方便查看输出内容"></a>因为 bash 和 powershell 不是一种语言，在powershell 里执行 sh 脚本也可以，他会自动调用 bash，但是不方便查看输出内容</h4><p>脚本非常简单 一共就两步，一是hexo 生成并发布，二是推送源代码到github仓库</p>
+<p>提交到github 仓库需要 commit 的 message，所以需要在执行脚本的时候可以输入</p>
+<h3 id="bash-脚本"><a href="#bash-脚本" class="headerlink" title="bash 脚本"></a>bash 脚本</h3><h4 id="将代码复制保存在”-sh”-为后缀名的文件中，在-gitbash-中执行即可。比如-保存成-push-sh-，则-执行-“push-sh-提交信息”"><a href="#将代码复制保存在”-sh”-为后缀名的文件中，在-gitbash-中执行即可。比如-保存成-push-sh-，则-执行-“push-sh-提交信息”" class="headerlink" title="将代码复制保存在”.sh” 为后缀名的文件中，在 gitbash 中执行即可。比如 保存成 push.sh ，则 执行 “push.sh 提交信息”"></a>将代码复制保存在”.sh” 为后缀名的文件中，在 gitbash 中执行即可。比如 保存成 push.sh ，则 执行 “push.sh 提交信息”</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">if</span> [ ! -n <span class="string">&quot;<span class="variable">$1</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;请输入提交信息&quot;</span></span><br><span class="line">  <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  msg=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$msg</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">echoMsg</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$1</span>:&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;cd D:\github\github-hexo&quot;</span></span><br><span class="line"><span class="built_in">cd</span> D:\github\github-hexo</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo g&quot;</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo d&quot;</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;git pull&quot;</span></span><br><span class="line">git pull</span><br><span class="line">echoMsg <span class="string">&quot;git status&quot;</span></span><br><span class="line">git status</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git add .&quot;</span></span><br><span class="line">git add .</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git commit -m <span class="variable">$msg</span>&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;<span class="variable">$msg</span>&quot;</span></span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git push &quot;</span></span><br><span class="line">git push </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="powershell-脚本"><a href="#powershell-脚本" class="headerlink" title="powershell 脚本"></a>powershell 脚本</h3><h4 id="将代码复制保存在”-ps1”-为后缀名的文件中，在-powershell下执行-即可。比如-保存成-push-ps1-，则-执行-“push-ps1-提交信息”"><a href="#将代码复制保存在”-ps1”-为后缀名的文件中，在-powershell下执行-即可。比如-保存成-push-ps1-，则-执行-“push-ps1-提交信息”" class="headerlink" title="将代码复制保存在”.ps1” 为后缀名的文件中，在 powershell下执行 即可。比如 保存成 push.ps1 ，则 执行 “push.ps1 提交信息”"></a>将代码复制保存在”.ps1” 为后缀名的文件中，在 powershell下执行 即可。比如 保存成 push.ps1 ，则 执行 “push.ps1 提交信息”</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 此文件在 powershell下执行</span></span><br><span class="line"></span><br><span class="line">param(<span class="variable">$msg</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hexo g&quot;</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hexo d&quot;</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git add .&quot;</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git commit -m <span class="variable">$msg</span>&quot;</span></span><br><span class="line">git commit -m <span class="variable">$msg</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git push &quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>bash</tag>
+        <tag>powershell</tag>
       </tags>
   </entry>
   <entry>
@@ -815,42 +875,19 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>运动的减肥方案（丁勇老师）</title>
-    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/yun-dong-de-jian-fei-fang-an/</url>
-    <content><![CDATA[<h2 id="运动的减肥方案"><a href="#运动的减肥方案" class="headerlink" title="运动的减肥方案"></a>运动的减肥方案</h2><p>1 标准运动方案5-10分钟关节活动，韧带拉伸。肌肉准备，可减少运动损伤<br>2 无氧运动， 10-15分钟，每周2-3次，大肌群运动<br>3 有氧运动，每天30-40分钟，慢跑，游泳，骑车，舞蹈，快走<br>4 整理拉伸 10-15分钟，拉伸肌群和韧带，缓解肌肉酸痛</p>
-<p>减肥运动方案</p>
-<p>120-150之间是完美的减肥运动</p>
-<p>真正好的运动是中等强度运动，尽量达到220-年龄的心率的80%以上，重度强度会导致乳酸堆积＋运动损伤＋增肌（撸铁）</p>
-<p>有氧运动是最佳方式，指吸入的氧气完全够用，非气喘吁吁，</p>
-<p>每周150分钟-250分钟运动可预防体重增加，即每天有氧运动半小时可保持身材</p>
-<p>每周大于250分钟的运动可达到减重效果，即每天40分钟有氧运动</p>
-<p>再加上每周3次的无氧运动，即每次10分钟大强度的肌肉阻抗运动，增肌</p>
-<p>防止运动定型，换多种运动做，举例每月换运动，</p>
-<p>顺序：</p>
-<p>必须做准备运动，然后先做无氧运动5-10分钟以提高心率（无氧会增食欲），再有氧40分钟（比如慢到走路的跑步，快慢结合看心率），最后肌肉拉伸10分钟</p>
-<p>减肥是饮食控制第一位，辅助有氧无氧运动</p>
+    <title>tdee 热量计算</title>
+    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/tdee-re-liang-ji-suan/</url>
+    <content><![CDATA[<p>计算网站 ：<a href="https://ifitness.tw/bmr-and-tdee/">https://ifitness.tw/bmr-and-tdee/</a></p>
+<p>58kg：<br>你的基礎代謝率BMR 1291.5</p>
+<p>你的TDEE：1549.8</p>
+<p>58kg摄入 1100卡<br>50kg的时候摄入1000卡</p>
+<p>&#x2F;&#x2F; 更新 56kg 对应  你的基礎代謝率BMR：1271.5 你的TDEE：1525.2 -300 卡 1200 平均摄入1050 吧 </p>
 ]]></content>
       <categories>
-        <category>生活</category>
+        <category>减肥</category>
       </categories>
       <tags>
         <tag>减肥</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>补觉有助于心情恢复-20221118</title>
-    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/bu-jue-you-zhu-yu-xin-qing-hui-fu-20221118/</url>
-    <content><![CDATA[<h2 id="20221116"><a href="#20221116" class="headerlink" title="20221116"></a>20221116</h2><h3 id="最近心态很差"><a href="#最近心态很差" class="headerlink" title="最近心态很差"></a>最近心态很差</h3><p>前两天觉得心态快崩了</p>
-<p>总结一下可能的原因：<br>    1 感冒，身体需要休息<br>    2 熬夜，没有睡好<br>    3 大姨妈影响心情<br>    4 减肥没有效果</p>
-<p>从16号开始 中午睡觉超过30分钟，晚上 十点多躺下，十一点左右睡着。<br>补了大概三天左右，心情放松了很多。</p>
-<p>今天下午突然感觉特别想吃东西。<br>    听了减肥up的讲解，说 馋 是一种情绪，而不是一种生理需求<br>    好像，知道了病根之后就突然不想吃东西了。也不馋了。</p>
-<p>1 想吃东西的时候可以吃高纤维，高蛋白，肝脂肪的食物<br>2 特别想吃东西的时候可以运动，分泌多巴胺</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -888,16 +925,53 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>tdee 热量计算</title>
-    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/tdee-re-liang-ji-suan/</url>
-    <content><![CDATA[<p>计算网站 ：<a href="https://ifitness.tw/bmr-and-tdee/">https://ifitness.tw/bmr-and-tdee/</a></p>
-<p>58kg：<br>你的基礎代謝率BMR 1291.5</p>
-<p>你的TDEE：1549.8</p>
-<p>58kg摄入 1100卡<br>50kg的时候摄入1000卡</p>
-<p>&#x2F;&#x2F; 更新 56kg 对应  你的基礎代謝率BMR：1271.5 你的TDEE：1525.2 -300 卡 1200 平均摄入1050 吧 </p>
+    <title>感冒疫苗</title>
+    <url>/2022/12/15/shenghuo/2022-nian-ji-lu/gan-mou-yi-miao/</url>
+    <content><![CDATA[<h2 id="关于感冒疫苗"><a href="#关于感冒疫苗" class="headerlink" title="关于感冒疫苗"></a>关于感冒疫苗</h2><p>适合在流感之前接种，一般在10月前，在9月，10月左右接种。</p>
+<p>可以接种三价疫苗或者四价疫苗。</p>
+<p>”四价流感疫苗覆盖更多病毒型别。但以国内现有的价格，三价流感疫苗性价比更高。<br>四价疫苗毕竟要翻一倍的价格了，成人剂型的四价疫苗现在140元左右，三价疫苗只要六七十元。多一个型别，但保护率并没有翻一倍。“</p>
 ]]></content>
       <categories>
-        <category>减肥</category>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>健康</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>补觉有助于心情恢复-20221118</title>
+    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/bu-jue-you-zhu-yu-xin-qing-hui-fu-20221118/</url>
+    <content><![CDATA[<h2 id="20221116"><a href="#20221116" class="headerlink" title="20221116"></a>20221116</h2><h3 id="最近心态很差"><a href="#最近心态很差" class="headerlink" title="最近心态很差"></a>最近心态很差</h3><p>前两天觉得心态快崩了</p>
+<p>总结一下可能的原因：<br>    1 感冒，身体需要休息<br>    2 熬夜，没有睡好<br>    3 大姨妈影响心情<br>    4 减肥没有效果</p>
+<p>从16号开始 中午睡觉超过30分钟，晚上 十点多躺下，十一点左右睡着。<br>补了大概三天左右，心情放松了很多。</p>
+<p>今天下午突然感觉特别想吃东西。<br>    听了减肥up的讲解，说 馋 是一种情绪，而不是一种生理需求<br>    好像，知道了病根之后就突然不想吃东西了。也不馋了。</p>
+<p>1 想吃东西的时候可以吃高纤维，高蛋白，肝脂肪的食物<br>2 特别想吃东西的时候可以运动，分泌多巴胺</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运动的减肥方案（丁勇老师）</title>
+    <url>/2022/12/10/shenghuo/2022-nian-ji-lu/yun-dong-de-jian-fei-fang-an/</url>
+    <content><![CDATA[<h2 id="运动的减肥方案"><a href="#运动的减肥方案" class="headerlink" title="运动的减肥方案"></a>运动的减肥方案</h2><p>1 标准运动方案5-10分钟关节活动，韧带拉伸。肌肉准备，可减少运动损伤<br>2 无氧运动， 10-15分钟，每周2-3次，大肌群运动<br>3 有氧运动，每天30-40分钟，慢跑，游泳，骑车，舞蹈，快走<br>4 整理拉伸 10-15分钟，拉伸肌群和韧带，缓解肌肉酸痛</p>
+<p>减肥运动方案</p>
+<p>120-150之间是完美的减肥运动</p>
+<p>真正好的运动是中等强度运动，尽量达到220-年龄的心率的80%以上，重度强度会导致乳酸堆积＋运动损伤＋增肌（撸铁）</p>
+<p>有氧运动是最佳方式，指吸入的氧气完全够用，非气喘吁吁，</p>
+<p>每周150分钟-250分钟运动可预防体重增加，即每天有氧运动半小时可保持身材</p>
+<p>每周大于250分钟的运动可达到减重效果，即每天40分钟有氧运动</p>
+<p>再加上每周3次的无氧运动，即每次10分钟大强度的肌肉阻抗运动，增肌</p>
+<p>防止运动定型，换多种运动做，举例每月换运动，</p>
+<p>顺序：</p>
+<p>必须做准备运动，然后先做无氧运动5-10分钟以提高心率（无氧会增食欲），再有氧40分钟（比如慢到走路的跑步，快慢结合看心率），最后肌肉拉伸10分钟</p>
+<p>减肥是饮食控制第一位，辅助有氧无氧运动</p>
+]]></content>
+      <categories>
+        <category>生活</category>
       </categories>
       <tags>
         <tag>减肥</tag>
@@ -916,13 +990,41 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>go 构建简单的web</title>
-    <url>/2022/12/10/golang/go-base/go-gou-jian-jian-dan-de-web/</url>
-    <content><![CDATA[<p>golang</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/bbb&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world bbb&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.ListenAndServe(<span class="string">&quot;localhost:8080&quot;</span>, nil)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="localhost-8080"><a href="#localhost-8080" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb"><a href="#localhost-8080-x2F-bbb" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3><p>http.Handle 的使用 </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> helloHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (m *helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> aboutHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (a *aboutHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;about&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Welcome(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;Welcome&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">	mh := helloHandler&#123;&#125;</span><br><span class="line">	a := aboutHandler&#123;&#125;</span><br><span class="line"></span><br><span class="line">	server := http.Server&#123;</span><br><span class="line">		Addr:    <span class="string">&quot;localhost:8080&quot;</span>,</span><br><span class="line">		Handler: nil,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	http.Handle(<span class="string">&quot;/hello&quot;</span>, &amp;mh)</span><br><span class="line">	http.Handle(<span class="string">&quot;/about&quot;</span>, &amp;a)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/home&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;home&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/welcome&quot;</span>, Welcome)</span><br><span class="line"></span><br><span class="line">	server.ListenAndServe()</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="localhost-8080-1"><a href="#localhost-8080-1" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb-1"><a href="#localhost-8080-x2F-bbb-1" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3>]]></content>
+    <title>potplayer 视频播放器</title>
+    <url>/2023/02/08/util/win-shi-pin-bo-fang-qi/</url>
+    <content><![CDATA[<h2 id="https-potplayer-daum-net"><a href="#https-potplayer-daum-net" class="headerlink" title="https://potplayer.daum.net/"></a><a href="https://potplayer.daum.net/">https://potplayer.daum.net/</a></h2>]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TCP协议和UDP协议</title>
+    <url>/2023/01/23/golang/go-base/tcp-xie-yi-he-udp-xie-yi/</url>
+    <content><![CDATA[<h3 id="1-tcp协议和udp协议的相同点是什么？"><a href="#1-tcp协议和udp协议的相同点是什么？" class="headerlink" title="1. tcp协议和udp协议的相同点是什么？"></a>1. tcp协议和udp协议的相同点是什么？</h3><p>都工作在传输层（应用层-&gt;传输层-&gt;网络层-&gt;数据链路层-&gt;物理层）<br>目标是在程序之间传输数据</p>
+<pre><code>数据可以是文本，可以是视频，可以是图片，这些文件对于tcp和udp文件来说都是一堆二进制数据，没有多大的区别
+</code></pre>
+<h3 id="2-tcp协议和udp协议-协议的区别是什么？"><a href="#2-tcp协议和udp协议-协议的区别是什么？" class="headerlink" title="2. tcp协议和udp协议 协议的区别是什么？"></a>2. tcp协议和udp协议 协议的区别是什么？</h3><p>参考视频：<a href="https://www.bilibili.com/video/BV1kV411j7hA?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">连接</a></p>
+<p>tcp 面向连接，udp 非面向连接<br>tcp是可靠的，有三次握手，四次挥手。udp 不可靠。</p>
+<p>为什么是三次握手？<br>三次握手解决了网络信道不可靠的问题。<br>比如只有两次握手，假如其中一次客户端向服务端发送syn包，由于网络延迟，客户端没接收到反馈，就又重试。<br>第二次重试成功，由于网络恢复，又重新被服务端接收，这样就导致服务端重复接收同一个请求，所以需要三次握手，服务端给客户端一个确认信号。<br>客户端再发送一个确认信号sck，才可以保证连接成功。<br>连接成功才可以进入客户端和服务端数据传输问题。</p>
+<p>为什么是四次挥手？<br>四次挥手实际上是<br>1 客户端发起fin包给服务端，客户端 客户端转变为 fin-wait-1 ，服务端状态变为 close-wait<br>2 服务端确认 ack  客户端转变为 fin-wait-2<br>3 服务端 发起 fin 给客户端， 服务端状态变为last-ack，客户端转变为 time-wait<br>4 客户端 发送 确认 ack 给 客户端 客户端转变为 close， 服务端状态变 close</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang 实现简单分片文件上传</title>
+    <url>/2022/12/10/golang/go-base/go-gin-fen-pian-shang-chuan-wen-jian/</url>
+    <content><![CDATA[<h2 id="golang-分片上传文件"><a href="#golang-分片上传文件" class="headerlink" title="golang 分片上传文件"></a>golang 分片上传文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	r := gin.New()</span><br><span class="line">	r.Use(</span><br><span class="line">		func(c *gin.Context) &#123;</span><br><span class="line">			defer <span class="function"><span class="title">func</span></span>() &#123;</span><br><span class="line">				<span class="keyword">if</span> e := recover(); e != nil &#123;</span><br><span class="line">					c.AbortWithStatusJSON(400, gin.H&#123;<span class="string">&quot;err&quot;</span>: e&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;()</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">	r.GET(<span class="string">&quot;/&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Transfer-Encoding&quot;</span>, <span class="string">&quot;chunked&quot;</span>)</span><br><span class="line">		//c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;image/png&quot;</span>)</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;video/mp4&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> i := 0; i &lt;= 5; i++ &#123;</span><br><span class="line">			//f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.png&quot;</span>, i))</span><br><span class="line">			f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.mp4&quot;</span>, i))</span><br><span class="line">			time.Sleep(time.Second)</span><br><span class="line">			b, _ := ioutil.ReadAll(f)</span><br><span class="line"></span><br><span class="line">			c.Writer.Write(b)</span><br><span class="line">			c.Writer.(http.Flusher).Flush()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	r.POST(<span class="string">&quot;/file&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		file, <span class="built_in">head</span>, _ := c.Request.FormFile(<span class="string">&quot;file&quot;</span>)</span><br><span class="line">		block := head.Size / 5</span><br><span class="line">		index := 0</span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			buf := make([]byte, block)</span><br><span class="line">			n, err := file.Read(buf)</span><br><span class="line"></span><br><span class="line">			//fmt.Println(<span class="string">&quot;buf&quot;</span>, buf)</span><br><span class="line">			//fmt.Println(<span class="string">&quot;n&quot;</span>, n)</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> err != nil &amp;&amp; err != io.EOF &#123;</span><br><span class="line">				panic(err.Error())</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> n == 0 &#123;</span><br><span class="line">				<span class="built_in">break</span></span><br><span class="line">			&#125;</span><br><span class="line">			//time.Sleep(1 * time.Second)</span><br><span class="line">			//saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.png&quot;</span>, index), buf)</span><br><span class="line">			saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.mp4&quot;</span>, index), buf)</span><br><span class="line">			index++</span><br><span class="line">		&#125;</span><br><span class="line">		c.JSON(200, gin.H&#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;ok&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line">	r.Run(<span class="string">&quot;:8888&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func saveBlock(name string, buf []byte) &#123;</span><br><span class="line">	save, _ := os.OpenFile(<span class="string">&quot;./file/&quot;</span>+name, os.O_CREATE|os.O_RDWR, 0600)</span><br><span class="line">	defer save.Close()</span><br><span class="line">	save.Write(buf)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参考文章: <a href="https://www.bilibili.com/video/BV1Cy4y1b7Bi?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">公开课:Gin模拟实现大文件上传、分片存储和分块显示</a></p>
+]]></content>
       <categories>
         <category>golang</category>
       </categories>
@@ -931,32 +1033,43 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>go 通过http 发送 GET、POST 请求，并读取返回数据</title>
-    <url>/2022/12/10/golang/go-base/go-tong-guo-http-fa-song-get-post-qing-qiu-bing-du-qu-fan-hui-shu-ju/</url>
+    <title>go init 函数</title>
+    <url>/2022/10/03/golang/go-base/go-init-han-shu/</url>
+    <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>先于main函数执行，实现包级别的一些初始化操作
+每个包可以包含多个 init 函数
+所有编译器发现的函数都会被安排在main函数之前执行
+init 函数没有输入参数，返回值会且仅会导入一次
+</code></pre>
+<h3 id="2-主要作用"><a href="#2-主要作用" class="headerlink" title="2. 主要作用"></a>2. 主要作用</h3><pre><code>初始化不能采用初始化表达式初始化的变量
+程序运行前的注册
+实现 sync.Once 功能
+</code></pre>
+<h3 id="3-init-执行顺序"><a href="#3-init-执行顺序" class="headerlink" title="3. init 执行顺序"></a>3. init 执行顺序</h3><pre><code>单个包中init执行顺序 初始化变量 &gt; init 函数 &gt; main 函数
+单个包中多个init 执行是顺序的
+相互以来的包之间的init 函数，按照递归的顺序执行
+</code></pre>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go int64 精度丢失</title>
+    <url>/2022/10/03/golang/go-base/go-int64-jing-du-diu-shi/</url>
     <content><![CDATA[<p>golang</p>
-<h3 id="GET-请求"><a href="#GET-请求" class="headerlink" title="GET 请求"></a>GET 请求</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;net/url&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	AdvertiserId uint64</span><br><span class="line">	Filtering    Filtering</span><br><span class="line">	Fields       []string</span><br><span class="line">	Page         string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Filtering struct &#123;</span><br><span class="line">	AdId uint64 `json:<span class="string">&quot;ad_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Resp struct &#123;</span><br><span class="line">	Message   string `json:<span class="string">&quot;message&quot;</span>`</span><br><span class="line">	Code      int    `json:<span class="string">&quot;code&quot;</span>`</span><br><span class="line">	Data      string `json:<span class="string">&quot;data&quot;</span>`</span><br><span class="line">	RequestId string `json:<span class="string">&quot;request_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	request, err := http.NewRequest(http.MethodGet, <span class="string">&quot;baidu.com&quot;</span>, nil)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	request.Header.Set(<span class="string">&quot;Access-Token&quot;</span>, <span class="string">&quot;dcb85e80f6bb92f&quot;</span>)</span><br><span class="line">	query := make(url.Values)</span><br><span class="line"></span><br><span class="line">	query.Set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;16329224&quot;</span>)</span><br><span class="line"></span><br><span class="line">	//设置 filtering  json 参数</span><br><span class="line">	var req Req</span><br><span class="line">	req.Filtering.AdId = 1747537983277069</span><br><span class="line">	filteringJson, err := json.Marshal(req.Filtering)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	query.Set(<span class="string">&quot;filtering&quot;</span>, string(filteringJson))</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> req.Page != <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		query.Set(<span class="string">&quot;page&quot;</span>, req.Page)</span><br><span class="line">	&#125;</span><br><span class="line">	query.Set(<span class="string">&quot;page_size&quot;</span>, <span class="string">&quot;100&quot;</span>)</span><br><span class="line">	<span class="keyword">if</span> len(req.Fields) &gt; 0 &#123;</span><br><span class="line">		fieldsJson, _ := json.Marshal(req.Fields)</span><br><span class="line">		query.Set(<span class="string">&quot;filtering&quot;</span>, string(fieldsJson))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	request.URL.RawQuery = query.Encode()</span><br><span class="line"></span><br><span class="line">	response, err := http.DefaultClient.Do(request)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	respJson, err := io.ReadAll(response.Body)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	var resp Resp</span><br><span class="line">	json.Unmarshal(respJson, &amp;resp)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;返回数据： %+v \n&quot;</span>, resp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;bytes&quot;</span></span><br><span class="line">	<span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">	<span class="string">&quot;errors&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	AdvertiserId uint64</span><br><span class="line">	Fields       []string</span><br><span class="line">	Page         string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Resp struct &#123;</span><br><span class="line">	Message   string `json:<span class="string">&quot;message&quot;</span>`</span><br><span class="line">	Code      int64  `json:<span class="string">&quot;code&quot;</span>`</span><br><span class="line">	Data      string `json:<span class="string">&quot;data&quot;</span>`</span><br><span class="line">	RequestId string `json:<span class="string">&quot;request_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	var req Req</span><br><span class="line">	reqByte, _ := json.Marshal(req)</span><br><span class="line">	request, err := http.NewRequest(http.MethodPost, <span class="string">&quot;baidu.com&quot;</span>, bytes.NewReader(reqByte))</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">	request.Header.Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">	request.Header.Set(<span class="string">&quot;Access-Token&quot;</span>, <span class="string">&quot;dcb85e8b92f&quot;</span>)</span><br><span class="line">	response, err := http.DefaultClient.Do(request)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">	respJson, err := io.ReadAll(response.Body)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	response.Body.Close()</span><br><span class="line">	var resp Resp</span><br><span class="line">	json.Unmarshal(respJson, &amp;resp)</span><br><span class="line">	<span class="keyword">if</span> resp.Code != 0 &#123;</span><br><span class="line">		err = errors.New(resp.Message)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
         <category>golang</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang 常用标准库-time</title>
-    <url>/2022/12/10/golang/go-base/go-chang-yong-biao-zhun-ku-02-time/</url>
-    <content><![CDATA[<h2 id="golang-常用标准库-time"><a href="#golang-常用标准库-time" class="headerlink" title="golang 常用标准库 time"></a>golang 常用标准库 time</h2><h4 id="time-代表一个纳秒精度的时间点"><a href="#time-代表一个纳秒精度的时间点" class="headerlink" title="time 代表一个纳秒精度的时间点"></a>time 代表一个纳秒精度的时间点</h4>]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>time</tag>
+        <tag>数据类型</tag>
+        <tag>int64</tag>
       </tags>
   </entry>
   <entry>
@@ -986,6 +1099,20 @@ map 是由 key-value 对组成的； key 只会出现一次。
     <content><![CDATA[<h2 id="golang-sync-WaitGroup-协程管理器-需要地址传参"><a href="#golang-sync-WaitGroup-协程管理器-需要地址传参" class="headerlink" title="golang sync.WaitGroup  协程管理器 需要地址传参"></a>golang sync.WaitGroup  协程管理器 需要地址传参</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;sync&quot;</span></span><br><span class="line">)</span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	//go Run()</span><br><span class="line">	//time.Sleep(1 * time.Second)</span><br><span class="line">	//i := 0</span><br><span class="line">	//for i &lt; 10 &#123;</span><br><span class="line">	//	i++</span><br><span class="line">	//	fmt.Println(i)</span><br><span class="line">	//&#125;</span><br><span class="line"></span><br><span class="line">	// 协程管理器 需要地址传参</span><br><span class="line">	var wg sync.WaitGroup</span><br><span class="line">	wg.Add(1)</span><br><span class="line">	go Run(&amp;wg)</span><br><span class="line">	wg.Wait()</span><br><span class="line"></span><br><span class="line">	// chan 协程之间通讯的工具</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Run(wg *sync.WaitGroup) &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;我跑起来了&quot;</span>)</span><br><span class="line">	wg.Done()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>参考视频: <a href="https://www.bilibili.com/video/BV1Vf4y1S75t?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">【golang教学】第十一章：golang的并发神器goroutine  和 channel （1010工作室出品）</a></p>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang 实现简单文件上传</title>
+    <url>/2022/10/03/golang/go-base/go-shi-xian-wen-jian-shang-chuan/</url>
+    <content><![CDATA[<h2 id="golang-上传文件"><a href="#golang-上传文件" class="headerlink" title="golang 上传文件"></a>golang 上传文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;html/template&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>()  &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/upload&quot;</span>, Upload)</span><br><span class="line">	<span class="keyword">if</span> err := http.ListenAndServe(<span class="string">&quot;127.0.0.1:9090&quot;</span>, nil); err != nil &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Upload(w http.ResponseWriter, r *http.Request)  &#123;</span><br><span class="line">	//判断请求方式</span><br><span class="line">	<span class="keyword">if</span> r.Method == <span class="string">&quot;POST&quot;</span> &#123;</span><br><span class="line">		//设置内存大小</span><br><span class="line">		r.ParseMultipartForm(32 &lt;&lt; <span class="string">20)</span></span><br><span class="line"><span class="string">		//获取上传文件</span></span><br><span class="line"><span class="string">		file, handler, err := r.FormFile(&quot;uploadfile&quot;)</span></span><br><span class="line"><span class="string">		if err != nil &#123;</span></span><br><span class="line"><span class="string">			fmt.Println(err)</span></span><br><span class="line"><span class="string">			return</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		defer file.Close()</span></span><br><span class="line"><span class="string">		fmt.Fprintf(w, &quot;%v&quot;, handler.Header)</span></span><br><span class="line"><span class="string">		//创建上传目录</span></span><br><span class="line"><span class="string">		os.Mkdir(&quot;./upload&quot;, os.ModePerm)</span></span><br><span class="line"><span class="string">		//创建上传文件</span></span><br><span class="line"><span class="string">		f, err := os.Create(&quot;./upload/&quot; + handler.Filename)</span></span><br><span class="line"><span class="string">		if err != nil &#123;</span></span><br><span class="line"><span class="string">			fmt.Println(err)</span></span><br><span class="line"><span class="string">			return</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		defer f.Close()</span></span><br><span class="line"><span class="string">		io.Copy(f, file)</span></span><br><span class="line"><span class="string">		w.WriteHeader(http.StatusCreated)</span></span><br><span class="line"><span class="string">		io.WriteString(w, &quot;Uploaded successfully&quot;)</span></span><br><span class="line"><span class="string">	&#125; else &#123;</span></span><br><span class="line"><span class="string">		//渲染页面 解析模板文件</span></span><br><span class="line"><span class="string">		tpl, _ := template.ParseFiles(&quot;./upload.html&quot;)</span></span><br><span class="line"><span class="string">		tpl.Execute(w, nil)</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p>参考文章: <a href="https://juejin.cn/post/7134935002432667679">稀土掘金</a></p>
 ]]></content>
       <categories>
         <category>golang</category>
@@ -1059,11 +1186,216 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>golang 实现简单分片文件上传</title>
-    <url>/2022/12/10/golang/go-base/go-gin-fen-pian-shang-chuan-wen-jian/</url>
-    <content><![CDATA[<h2 id="golang-分片上传文件"><a href="#golang-分片上传文件" class="headerlink" title="golang 分片上传文件"></a>golang 分片上传文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	r := gin.New()</span><br><span class="line">	r.Use(</span><br><span class="line">		func(c *gin.Context) &#123;</span><br><span class="line">			defer <span class="function"><span class="title">func</span></span>() &#123;</span><br><span class="line">				<span class="keyword">if</span> e := recover(); e != nil &#123;</span><br><span class="line">					c.AbortWithStatusJSON(400, gin.H&#123;<span class="string">&quot;err&quot;</span>: e&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;()</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">	r.GET(<span class="string">&quot;/&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Transfer-Encoding&quot;</span>, <span class="string">&quot;chunked&quot;</span>)</span><br><span class="line">		//c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;image/png&quot;</span>)</span><br><span class="line">		c.Writer.Header().Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;video/mp4&quot;</span>)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> i := 0; i &lt;= 5; i++ &#123;</span><br><span class="line">			//f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.png&quot;</span>, i))</span><br><span class="line">			f, _ := os.Open(fmt.Sprintf(<span class="string">&quot;./file/img_%d.mp4&quot;</span>, i))</span><br><span class="line">			time.Sleep(time.Second)</span><br><span class="line">			b, _ := ioutil.ReadAll(f)</span><br><span class="line"></span><br><span class="line">			c.Writer.Write(b)</span><br><span class="line">			c.Writer.(http.Flusher).Flush()</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	r.POST(<span class="string">&quot;/file&quot;</span>, func(c *gin.Context) &#123;</span><br><span class="line">		file, <span class="built_in">head</span>, _ := c.Request.FormFile(<span class="string">&quot;file&quot;</span>)</span><br><span class="line">		block := head.Size / 5</span><br><span class="line">		index := 0</span><br><span class="line">		<span class="keyword">for</span> &#123;</span><br><span class="line">			buf := make([]byte, block)</span><br><span class="line">			n, err := file.Read(buf)</span><br><span class="line"></span><br><span class="line">			//fmt.Println(<span class="string">&quot;buf&quot;</span>, buf)</span><br><span class="line">			//fmt.Println(<span class="string">&quot;n&quot;</span>, n)</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> err != nil &amp;&amp; err != io.EOF &#123;</span><br><span class="line">				panic(err.Error())</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> n == 0 &#123;</span><br><span class="line">				<span class="built_in">break</span></span><br><span class="line">			&#125;</span><br><span class="line">			//time.Sleep(1 * time.Second)</span><br><span class="line">			//saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.png&quot;</span>, index), buf)</span><br><span class="line">			saveBlock(fmt.Sprintf(<span class="string">&quot;img_%d.mp4&quot;</span>, index), buf)</span><br><span class="line">			index++</span><br><span class="line">		&#125;</span><br><span class="line">		c.JSON(200, gin.H&#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;ok&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">	&#125;)</span><br><span class="line">	r.Run(<span class="string">&quot;:8888&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func saveBlock(name string, buf []byte) &#123;</span><br><span class="line">	save, _ := os.OpenFile(<span class="string">&quot;./file/&quot;</span>+name, os.O_CREATE|os.O_RDWR, 0600)</span><br><span class="line">	defer save.Close()</span><br><span class="line">	save.Write(buf)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <title>golang 常用标准库-time</title>
+    <url>/2022/12/10/golang/go-base/go-chang-yong-biao-zhun-ku-02-time/</url>
+    <content><![CDATA[<h2 id="golang-常用标准库-time"><a href="#golang-常用标准库-time" class="headerlink" title="golang 常用标准库 time"></a>golang 常用标准库 time</h2><h4 id="time-代表一个纳秒精度的时间点"><a href="#time-代表一个纳秒精度的时间点" class="headerlink" title="time 代表一个纳秒精度的时间点"></a>time 代表一个纳秒精度的时间点</h4>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>time</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go 构建简单的web</title>
+    <url>/2022/12/10/golang/go-base/go-gou-jian-jian-dan-de-web/</url>
+    <content><![CDATA[<p>golang</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/bbb&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;hello world bbb&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.ListenAndServe(<span class="string">&quot;localhost:8080&quot;</span>, nil)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="localhost-8080"><a href="#localhost-8080" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb"><a href="#localhost-8080-x2F-bbb" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3><p>http.Handle 的使用 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;net/http&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> helloHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (m *helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;hello world&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> aboutHandler struct&#123;&#125;</span><br><span class="line"></span><br><span class="line">func (a *aboutHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;about&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Welcome(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">	w.Write([]byte(<span class="string">&quot;Welcome&quot;</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">	mh := helloHandler&#123;&#125;</span><br><span class="line">	a := aboutHandler&#123;&#125;</span><br><span class="line"></span><br><span class="line">	server := http.Server&#123;</span><br><span class="line">		Addr:    <span class="string">&quot;localhost:8080&quot;</span>,</span><br><span class="line">		Handler: nil,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	http.Handle(<span class="string">&quot;/hello&quot;</span>, &amp;mh)</span><br><span class="line">	http.Handle(<span class="string">&quot;/about&quot;</span>, &amp;a)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/home&quot;</span>, func(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">		w.Write([]byte(<span class="string">&quot;home&quot;</span>))</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/welcome&quot;</span>, Welcome)</span><br><span class="line"></span><br><span class="line">	server.ListenAndServe()</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="localhost-8080-1"><a href="#localhost-8080-1" class="headerlink" title="localhost:8080"></a>localhost:8080</h3><h3 id="localhost-8080-x2F-bbb-1"><a href="#localhost-8080-x2F-bbb-1" class="headerlink" title="localhost:8080&#x2F;bbb"></a>localhost:8080&#x2F;bbb</h3>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go 修改结构体切片的值</title>
+    <url>/2022/10/03/golang/go-base/go-jie-gou-ti-qie-pian-de-zhi/</url>
+    <content><![CDATA[<p>golang</p>
+<h2 id="for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的"><a href="#for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的" class="headerlink" title="for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的"></a>for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</h2><h3 id="for-循环里的-v-属于临时变量"><a href="#for-循环里的-v-属于临时变量" class="headerlink" title="for 循环里的 v 属于临时变量"></a>for 循环里的 v 属于临时变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">	Name    string</span><br><span class="line">	Address string</span><br><span class="line">	Age     int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	<span class="built_in">users</span> := []User&#123;</span><br><span class="line">		&#123;<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;北京&quot;</span>, 18&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;李四&quot;</span>, <span class="string">&quot;上海&quot;</span>, 19&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;王五&quot;</span>, <span class="string">&quot;广州&quot;</span>, 20&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	users02 := <span class="built_in">users</span></span><br><span class="line">	fmt.Printf(<span class="string">&quot;原数据:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := range <span class="built_in">users</span> &#123;</span><br><span class="line">		v.Name = <span class="string">&quot;大傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第一种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">	<span class="keyword">for</span> k, v := range users02 &#123;</span><br><span class="line">		<span class="built_in">users</span>[k].Name = <span class="string">&quot;小傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第二种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"><a href="#打印内容，可以看到大傻瓜没加上，小傻瓜加上了" class="headerlink" title="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"></a>打印内容，可以看到大傻瓜没加上，小傻瓜加上了</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">原数据:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第一种方式修改后:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第二种方式修改后:</span><br><span class="line">[&#123;Name:小傻瓜：张三 Address:北京 Age:18&#125; &#123;Name:小傻瓜：李四 Address:上海 Age:19 &#125; &#123;Name:小傻瓜：王五 Address:广州 Age:20&#125;]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>结构体</tag>
+        <tag>切片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go 通过http 发送 GET、POST 请求，并读取返回数据</title>
+    <url>/2022/12/10/golang/go-base/go-tong-guo-http-fa-song-get-post-qing-qiu-bing-du-qu-fan-hui-shu-ju/</url>
+    <content><![CDATA[<p>golang</p>
+<h3 id="GET-请求"><a href="#GET-请求" class="headerlink" title="GET 请求"></a>GET 请求</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;net/url&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	AdvertiserId uint64</span><br><span class="line">	Filtering    Filtering</span><br><span class="line">	Fields       []string</span><br><span class="line">	Page         string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Filtering struct &#123;</span><br><span class="line">	AdId uint64 `json:<span class="string">&quot;ad_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Resp struct &#123;</span><br><span class="line">	Message   string `json:<span class="string">&quot;message&quot;</span>`</span><br><span class="line">	Code      int    `json:<span class="string">&quot;code&quot;</span>`</span><br><span class="line">	Data      string `json:<span class="string">&quot;data&quot;</span>`</span><br><span class="line">	RequestId string `json:<span class="string">&quot;request_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	request, err := http.NewRequest(http.MethodGet, <span class="string">&quot;baidu.com&quot;</span>, nil)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	request.Header.Set(<span class="string">&quot;Access-Token&quot;</span>, <span class="string">&quot;dcb85e80f6bb92f&quot;</span>)</span><br><span class="line">	query := make(url.Values)</span><br><span class="line"></span><br><span class="line">	query.Set(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;16329224&quot;</span>)</span><br><span class="line"></span><br><span class="line">	//设置 filtering  json 参数</span><br><span class="line">	var req Req</span><br><span class="line">	req.Filtering.AdId = 1747537983277069</span><br><span class="line">	filteringJson, err := json.Marshal(req.Filtering)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	query.Set(<span class="string">&quot;filtering&quot;</span>, string(filteringJson))</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> req.Page != <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		query.Set(<span class="string">&quot;page&quot;</span>, req.Page)</span><br><span class="line">	&#125;</span><br><span class="line">	query.Set(<span class="string">&quot;page_size&quot;</span>, <span class="string">&quot;100&quot;</span>)</span><br><span class="line">	<span class="keyword">if</span> len(req.Fields) &gt; 0 &#123;</span><br><span class="line">		fieldsJson, _ := json.Marshal(req.Fields)</span><br><span class="line">		query.Set(<span class="string">&quot;filtering&quot;</span>, string(fieldsJson))</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	request.URL.RawQuery = query.Encode()</span><br><span class="line"></span><br><span class="line">	response, err := http.DefaultClient.Do(request)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	respJson, err := io.ReadAll(response.Body)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	var resp Resp</span><br><span class="line">	json.Unmarshal(respJson, &amp;resp)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;返回数据： %+v \n&quot;</span>, resp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>参考文章: <a href="https://www.bilibili.com/video/BV1Cy4y1b7Bi?vd_source=08c7a48b57ad4d6c4aa2c17295004ee2">公开课:Gin模拟实现大文件上传、分片存储和分块显示</a></p>
+
+<h3 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;bytes&quot;</span></span><br><span class="line">	<span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">	<span class="string">&quot;errors&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Req struct &#123;</span><br><span class="line">	AdvertiserId uint64</span><br><span class="line">	Fields       []string</span><br><span class="line">	Page         string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> Resp struct &#123;</span><br><span class="line">	Message   string `json:<span class="string">&quot;message&quot;</span>`</span><br><span class="line">	Code      int64  `json:<span class="string">&quot;code&quot;</span>`</span><br><span class="line">	Data      string `json:<span class="string">&quot;data&quot;</span>`</span><br><span class="line">	RequestId string `json:<span class="string">&quot;request_id&quot;</span>`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	var req Req</span><br><span class="line">	reqByte, _ := json.Marshal(req)</span><br><span class="line">	request, err := http.NewRequest(http.MethodPost, <span class="string">&quot;baidu.com&quot;</span>, bytes.NewReader(reqByte))</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">	request.Header.Set(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json&quot;</span>)</span><br><span class="line">	request.Header.Set(<span class="string">&quot;Access-Token&quot;</span>, <span class="string">&quot;dcb85e8b92f&quot;</span>)</span><br><span class="line">	response, err := http.DefaultClient.Do(request)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		fmt.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">	respJson, err := io.ReadAll(response.Body)</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	response.Body.Close()</span><br><span class="line">	var resp Resp</span><br><span class="line">	json.Unmarshal(respJson, &amp;resp)</span><br><span class="line">	<span class="keyword">if</span> resp.Code != 0 &#123;</span><br><span class="line">		err = errors.New(resp.Message)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang map相关</title>
+    <url>/2023/01/23/golang/go-base/golang-map-xiang-guan/</url>
+    <content><![CDATA[<h3 id="1-map-的-key-和-value有什么限制吗"><a href="#1-map-的-key-和-value有什么限制吗" class="headerlink" title="1. map 的 key 和 value有什么限制吗"></a>1. map 的 key 和 value有什么限制吗</h3><pre><code>没有，不限制
+key可以int，strin g，不可以是map，
+value 可以是任何值
+</code></pre>
+<h3 id="2-如何判断-map-中是否包含某个-key-？"><a href="#2-如何判断-map-中是否包含某个-key-？" class="headerlink" title="2. 如何判断 map 中是否包含某个 key ？"></a>2. 如何判断 map 中是否包含某个 key ？</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var sample map[int]int</span><br><span class="line">if _, ok := sample[10];ok&#123;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-map-长啥样-？-map的底层实现"><a href="#3-map-长啥样-？-map的底层实现" class="headerlink" title="3. map 长啥样 ？ map的底层实现?"></a>3. map 长啥样 ？ map的底层实现?</h3><pre><code>哈希表，hash table
+map 是由 key-value 对组成的； key 只会出现一次。
+</code></pre>
+<p>和 map 相关的操作主要是：增删改查<br>使用 map 的原因是 各种增删改查的效率非常高</p>
+<pre><code>map的底层是 哈希查找表，并且使用链表解决哈希冲突
+</code></pre>
+<h3 id="4-map-的内存模型是什么样的-？"><a href="#4-map-的内存模型是什么样的-？" class="headerlink" title="4. map 的内存模型是什么样的 ？"></a>4. map 的内存模型是什么样的 ？</h3><pre><code>golang 中 map 的结构体是 hmap，它是 hashmap 的“缩写”。
+</code></pre>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> runtime</span><br><span class="line"><span class="comment">// A header for a Go map.</span></span><br><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// Note: the format of the hmap is also encoded in cmd/compile/internal/gc/reflect.go.</span></span><br><span class="line">	<span class="comment">// Make sure this stays in sync with the compiler&#x27;s definition.</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 元素个数，调用 len(map) 时，直接返回此值</span></span><br><span class="line">	count     <span class="type">int</span> <span class="comment">// # live cells == size of map.  Must be first (used by len() builtin)</span></span><br><span class="line">	flags     <span class="type">uint8</span></span><br><span class="line">	<span class="comment">// buckets 的对数 log_2</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// log_2 of # of buckets (can hold up to loadFactor * 2^B items)</span></span><br><span class="line">	<span class="comment">// overflow 的 bucket 近似数</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// approximate number of overflow buckets; see incrnoverflow for details</span></span><br><span class="line">	<span class="comment">// 计算 key 的哈希的时候会传入哈希函数</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// hash seed</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 指向 buckets 数组，大小为 2^B</span></span><br><span class="line">	<span class="comment">// 如果元素个数为0，就为 nil</span></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// array of 2^B Buckets. may be nil if count==0.</span></span><br><span class="line">	<span class="comment">// 扩容的时候，buckets 长度会是 oldbuckets 的两倍</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// previous bucket array of half the size, non-nil only when growing</span></span><br><span class="line">	<span class="comment">// 指示扩容进度，小于此地址的 buckets 迁移完成</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// progress counter for evacuation (buckets less than this have been evacuated)</span></span><br><span class="line"></span><br><span class="line">	extra *mapextra <span class="comment">// optional fields</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>map</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang的内存分配机制是怎样的</title>
+    <url>/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/</url>
+    <content><![CDATA[<h3 id="关于内存分配可以好好聊聊GMP模型，这才是重点"><a href="#关于内存分配可以好好聊聊GMP模型，这才是重点" class="headerlink" title="关于内存分配可以好好聊聊GMP模型，这才是重点"></a>关于内存分配可以好好聊聊GMP模型，这才是重点</h3>]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>beego 常用操作</title>
+    <url>/2022/10/03/golang/go-framework/beego/beego-chang-yong-cao-zuo/</url>
+    <content><![CDATA[<h3 id="1-bee-命令"><a href="#1-bee-命令" class="headerlink" title="1. bee 命令"></a>1. bee 命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bee new xxx <span class="comment"># 创建一个新项目</span></span><br><span class="line">bee api xxx <span class="comment"># 创建一个api项目</span></span><br><span class="line">bee run <span class="comment"># 运行 beego 项目</span></span><br><span class="line">bee pack <span class="comment"># 上线时用来打包beego文件的，打包完成的文件在bin文件中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-beego-过滤器"><a href="#2-beego-过滤器" class="headerlink" title="2. beego 过滤器"></a>2. beego 过滤器</h3><pre><code>安全验证，如IP屏蔽，token 验证，访问地址屏蔽
+</code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ne 不等于</span><br><span class="line">lt 小于</span><br><span class="line">gt 大于</span><br><span class="line">le 小于等于</span><br><span class="line">ge 大于等于</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-beego-通过orm-操作数据库"><a href="#3-beego-通过orm-操作数据库" class="headerlink" title="3. beego 通过orm 操作数据库"></a>3. beego 通过orm 操作数据库</h3><pre><code>在关系型数据库和对象之间做一个映射
+在操作数据库时，不需要写复杂的sql语句，只需要操作对象即可对对应的数据进行操作
+</code></pre>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>beego</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RAM内存条是怎么存数据的</title>
+    <url>/2022/12/10/system/ram-nei-cun-tiao-shi-zen-me-cun-shu-ju-de/</url>
+    <content><![CDATA[<p>###内存条是怎么存存储数据的？</p>
+<p>图解文章 ：<a href="https://blog.csdn.net/zyhse/article/details/120771121">https://blog.csdn.net/zyhse/article/details/120771121</a></p>
+<p>个人理解：</p>
+<p>每个内存条的一面是一个rank ，有的双面内存条就是两个rank。<br>每个面上有8个小黑块，哪个小黑块就是 一个chip，<br>每个小黑块有8个bank，8层bank 叠加在一起，组成一个小黑块&#x3D;》chip</p>
+<p>每个bank呢，就有对应的行和列存储对应的数据。<br>每个bank 有16384行，1024列，每个格子可以保存8个bit，也就是1个字节(byte)的数据。<br>每个bank存储的数据 16384<em>1024</em>8 &#x3D; 134217728 bit &#x3D;  16777216 bytes &#x3D; 16384 kb &#x3D; 16 MB &#x3D; 0.015625 G</p>
+<p>bit 只能表示 0 或者 1<br>8bit 就是可以表示 00000000 - 11111111 即 0-255<br>16bit 就是可以表示 0000000000000000 - 1111111111111111 即 0-65535</p>
+<p>bit 转 bytes 需要除以 8<br>8 bit &#x3D; 1 byte </p>
+<p>所以 1 byte 即 1 个字节可以表示 256个数字（加上 0 值）<br>     2 byte 即 2 个字节可以表示 65536个数字（加上 0 值）</p>
+<p>一个小黑块有8个bank 就是 16<em>8 &#x3D; 128 MB<br>一块内存条有8个小黑块 就是 128</em>8 &#x3D; 1024 MB &#x3D; 1G</p>
+<p>golang 中 int64 占用 8个字节 ，也就是8个格子，也就是bank 上面 一行8列，横着连续8个格子</p>
+<p>int16  占用 2  字节 2  个横着连续格子<br>int32  占用 4  字节 4  个横着连续格子<br>int64  占用 8  字节 8  个横着连续格子<br>string 占用 16 字节 16 个横着连续格子</p>
+<p>每种数据的对齐值，就是她的对其边界。<br>内存对齐要求 数据存储地址，以及占用的字节数都要是它对其边界的倍数<br>内存对其是为了减少浪费</p>
+<p>go 结构体是如何内存对齐的？<br>    go 的结构体取结构中各成员的对齐值最大的数据</p>
+<p>如 type Test struct {<br>    a int8      1byte<br>    b int64     8byte<br>    c int32     4byte<br>    d int16     2byte<br>}</p>
+<p>则这个结构体的内存对其值 为 8 byte<br>结构体整体对其的数据需要是内存对其的倍数 ，所以上述 结构体的占用字节是 24</p>
+]]></content>
+      <categories>
+        <category>内存</category>
+      </categories>
+      <tags>
+        <tag>内存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串在内存里怎么存</title>
+    <url>/2022/12/10/system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/</url>
+    <content><![CDATA[<p>bit 只能表示 0 或者 1<br>8bit 就是可以表示 00000000 - 11111111 即 0-255<br>16bit 就是可以表示 0000000000000000 - 1111111111111111 即 0-65535</p>
+<p>bit 转 bytes 需要除以 8<br>8 bit &#x3D; 1 byte </p>
+<p>所以 1 byte 即 1 个字节可以表示 256个数字（加上 0 值）<br>     2 byte 即 2 个字节可以表示 65536个数字（加上 0 值）</p>
+<p>那么 字母可以用编号存<br>如 A &#x3D;》 65 &#x3D;》0100 0001</p>
+<p>go 语言中，认为字符串是不会被修改的，所以字符串是存在只读内存段。<br>字符串变量是可以共用底层字符串内容的。被另一个变量修改了，另外一个也会被修改。</p>
+<p>如果非要修改，可以直接给变量赋值新值，这样这个变量存储的地址就会指向新的内容。</p>
+<p>也可以把变量强制修改成字节slice切片，这样会为切片重新分配一段内存，并且拷贝原来字符串的内容。</p>
+]]></content>
+      <categories>
+        <category>内存</category>
+      </categories>
+      <tags>
+        <tag>内存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GMP 的设计策略</title>
+    <url>/2022/12/10/golang/go-gmp/gmp-de-she-ji-ce-lue/</url>
+    <content><![CDATA[<h2 id="1-GMP-的设计策略"><a href="#1-GMP-的设计策略" class="headerlink" title="1. GMP 的设计策略"></a>1. GMP 的设计策略</h2><h3 id="1-1-复用线程"><a href="#1-1-复用线程" class="headerlink" title="1.1. 复用线程"></a>1.1. 复用线程</h3><pre><code>偷取G
+handle off
+</code></pre>
+<h3 id="1-2-抢占"><a href="#1-2-抢占" class="headerlink" title="1.2. 抢占"></a>1.2. 抢占</h3><pre><code>每个G只执行10ms，到期会被抢走P
+</code></pre>
+<h3 id="1-3-全局队列"><a href="#1-3-全局队列" class="headerlink" title="1.3. 全局队列"></a>1.3. 全局队列</h3><pre><code>M 没有 G 的时候从全局队列取G
+</code></pre>
+<h3 id="1-4-利用并行"><a href="#1-4-利用并行" class="headerlink" title="1.4. 利用并行"></a>1.4. 利用并行</h3><pre><code>MaxProcess P = cpu/2
+</code></pre>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang的MPG模型</title>
+    <url>/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/</url>
+    <content><![CDATA[<h3 id="1-mpg-模型"><a href="#1-mpg-模型" class="headerlink" title="1. mpg 模型"></a>1. mpg 模型</h3><h4 id="1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系"><a href="#1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系" class="headerlink" title="1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系"></a>1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</h4><ol>
+<li>M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射</li>
+<li>P：processor（处理器）。一个p代表执行go代码所需要的上下文环境</li>
+<li>G：goroutine（协程）。是一个代码片段，相当于用户级线程</li>
+<li>go func aaa(){} ,这里的aaa 相当于 一个用户级线程</li>
+</ol>
+<h6 id="1-1-1-goroutine和coroutine的区别"><a href="#1-1-1-goroutine和coroutine的区别" class="headerlink" title="1.1.1. goroutine和coroutine的区别"></a>1.1.1. goroutine和coroutine的区别</h6><pre><code>  goroutine 可能发生并行执行；
+  但 coroutine 始终顺序执行。
+  http://c.biancheng.net/view/96.html
+</code></pre>
+<p>MPG：<br>每个M都会与一个内核级线程绑定，在运行时，一个M同时只能绑定一个内核线程</p>
+<p>…<br>琅琊百晓生</p>
+]]></content>
+      <categories>
+        <category>golang</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>golang GMP goroutinue 的执行过程</title>
+    <url>/2022/12/10/golang/go-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/</url>
+    <content><![CDATA[<h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
+<p>全局变量G0 就是主协程对应的G </p>
+<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
+<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
+<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
 ]]></content>
       <categories>
         <category>golang</category>
@@ -1120,64 +1452,67 @@ map 是由 key-value 对组成的； key 只会出现一次。
       </tags>
   </entry>
   <entry>
-    <title>Golang的MPG模型</title>
-    <url>/2022/12/10/golang/go-gmp/golang-de-mpg-mo-xing/</url>
-    <content><![CDATA[<h3 id="1-mpg-模型"><a href="#1-mpg-模型" class="headerlink" title="1. mpg 模型"></a>1. mpg 模型</h3><h4 id="1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系"><a href="#1-1-go-语言的-mpg-模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为-M、P、G三者之间的关系" class="headerlink" title="1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系"></a>1.1. go 语言的 mpg 模型是一种特殊的两级线程模型，它将CPU，内核线程，用户线程之间的管理，描述为 M、P、G三者之间的关系</h4><ol>
-<li>M：machine（机器）。一个M对应一个内核级线程，相当于内核级线程在go中的映射</li>
-<li>P：processor（处理器）。一个p代表执行go代码所需要的上下文环境</li>
-<li>G：goroutine（协程）。是一个代码片段，相当于用户级线程</li>
-<li>go func aaa(){} ,这里的aaa 相当于 一个用户级线程</li>
+    <title>tcp和udp 的区别是什么？</title>
+    <url>/2023/07/04/http/tcp-he-udp-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="tcp和udp-的区别是什么？"><a href="#tcp和udp-的区别是什么？" class="headerlink" title="tcp和udp 的区别是什么？"></a>tcp和udp 的区别是什么？</h3><p>tcp：面向连接，三次握手；可靠性；有序性；速度慢；重量级</p>
+<p>udp：无连接；可能会丢失；无序；速度快；轻量级</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tcp的滑动窗口是什么？</title>
+    <url>/2023/07/04/http/tcp-de-hua-dong-chuang-kou-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="tcp的滑动窗口是什么？"><a href="#tcp的滑动窗口是什么？" class="headerlink" title="tcp的滑动窗口是什么？"></a>tcp的滑动窗口是什么？</h3><p>RTT：发送一个数据包到收到对应的ACK，所花费的时间</p>
+<p>RTO：重传时间间隔（RTO是根据RTT计算出来的，不是固定的）</p>
+<p>TCP使用滑动窗口做流量控制与乱序重排</p>
+<ol>
+<li>保证tcp的可靠性</li>
+<li>保证tcp的流控特性</li>
 </ol>
-<h6 id="1-1-1-goroutine和coroutine的区别"><a href="#1-1-1-goroutine和coroutine的区别" class="headerlink" title="1.1.1. goroutine和coroutine的区别"></a>1.1.1. goroutine和coroutine的区别</h6><pre><code>  goroutine 可能发生并行执行；
-  但 coroutine 始终顺序执行。
-  http://c.biancheng.net/view/96.html
-</code></pre>
-<p>MPG：<br>每个M都会与一个内核级线程绑定，在运行时，一个M同时只能绑定一个内核线程</p>
-<p>…<br>琅琊百晓生</p>
 ]]></content>
       <categories>
-        <category>golang</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>golang</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>GMP 的设计策略</title>
-    <url>/2022/12/10/golang/go-gmp/gmp-de-she-ji-ce-lue/</url>
-    <content><![CDATA[<h2 id="1-GMP-的设计策略"><a href="#1-GMP-的设计策略" class="headerlink" title="1. GMP 的设计策略"></a>1. GMP 的设计策略</h2><h3 id="1-1-复用线程"><a href="#1-1-复用线程" class="headerlink" title="1.1. 复用线程"></a>1.1. 复用线程</h3><pre><code>偷取G
-handle off
-</code></pre>
-<h3 id="1-2-抢占"><a href="#1-2-抢占" class="headerlink" title="1.2. 抢占"></a>1.2. 抢占</h3><pre><code>每个G只执行10ms，到期会被抢走P
-</code></pre>
-<h3 id="1-3-全局队列"><a href="#1-3-全局队列" class="headerlink" title="1.3. 全局队列"></a>1.3. 全局队列</h3><pre><code>M 没有 G 的时候从全局队列取G
-</code></pre>
-<h3 id="1-4-利用并行"><a href="#1-4-利用并行" class="headerlink" title="1.4. 利用并行"></a>1.4. 利用并行</h3><pre><code>MaxProcess P = cpu/2
-</code></pre>
+    <title>什么情况下服务器会出现大量close_wait,该如何解决？</title>
+    <url>/2023/07/04/http/shi-me-qing-kuang-xia-fu-wu-qi-hui-chu-xian-da-liang-close-wait-gai-ru-he-jie-jue/</url>
+    <content><![CDATA[<h3 id="什么情况下服务器会出现大量-close-wait-该如何解决？"><a href="#什么情况下服务器会出现大量-close-wait-该如何解决？" class="headerlink" title="什么情况下服务器会出现大量 close_wait,该如何解决？"></a>什么情况下服务器会出现大量 close_wait,该如何解决？</h3><p>基于tcp四次挥手的过程，close_wait 会出现在第二次挥手。<br>如果是服务器出现大量 close_wait，那么主动发起第一次挥手的就是客户端。</p>
+<p>这种情况一般是程序忘记执行第三次挥手，没有及时释放导致的，一般就是程序有bug</p>
+<p>解决方式：</p>
+<ol>
+<li>检查代码，特别是释放资源的代码</li>
+<li>检查配置，特别是处理请求的线程配置</li>
+</ol>
 ]]></content>
       <categories>
-        <category>golang</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>golang</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>字符串在内存里怎么存</title>
-    <url>/2022/12/10/system/zi-fu-chuan-zai-nei-cun-li-zen-me-cun/</url>
-    <content><![CDATA[<p>bit 只能表示 0 或者 1<br>8bit 就是可以表示 00000000 - 11111111 即 0-255<br>16bit 就是可以表示 0000000000000000 - 1111111111111111 即 0-65535</p>
-<p>bit 转 bytes 需要除以 8<br>8 bit &#x3D; 1 byte </p>
-<p>所以 1 byte 即 1 个字节可以表示 256个数字（加上 0 值）<br>     2 byte 即 2 个字节可以表示 65536个数字（加上 0 值）</p>
-<p>那么 字母可以用编号存<br>如 A &#x3D;》 65 &#x3D;》0100 0001</p>
-<p>go 语言中，认为字符串是不会被修改的，所以字符串是存在只读内存段。<br>字符串变量是可以共用底层字符串内容的。被另一个变量修改了，另外一个也会被修改。</p>
-<p>如果非要修改，可以直接给变量赋值新值，这样这个变量存储的地址就会指向新的内容。</p>
-<p>也可以把变量强制修改成字节slice切片，这样会为切片重新分配一段内存，并且拷贝原来字符串的内容。</p>
+    <title>什么情况下服务器会出现大量time_wait,该如何解决？</title>
+    <url>/2023/07/04/http/shi-me-qing-kuang-xia-fu-wu-qi-hui-chu-xian-da-liang-time-wait-gai-ru-he-jie-jue/</url>
+    <content><![CDATA[<h3 id="什么情况下服务器会出现大量-time-wait-该如何解决？"><a href="#什么情况下服务器会出现大量-time-wait-该如何解决？" class="headerlink" title="什么情况下服务器会出现大量 time_wait,该如何解决？"></a>什么情况下服务器会出现大量 time_wait,该如何解决？</h3><p>基于tcp四次挥手的过程，time_wait 会出现在第四次挥手。<br>如果是服务器出现大量 time_wait，那么主动发起第一次挥手的就是服务端。<br>主动方要处于 time_wait 状态。</p>
+<p>time_wait是正常的tcp连接断开的步骤，在等待2msl，2msl一般情况下是分钟或几分钟的时间，根据操作系统的设置而定。<br>到时间之后会进入CLOSED状态，即断开连接。<br>在短时间内服务器会出现大量 time_wait的话可能会导致服务器资源耗尽，这通常发生在短时间内建立大量的连接并快速关闭它们的情况下。</p>
+<p>解决方式：<br>    1 调整操作系统的TCP参数：可以通过调整操作系统的TCP连接超时时间和端口重用等参数来减少TIME_WAIT状态的持续时间。<br>    2 使用连接复用<br>    3 调整应用程序逻辑</p>
+<p>关闭处于TIME_WAIT状态的连接是由操作系统自动处理的，应用程序通常不需要显式地关闭这些连接。<br>TIME_WAIT状态是TCP协议的一部分，旨在保证可靠的连接关闭和数据传输。</p>
 ]]></content>
       <categories>
-        <category>内存</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>内存</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -1197,480 +1532,229 @@ handle off
       </tags>
   </entry>
   <entry>
-    <title>golang的内存分配机制是怎样的</title>
-    <url>/2022/12/10/golang/go-base/golang-de-nei-cun-fen-pei-ji-zhi-shi-zen-yang-de/</url>
-    <content><![CDATA[<h3 id="关于内存分配可以好好聊聊GMP模型，这才是重点"><a href="#关于内存分配可以好好聊聊GMP模型，这才是重点" class="headerlink" title="关于内存分配可以好好聊聊GMP模型，这才是重点"></a>关于内存分配可以好好聊聊GMP模型，这才是重点</h3>]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang GMP goroutinue 的执行过程</title>
-    <url>/2022/12/10/golang/go-gmp/golang-gmp-goroutinue-de-zhi-xing-guo-cheng/</url>
-    <content><![CDATA[<h3 id="golang-GMP-goroutinue-的执行过程"><a href="#golang-GMP-goroutinue-的执行过程" class="headerlink" title="golang GMP goroutinue 的执行过程"></a>golang GMP goroutinue 的执行过程</h3><p>go 语言中 协程对应的数据结构是 runtime.g<br>         工作线程对应的数据结构是 runtime.m<br>         逻辑处理器P，对应的数据结构是 runtime.p<br>         全局变量 sched 对应的就是调度器，对应的数据结构是 runtime.schedt,记录了很多的调度相关的信息。包括全局的runq</p>
-<p>全局变量G0 就是主协程对应的G </p>
-<p>M 执行 队列的顺序<br>先从本地队列 也就是P 上去获取 G 执行完本地队列就会去全局队列，全局队列也没有了就会去其他的M 上偷取G</p>
-<p>自己的理解：<br>把程序的运行比作产科，<br>G：协程， 就相当于嗷嗷待补的娃娃，饿了拉了，冷了，热了 就是需要人去照顾，去处理<br>M：线程，就相当于护士，去满足这些孩子的需求，给他们洗澡换衣服。满足他们的需求。<br>P：处理器，就相当于护士长。记录哪个孩子需要啥，并且去分配给护士去处理，护士不够了就会“创建”更多的护士来处理、满足这些娃娃的需求。</p>
-<p>如果使用 time.sleep() 方式，实际上会调用 gopark 函数,把当前协程的状态从”_Gruning” 修改为 “_Gwaiting”</p>
+    <title>什么是tcp四次挥手，为什么需要四次？</title>
+    <url>/2023/07/04/http/shi-me-shi-tcp-si-ci-hui-shou-wei-shi-me-xu-yao-si-ci/</url>
+    <content><![CDATA[<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
+<li>挥手是为了终止连接</li>
+<li>客户端或服务端都可主动发送挥手信号</li>
+<li>TCP连接必须经过2MSL后才能真正释放</li>
+</ol>
+<p>以下为客户端主动发起终止请求：</p>
+<p>第一次挥手（FIN）：客户端 —-&gt;（发送带有FIN标志的TCP报文）  —-&gt; 服务端； （客户端进入FIN_WAIT_1状态）</p>
+<p>第二次挥手（ACK）：服务端 —-&gt;（发送带有ACK标志的TCP报文）  —-&gt; 客户端；（服务端进入<strong>CLOSE_WAIT</strong>状态，客户端进入FIN_WAIT_2状态）</p>
+<p>第三次挥手（FIN）：服务端 —-&gt;（发送带有FIN标志的TCP报文段） —-&gt; 客户端；（客户端进入LAST_ACK状态）</p>
+<p>第四次挥手（ACK）：客户端 —-&gt;（发送带有ACK标志的TCP报文）  —-&gt; 服务端；（客户端进入TIME_WAIT状态，等待一段时间后[时间：2MSL]进入CLOSED状态，服务端接收ACK后直接进入CLOSED状态）</p>
+<p>注意：</p>
+<p>CLOSE_WAIT：只会出现在第二次挥手后，被动接收放会进入 CLOSE_WAIT 状态</p>
+<p>TIME_WAIT：只会出现在第四次挥手后，主动发起方会进入 TIME_WAIT 状态</p>
+<h3 id="time-wait-等待时间为什么是-2MSL-？"><a href="#time-wait-等待时间为什么是-2MSL-？" class="headerlink" title="time_wait 等待时间为什么是 2MSL ？"></a>time_wait 等待时间为什么是 2MSL ？</h3><p>MSL：最大报文段生存时间（Maximum Segment Lifetime）。<br>MSL是指一个TCP报文在网络中的最长生存时间，它的值根据具体的实现和网络环境而定，一般被认为是2分钟（120秒）。<br>原因：<br>1 确保有足够的时间让对方收到ack包<br>2 避免新旧连接混淆</p>
+<p>小林coding提到：<br>在 Linux 系统里 2MSL 默认是 60 秒，那么一个 MSL 也就是 30 秒。Linux 系统停留在 TIME_WAIT 的时间为固定的 60 秒。</p>
+<h3 id="为什么需要四次挥手才能断开连接？"><a href="#为什么需要四次挥手才能断开连接？" class="headerlink" title="为什么需要四次挥手才能断开连接？"></a>为什么需要四次挥手才能断开连接？</h3><p>因为是全双工的，发送方和接收方都需要FIN报文和ACK报文。<br>发送方和接收放都各自需要两次挥手。<br>一方主动，一方被动，就看起来是四次挥手了。</p>
 ]]></content>
       <categories>
-        <category>golang</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>golang</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>RAM内存条是怎么存数据的</title>
-    <url>/2022/12/10/system/ram-nei-cun-tiao-shi-zen-me-cun-shu-ju-de/</url>
-    <content><![CDATA[<p>###内存条是怎么存存储数据的？</p>
-<p>图解文章 ：<a href="https://blog.csdn.net/zyhse/article/details/120771121">https://blog.csdn.net/zyhse/article/details/120771121</a></p>
-<p>个人理解：</p>
-<p>每个内存条的一面是一个rank ，有的双面内存条就是两个rank。<br>每个面上有8个小黑块，哪个小黑块就是 一个chip，<br>每个小黑块有8个bank，8层bank 叠加在一起，组成一个小黑块&#x3D;》chip</p>
-<p>每个bank呢，就有对应的行和列存储对应的数据。<br>每个bank 有16384行，1024列，每个格子可以保存8个bit，也就是1个字节(byte)的数据。<br>每个bank存储的数据 16384<em>1024</em>8 &#x3D; 134217728 bit &#x3D;  16777216 bytes &#x3D; 16384 kb &#x3D; 16 MB &#x3D; 0.015625 G</p>
-<p>bit 只能表示 0 或者 1<br>8bit 就是可以表示 00000000 - 11111111 即 0-255<br>16bit 就是可以表示 0000000000000000 - 1111111111111111 即 0-65535</p>
-<p>bit 转 bytes 需要除以 8<br>8 bit &#x3D; 1 byte </p>
-<p>所以 1 byte 即 1 个字节可以表示 256个数字（加上 0 值）<br>     2 byte 即 2 个字节可以表示 65536个数字（加上 0 值）</p>
-<p>一个小黑块有8个bank 就是 16<em>8 &#x3D; 128 MB<br>一块内存条有8个小黑块 就是 128</em>8 &#x3D; 1024 MB &#x3D; 1G</p>
-<p>golang 中 int64 占用 8个字节 ，也就是8个格子，也就是bank 上面 一行8列，横着连续8个格子</p>
-<p>int16  占用 2  字节 2  个横着连续格子<br>int32  占用 4  字节 4  个横着连续格子<br>int64  占用 8  字节 8  个横着连续格子<br>string 占用 16 字节 16 个横着连续格子</p>
-<p>每种数据的对齐值，就是她的对其边界。<br>内存对齐要求 数据存储地址，以及占用的字节数都要是它对其边界的倍数<br>内存对其是为了减少浪费</p>
-<p>go 结构体是如何内存对齐的？<br>    go 的结构体取结构中各成员的对齐值最大的数据</p>
-<p>如 type Test struct {<br>    a int8      1byte<br>    b int64     8byte<br>    c int32     4byte<br>    d int16     2byte<br>}</p>
-<p>则这个结构体的内存对其值 为 8 byte<br>结构体整体对其的数据需要是内存对其的倍数 ，所以上述 结构体的占用字节是 24</p>
+    <title>Cookie和Session的区别是什么？</title>
+    <url>/2023/07/05/http/cookie-he-session-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="cookie简述："><a href="#cookie简述：" class="headerlink" title="cookie简述："></a>cookie简述：</h3><p>cookie是服务器打给客户端的特殊信息，以文本的形式存在客户端</p>
+<p>客户端再次亲求的时候会把cookie回发</p>
+<p>服务端接收后，会解析cookie生成与客户端相对应的内容</p>
+<h3 id="session-简述："><a href="#session-简述：" class="headerlink" title="session 简述："></a>session 简述：</h3><p>服务器端的机制，在服务器上保存的信息</p>
+<p>解析客户端请求并操作session_id，按需保存状态信息</p>
+<h3 id="session-的实现方式？"><a href="#session-的实现方式？" class="headerlink" title="session 的实现方式？"></a>session 的实现方式？</h3><ol>
+<li>使用cookie来实现</li>
+<li>使用url回写来实现</li>
+</ol>
+<h3 id="Cookie和Session的区别是什么？"><a href="#Cookie和Session的区别是什么？" class="headerlink" title="Cookie和Session的区别是什么？"></a>Cookie和Session的区别是什么？</h3><p>Session是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在<br>集群、数据库、文件中。<br>Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现<br>Session的一种方式。</p>
 ]]></content>
       <categories>
-        <category>内存</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>内存</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>维生素</title>
-    <url>/2022/10/16/shenghuo/wei-sheng-su/</url>
-    <content><![CDATA[<h2 id="维生素A"><a href="#维生素A" class="headerlink" title="维生素A"></a>维生素A</h2><pre><code>来源：动物肝脏，深色水果，类胡萝卜素转化成维生素A（转化效率不高）
-缺乏表现：严重缺乏的话会得夜盲症，轻度缺乏有干眼症、皮肤粗糙、皮肤干燥
-</code></pre>
-<h2 id="维生素B"><a href="#维生素B" class="headerlink" title="维生素B"></a>维生素B</h2><h2 id="维生素C"><a href="#维生素C" class="headerlink" title="维生素C"></a>维生素C</h2>]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git 撤销 add commit</title>
-    <url>/2022/10/13/util/git-che-xiao-add-commit/</url>
-    <content><![CDATA[<h2 id="git-撤销-add-commit"><a href="#git-撤销-add-commit" class="headerlink" title="git 撤销 add commit"></a>git 撤销 add commit</h2><h3 id="git-撤销-add"><a href="#git-撤销-add" class="headerlink" title="git 撤销 add"></a>git 撤销 add</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-撤销-commit"><a href="#git-撤销-commit" class="headerlink" title="git 撤销 commit"></a>git 撤销 commit</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+    <title>GET请求和POST请求的区别是什么？</title>
+    <url>/2023/07/05/http/get-qing-qiu-he-post-qing-qiu-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="GET请求和POST请求的区别是什么？"><a href="#GET请求和POST请求的区别是什么？" class="headerlink" title="GET请求和POST请求的区别是什么？"></a>GET请求和POST请求的区别是什么？</h3><ol>
+<li>使用场景 GET用来获取资源 POST用来传输实体主体</li>
+<li>参数 GET在 url 中，post 在 实体中</li>
+<li>安全性 get 是安全的，不会改变服务器状态，post 是不安全的</li>
+<li>幂等性 get 是幂等的，post 不是</li>
+<li>可缓存 get 是可缓存的，可被存储的 post 不可以</li>
+</ol>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>linux 常用操作和命令</title>
-    <url>/2022/10/05/linux/linux-chang-yong-cao-zuo-he-ming-ling/</url>
-    <content><![CDATA[<p>linux 常用操作和命令</p>
-<h4 id="1-后台执行脚本-a-sh"><a href="#1-后台执行脚本-a-sh" class="headerlink" title="1. 后台执行脚本 a.sh"></a>1. 后台执行脚本 a.sh</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> sh a.sh &amp;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查找-a-sh-的进程"><a href="#2-查找-a-sh-的进程" class="headerlink" title="2. 查找 a.sh 的进程"></a>2. 查找 a.sh 的进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -aux|grep a.sh </span><br></pre></td></tr></table></figure>
-<h4 id="3-杀掉进程"><a href="#3-杀掉进程" class="headerlink" title="3. 杀掉进程"></a>3. 杀掉进程</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 1211  </span><br><span class="line"><span class="string">&quot;kill 杀死进程&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令"><a href="#4-ps：process-status，列出系统中的进程，非动态，需要动态显示的话可以使用-top-命令" class="headerlink" title="4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令"></a>4. ps：process status，列出系统中的进程，非动态，需要动态显示的话可以使用 top 命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -A       <span class="comment">#显示所有的进程信息</span></span><br><span class="line">ps -U root  <span class="comment">#显示指定用户信息 </span></span><br><span class="line">ps -ef      <span class="comment">#显示所有进程信息连同命令行</span></span><br><span class="line">ps -l       <span class="comment">#查找登陆这相关的pid 相关信息</span></span><br><span class="line">ps -aux     <span class="comment">#列出所有在内存中的程序</span></span><br><span class="line">ps -axjf    <span class="comment">#进程树方式显示</span></span><br><span class="line">ps -ef|grep php       <span class="comment">#查找特定进程</span></span><br><span class="line">ps -aux|grep <span class="string">&#x27;aa.txt&#x27;</span> <span class="comment">#找出aa.txt 服务信息 pid 号码 </span></span><br></pre></td></tr></table></figure>
-<h4 id="5-文件相关"><a href="#5-文件相关" class="headerlink" title="5. 文件相关"></a>5. 文件相关</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p aa <span class="comment">#不存在则创建文件夹</span></span><br><span class="line"><span class="built_in">touch</span> aa.log   <span class="comment">#存在则修改文件创建和修改的时间，不存在则创建对应文件</span></span><br><span class="line"><span class="built_in">cp</span> /home/wwwroot/a.txt /home/wwwlogs/a.txt  <span class="comment">#将 /home/wwwroot/a.txt 拷贝到  /home/wwwlogs/a.txt 中</span></span><br><span class="line"><span class="string">&quot;cp 源文件 目的文件&quot;</span></span><br><span class="line"><span class="built_in">cat</span> aa.log <span class="comment">#查看aa.log 文件内容</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="vim-操作"><a href="#vim-操作" class="headerlink" title="vim 操作"></a>vim 操作</h3><h4 id="6-hjkl-操作对应的方向"><a href="#6-hjkl-操作对应的方向" class="headerlink" title="6. hjkl 操作对应的方向"></a>6. hjkl 操作对应的方向</h4><pre><code>    ^
-    |
-&lt;-hjkl-&gt;
-   |
-   V
-</code></pre>
-<h4 id="7-模式切换"><a href="#7-模式切换" class="headerlink" title="7. 模式切换"></a>7. 模式切换</h4><pre><code>                 i,a              :/     
-        编辑模式 《====》 正常模式 《====》 命令模式
-    (无法使用快捷键)    （使用快捷键）     （：wq 保存退出）
-                                          ：q 退出
-                                          ：q！不保存退出
-                                          ：w 保存
-</code></pre>
-<h4 id="8-正常模式使用快捷键操作："><a href="#8-正常模式使用快捷键操作：" class="headerlink" title="8. 正常模式使用快捷键操作："></a>8. 正常模式使用快捷键操作：</h4><pre><code>yy 复制当前行，5yy 复制当前光标下的5行
-p 拷贝当前复制，
-dd 删除当前行，5dd 删除当前光标下的5行
-:set nu  显示行号
-:set nonu 不显示行号
-G 跳转到末行
-gg 跳转到首行
-/xx 回车 查找xx
-n: 查找下一个
-Shift + g :200 跳转到第200行 
-</code></pre>
+    <title>http是什么？</title>
+    <url>/2023/07/05/http/http-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="http是什么？"><a href="#http是什么？" class="headerlink" title="http是什么？"></a>http是什么？</h3><p>http 是超文本传输协议 ，是一个应用层的协议</p>
+<p>主要特点：</p>
+<ol>
+<li>支持客户&#x2F;服务器模式</li>
+<li>简单快速</li>
+<li>灵活</li>
+<li>无连接，http1.0 使用短链接，http1.1（目前主流） 起默认使用长连接（<strong>keep-alive</strong>）。</li>
+<li>无状态</li>
+</ol>
+<h3 id="http请求结构有哪些？"><a href="#http请求结构有哪些？" class="headerlink" title="http请求结构有哪些？"></a>http请求结构有哪些？</h3><ol>
+<li>请求行（Request Line），包含请求方法、请求的URL和HTTP协议的版本。</li>
+<li>请求头（Request Headers）包含一系列的键值对，用于描述请求的各种属性和要求。常见的请求头包括：</li>
+</ol>
+<ul>
+<li>Host：指定服务器的域名或IP地址。</li>
+<li>User-Agent：标识发送请求的用户代理（通常是浏览器）。</li>
+<li>Accept：指定可接受的响应内容的MIME类型。</li>
+<li>Content-Type：指定请求体的MIME类型（仅适用于POST、PUT等包含请求体的方法）。</li>
+<li>Authorization：用于身份验证的凭证信息</li>
+</ul>
+<ol start="3">
+<li>空行：请求头和请求体之间必须有一个空行。</li>
+<li>请求体（Request Body）：可选项，包含发送给服务器的数据，通常用于POST、PUT等需要提交数据的请求方法</li>
+</ol>
+<h3 id="http响应报文有哪些？"><a href="#http响应报文有哪些？" class="headerlink" title="http响应报文有哪些？"></a>http响应报文有哪些？</h3><ol>
+<li>状态行（Status Line） 包含HTTP协议版本、<strong>状态码</strong>和对应的状态信息，示例：HTTP&#x2F;1.1 200 OK</li>
+<li>响应头（Response Headers）</li>
+<li>空行：响应头和响应体之间必须有一个空行。</li>
+<li>响应体（Response Body）</li>
+</ol>
+<h3 id="常见http状态码有哪些？"><a href="#常见http状态码有哪些？" class="headerlink" title="常见http状态码有哪些？"></a>常见http状态码有哪些？</h3><p>200：ok，正常返回信息</p>
+<p>400：客户端请求语法错误</p>
+<p>403：重定向</p>
+<p>404：客户端请求的资源不存在</p>
+<p>500：服务器错误</p>
+<p>503：服务器错误</p>
 ]]></content>
       <categories>
-        <category>linux</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>死信队列</title>
-    <url>/2022/10/05/mq/si-xin-dui-lie/</url>
-    <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>死信队列（Dead-Letter-Queue，DLQ）用于处理无法被正常消费的消息。
-达到最大重试次数后，若消费依然失败，则表明消费者在正常情况下无法正确地消费该消息，
-此时CMQ 不会立刻将消息丢弃，而是将其发送到该消费者对应的特殊队列中，这个特殊队列就是DLQ。
-</code></pre>
-<h3 id="2-常见用途"><a href="#2-常见用途" class="headerlink" title="2. 常见用途"></a>2. 常见用途</h3><pre><code>发送消息十分钟后发送给用户
-未支付订单取消订单
-下单后收到支付系统消息
-规定每天固定发送消息
-</code></pre>
+    <title>socket是什么？</title>
+    <url>/2023/07/05/http/socket-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="socket是什么？"><a href="#socket是什么？" class="headerlink" title="socket是什么？"></a>socket是什么？</h3><p>socket 是对tcp&#x2F;ip协议的抽象，是操作系统对外开放的接口</p>
 ]]></content>
       <categories>
-        <category>mq</category>
+        <category>http</category>
       </categories>
       <tags>
-        <tag>mq</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
-    <title>mysql 为什么使用 B+ 树</title>
-    <url>/2022/10/03/mysql/mysql-wei-shi-me-shi-yong-b-shu/</url>
-    <content><![CDATA[<p>mysql 为什么使用 B+ 树</p>
-<h3 id="1-B-树的特点"><a href="#1-B-树的特点" class="headerlink" title="1. B 树的特点"></a>1. B 树的特点</h3><pre><code>节点排序
-一个节点可以存多个元素，元素也排序了 
-</code></pre>
-<h3 id="2-B-树的特点"><a href="#2-B-树的特点" class="headerlink" title="2. B+ 树的特点"></a>2. B+ 树的特点</h3><pre><code>拥有B树的特点
-叶子节点之间有指针（底层-&gt; 叶子）
-非叶子节点（树枝）在叶子节点都冗余了，即叶子节点存储了所有的数据，并且排好序
-</code></pre>
-<h3 id="3-mysql-使用-B-树的原因是："><a href="#3-mysql-使用-B-树的原因是：" class="headerlink" title="3. mysql 使用 B+ 树的原因是："></a>3. mysql 使用 B+ 树的原因是：</h3><pre><code>索引是用来查询的
-而B+树是通过对数据进行排序来提升查询速度的
-B+树中一个InnoDb页就是一个B+树节点，一个InnoDb默认是16KB，
-所以若一条数据1KB，而两层的B+树可以村2000万行数据，可以友好的全表扫描范围内查找sql语句。
-所以两千万条数据以上的表需要做分库分表，无法通过索引优化
-</code></pre>
-<h3 id="4-叶子节点村的是主键索引还是普通索引？"><a href="#4-叶子节点村的是主键索引还是普通索引？" class="headerlink" title="4. 叶子节点村的是主键索引还是普通索引？"></a>4. 叶子节点村的是主键索引还是普通索引？</h3><pre><code>叶子节点存的是主键索引。
-如果是联合索引，则之间存主键索引的位置，通过主键索引再查到对应的数据
-查询过程是回表操作，索引会慢
-</code></pre>
+    <title>Http和https的区别是什么？</title>
+    <url>/2023/07/05/http/http-he-https-de-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="https是什么？"><a href="#https是什么？" class="headerlink" title="https是什么？"></a>https是什么？</h3><p>https 在 http 的基础上 加了 ssl或tls，可以理解为安全版的http协议</p>
+<h3 id="ssl是什么？如何保证了数据安全？"><a href="#ssl是什么？如何保证了数据安全？" class="headerlink" title="ssl是什么？如何保证了数据安全？"></a>ssl是什么？如何保证了数据安全？</h3><p>采用身份验证和数据加密保证网络通信的安全和数据的完整性</p>
+<h3 id="Http和https的区别是什么？"><a href="#Http和https的区别是什么？" class="headerlink" title="Http和https的区别是什么？"></a>Http和https的区别是什么？</h3><p>https 需要到ca申请证书 http不需要</p>
+<p>https 密文传输，http 明文传输</p>
+<p>https 默认使用443端口，http使用80端口</p>
+<p>https&#x3D; http + 加密 + 认证</p>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 优化</title>
+    <url>/2023/07/05/mysql/mysql-shi-shi-me/</url>
+    <content><![CDATA[<p>mysql</p>
+<h3 id="mysql-是什么？"><a href="#mysql-是什么？" class="headerlink" title="mysql 是什么？"></a>mysql 是什么？</h3><p>mysql 是一款开源的关系型数据库管理系统（RDBMS）。使用文件系统对数据进行管理。</p>
 ]]></content>
       <categories>
         <category>mysql</category>
       </categories>
       <tags>
-        <tag>索引</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
-    <title>redis 使用场景</title>
-    <url>/2022/10/03/redis/redis-shi-yong-chang-jing/</url>
-    <content><![CDATA[<h2 id="1-string"><a href="#1-string" class="headerlink" title="1. string"></a>1. string</h2><h3 id="1-1-记录短信验证码到redis，并给失效时间"><a href="#1-1-记录短信验证码到redis，并给失效时间" class="headerlink" title="1.1. 记录短信验证码到redis，并给失效时间"></a>1.1. 记录短信验证码到redis，并给失效时间</h3><h3 id="1-2-记录用户-token，判断是否合法登录，"><a href="#1-2-记录用户-token，判断是否合法登录，" class="headerlink" title="1.2. 记录用户 token，判断是否合法登录，"></a>1.2. 记录用户 token，判断是否合法登录，</h3><h3 id="1-3-商品计数器"><a href="#1-3-商品计数器" class="headerlink" title="1.3. 商品计数器"></a>1.3. 商品计数器</h3><h2 id="2-hash"><a href="#2-hash" class="headerlink" title="2. hash"></a>2. hash</h2><h3 id="2-1-购物车-hset-hget"><a href="#2-1-购物车-hset-hget" class="headerlink" title="2.1. 购物车 hset hget"></a>2.1. 购物车 hset hget</h3>]]></content>
+    <title>mysql 的乐观锁，悲观锁区别是什么？</title>
+    <url>/2023/07/05/mysql/mysql-de-le-guan-suo-bei-guan-suo-qu-bie-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="mysql-的乐观锁是什么？"><a href="#mysql-的乐观锁是什么？" class="headerlink" title="mysql 的乐观锁是什么？"></a>mysql 的乐观锁是什么？</h3>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 的锁是什么？</title>
+    <url>/2023/07/05/mysql/mysql-de-suo-shi-shi-me/</url>
+    <content><![CDATA[<h3 id="mysql-的锁是什么？"><a href="#mysql-的锁是什么？" class="headerlink" title="mysql 的锁是什么？"></a>mysql 的锁是什么？</h3><p>mysql 的锁是一种机制。用来保证并发操作&#x2F;访问数据时的数据完整性，一致性，正确性。</p>
+<p>mysql 利用锁机制创建了不同的事务隔离级别</p>
+<p>mysql 的唆的触发和释放是由mysql 自动管理的，而具体的锁机制和行为取决于所使用的存储引擎，事务隔离级别以及执行的语句类型。</p>
+<h3 id="mysql-锁的分类？"><a href="#mysql-锁的分类？" class="headerlink" title="mysql 锁的分类？"></a>mysql 锁的分类？</h3><p>按锁的粒度划分： 表级锁，行级锁，页级&#x3D;锁</p>
+<p>按锁级别划分：共享锁（Shared Lock：select），排他锁（Exclusive Lock，操作：insert，update，delete）</p>
+<p>按加锁方式划分：自动锁，显式锁</p>
+<p>按操作划分：DML锁，DDL锁</p>
+<p>按使用方式划分：乐观锁，悲观锁</p>
+<h3 id="mysql-在什么情况下会触发锁？"><a href="#mysql-在什么情况下会触发锁？" class="headerlink" title="mysql 在什么情况下会触发锁？"></a>mysql 在什么情况下会触发锁？</h3><ol>
+<li>事务操作<ul>
+<li>事务开始时，会根据事务的隔离级别和存储引擎选择对应的锁（行级锁，表级锁，或其他级别的锁）来保护所设计的数据。</li>
+</ul>
+</li>
+<li>显式锁定<ul>
+<li>使用 lock tables 锁定一个或多个表</li>
+<li>使用 select … for update 或 select … lock in share mode 语句 ，在查询中获得行级锁</li>
+</ul>
+</li>
+<li>自动锁定<ul>
+<li>如执行insert update selete 等修改数据的语句，mysql会在执行期间自动获取合适的锁</li>
+</ul>
+</li>
+<li>冲突锁定<ul>
+<li>多个事务同时对统一数据进行修改时，可能会发生锁冲突。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是redis？</title>
+    <url>/2023/07/06/redis/shi-me-shi-redis/</url>
+    <content><![CDATA[<h3 id="什么是redis？"><a href="#什么是redis？" class="headerlink" title="什么是redis？"></a>什么是redis？</h3><p>redis 是一种基于内存的数据库，对数据的读写操作都是在内存中完成。</p>
+<p>因此读写速度非常快，常用于缓存，消息队列，分布式锁等场景。</p>
+<h3 id="redis和memcache有什么区别？"><a href="#redis和memcache有什么区别？" class="headerlink" title="redis和memcache有什么区别？"></a>redis和memcache有什么区别？</h3><p>共同点：</p>
+<p>都是基于内存的数据库，一般都用来当作缓存使用</p>
+<p>都有过期策略</p>
+<p>两者的性能都很高</p>
+<p>区别：</p>
+<p>数据类型：redis支持的数据类型更丰富，memcache只支持最简单的额key-value数据类型</p>
+<p>持久化：redis支持持久化，memcache不支持</p>
+<p>集群模式：redis原生支持集权模式，memcached没有原生的集群模式，需要依赖客户端来实现往集群中分片写入数据</p>
+<p>其他：redis支持 发布订阅模式，lua脚本，事务等功能，memcached不支持</p>
+]]></content>
       <categories>
         <category>redis</category>
       </categories>
       <tags>
         <tag>redis</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>redis 使用场景</title>
-    <url>/2022/10/03/redis/redis-yu-shu-ju-ku-huan-cun-yi-zhi-xing-wen-ti/</url>
-    <content><![CDATA[<h2 id="1-redis-与数据库缓存一致性问题"><a href="#1-redis-与数据库缓存一致性问题" class="headerlink" title="1. redis 与数据库缓存一致性问题"></a>1. redis 与数据库缓存一致性问题</h2><h3 id="1-1-延时双删"><a href="#1-1-延时双删" class="headerlink" title="1.1. 延时双删"></a>1.1. 延时双删</h3><h3 id="1-2-先写库，再删除缓存"><a href="#1-2-先写库，再删除缓存" class="headerlink" title="1.2. 先写库，再删除缓存"></a>1.2. 先写库，再删除缓存</h3><pre><code>引入MQ
-    MQ mysql，失败可重试
-    MQ 更新 redis
-闹正原子操作
-</code></pre>
-<h3 id="1-3-热点数据永不过期，保证若一致性"><a href="#1-3-热点数据永不过期，保证若一致性" class="headerlink" title="1.3. 热点数据永不过期，保证若一致性"></a>1.3. 热点数据永不过期，保证若一致性</h3>]]></content>
-      <categories>
-        <category>redis</category>
-      </categories>
-      <tags>
-        <tag>string</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker 常用操作</title>
-    <url>/2022/10/03/docker/docker-chang-yong-cao-zuo/</url>
-    <content><![CDATA[<h3 id="1-docker-命令"><a href="#1-docker-命令" class="headerlink" title="1. docker 命令"></a>1. docker 命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker start 容器名/id     <span class="comment">#开始运行容器</span></span><br><span class="line">docker stop 容器名/id      <span class="comment">#停止运行容器</span></span><br><span class="line">docker ps       <span class="comment">#列出正在运行的容器</span></span><br><span class="line">docker run      <span class="comment">#构建容器</span></span><br><span class="line">docker build    <span class="comment">#创建镜像</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>beego 常用操作</title>
-    <url>/2022/10/03/golang/go-framework/beego/beego-chang-yong-cao-zuo/</url>
-    <content><![CDATA[<h3 id="1-bee-命令"><a href="#1-bee-命令" class="headerlink" title="1. bee 命令"></a>1. bee 命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bee new xxx <span class="comment"># 创建一个新项目</span></span><br><span class="line">bee api xxx <span class="comment"># 创建一个api项目</span></span><br><span class="line">bee run <span class="comment"># 运行 beego 项目</span></span><br><span class="line">bee pack <span class="comment"># 上线时用来打包beego文件的，打包完成的文件在bin文件中</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-beego-过滤器"><a href="#2-beego-过滤器" class="headerlink" title="2. beego 过滤器"></a>2. beego 过滤器</h3><pre><code>安全验证，如IP屏蔽，token 验证，访问地址屏蔽
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ne 不等于</span><br><span class="line">lt 小于</span><br><span class="line">gt 大于</span><br><span class="line">le 小于等于</span><br><span class="line">ge 大于等于</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-beego-通过orm-操作数据库"><a href="#3-beego-通过orm-操作数据库" class="headerlink" title="3. beego 通过orm 操作数据库"></a>3. beego 通过orm 操作数据库</h3><pre><code>在关系型数据库和对象之间做一个映射
-在操作数据库时，不需要写复杂的sql语句，只需要操作对象即可对对应的数据进行操作
-</code></pre>
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>beego</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>go init 函数</title>
-    <url>/2022/10/03/golang/go-base/go-init-han-shu/</url>
-    <content><![CDATA[<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><pre><code>先于main函数执行，实现包级别的一些初始化操作
-每个包可以包含多个 init 函数
-所有编译器发现的函数都会被安排在main函数之前执行
-init 函数没有输入参数，返回值会且仅会导入一次
-</code></pre>
-<h3 id="2-主要作用"><a href="#2-主要作用" class="headerlink" title="2. 主要作用"></a>2. 主要作用</h3><pre><code>初始化不能采用初始化表达式初始化的变量
-程序运行前的注册
-实现 sync.Once 功能
-</code></pre>
-<h3 id="3-init-执行顺序"><a href="#3-init-执行顺序" class="headerlink" title="3. init 执行顺序"></a>3. init 执行顺序</h3><pre><code>单个包中init执行顺序 初始化变量 &gt; init 函数 &gt; main 函数
-单个包中多个init 执行是顺序的
-相互以来的包之间的init 函数，按照递归的顺序执行
-</code></pre>
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub 添加 sshkey</title>
-    <url>/2022/10/03/util/github-tian-jia-sshkey/</url>
-    <content><![CDATA[<h2 id="1-GitHub-添加-sshkey"><a href="#1-GitHub-添加-sshkey" class="headerlink" title="1. GitHub 添加 sshkey"></a>1. GitHub 添加 sshkey</h2><h3 id="1-1-生成密钥-邮箱填自己的GitHub注册邮箱"><a href="#1-1-生成密钥-邮箱填自己的GitHub注册邮箱" class="headerlink" title="1.1. 生成密钥 邮箱填自己的GitHub注册邮箱"></a>1.1. 生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-2-生成密钥-邮箱填自己的GitHub注册邮箱"><a href="#1-2-生成密钥-邮箱填自己的GitHub注册邮箱" class="headerlink" title="1.2. 生成密钥 邮箱填自己的GitHub注册邮箱"></a>1.2. 生成密钥 邮箱填自己的GitHub注册邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;xxx@xxx.com&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-将生成的密钥添加到GitHub-SSH-keys-里面"><a href="#1-3-将生成的密钥添加到GitHub-SSH-keys-里面" class="headerlink" title="1.3. 将生成的密钥添加到GitHub SSH keys 里面"></a>1.3. 将生成的密钥添加到GitHub SSH keys 里面</h3><p>点击头像 &#x3D;》 <code>Settings</code> &#x3D;》 <code>SSH and GPG keys</code> &#x3D;》 点击 <code>New SSH key</code> 按钮 添加即可</p>
-<h3 id="1-4-测试是否添加成功"><a href="#1-4-测试是否添加成功" class="headerlink" title="1.4. 测试是否添加成功"></a>1.4. 测试是否添加成功</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com <span class="comment"># 回车 输入 yes即可 </span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo 修改后 自动提交脚本</title>
-    <url>/2022/10/03/util/zi-dong-ti-jiao-jiao-ben/</url>
-    <content><![CDATA[<p>每次修改文章后都需要敲一串生成 和 提交github 的代码，研究了一下脚本，写了两种方式自动生成并且将原代码提交</p>
-<h3 id="为什么要写两种方式呢-？"><a href="#为什么要写两种方式呢-？" class="headerlink" title="为什么要写两种方式呢 ？"></a>为什么要写两种方式呢 ？</h3><h4 id="因为-bash-和-powershell-不是一种语言，在powershell-里执行-sh-脚本也可以，他会自动调用-bash，但是不方便查看输出内容"><a href="#因为-bash-和-powershell-不是一种语言，在powershell-里执行-sh-脚本也可以，他会自动调用-bash，但是不方便查看输出内容" class="headerlink" title="因为 bash 和 powershell 不是一种语言，在powershell 里执行 sh 脚本也可以，他会自动调用 bash，但是不方便查看输出内容"></a>因为 bash 和 powershell 不是一种语言，在powershell 里执行 sh 脚本也可以，他会自动调用 bash，但是不方便查看输出内容</h4><p>脚本非常简单 一共就两步，一是hexo 生成并发布，二是推送源代码到github仓库</p>
-<p>提交到github 仓库需要 commit 的 message，所以需要在执行脚本的时候可以输入</p>
-<h3 id="bash-脚本"><a href="#bash-脚本" class="headerlink" title="bash 脚本"></a>bash 脚本</h3><h4 id="将代码复制保存在”-sh”-为后缀名的文件中，在-gitbash-中执行即可。比如-保存成-push-sh-，则-执行-“push-sh-提交信息”"><a href="#将代码复制保存在”-sh”-为后缀名的文件中，在-gitbash-中执行即可。比如-保存成-push-sh-，则-执行-“push-sh-提交信息”" class="headerlink" title="将代码复制保存在”.sh” 为后缀名的文件中，在 gitbash 中执行即可。比如 保存成 push.sh ，则 执行 “push.sh 提交信息”"></a>将代码复制保存在”.sh” 为后缀名的文件中，在 gitbash 中执行即可。比如 保存成 push.sh ，则 执行 “push.sh 提交信息”</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">if</span> [ ! -n <span class="string">&quot;<span class="variable">$1</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;请输入提交信息&quot;</span></span><br><span class="line">  <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  msg=<span class="string">&quot;<span class="variable">$1</span>&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$msg</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">echoMsg</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;\n<span class="variable">$1</span>:&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;cd D:\github\github-hexo&quot;</span></span><br><span class="line"><span class="built_in">cd</span> D:\github\github-hexo</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo g&quot;</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;hexo d&quot;</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">echoMsg <span class="string">&quot;git pull&quot;</span></span><br><span class="line">git pull</span><br><span class="line">echoMsg <span class="string">&quot;git status&quot;</span></span><br><span class="line">git status</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git add .&quot;</span></span><br><span class="line">git add .</span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git commit -m <span class="variable">$msg</span>&quot;</span></span><br><span class="line">git commit -m <span class="string">&quot;<span class="variable">$msg</span>&quot;</span></span><br><span class="line"> </span><br><span class="line">echoMsg <span class="string">&quot;git push &quot;</span></span><br><span class="line">git push </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="powershell-脚本"><a href="#powershell-脚本" class="headerlink" title="powershell 脚本"></a>powershell 脚本</h3><h4 id="将代码复制保存在”-ps1”-为后缀名的文件中，在-powershell下执行-即可。比如-保存成-push-ps1-，则-执行-“push-ps1-提交信息”"><a href="#将代码复制保存在”-ps1”-为后缀名的文件中，在-powershell下执行-即可。比如-保存成-push-ps1-，则-执行-“push-ps1-提交信息”" class="headerlink" title="将代码复制保存在”.ps1” 为后缀名的文件中，在 powershell下执行 即可。比如 保存成 push.ps1 ，则 执行 “push.ps1 提交信息”"></a>将代码复制保存在”.ps1” 为后缀名的文件中，在 powershell下执行 即可。比如 保存成 push.ps1 ，则 执行 “push.ps1 提交信息”</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 此文件在 powershell下执行</span></span><br><span class="line"></span><br><span class="line">param(<span class="variable">$msg</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hexo g&quot;</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hexo d&quot;</span></span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git add .&quot;</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git commit -m <span class="variable">$msg</span>&quot;</span></span><br><span class="line">git commit -m <span class="variable">$msg</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;git push &quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>bash</tag>
-        <tag>powershell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis</title>
-    <url>/2022/10/03/redis/redis/</url>
-    <content><![CDATA[<p>redis 所有的key 原则上都要设置过期时间！！！</p>
-<h2 id="1-常用数据类型"><a href="#1-常用数据类型" class="headerlink" title="1. 常用数据类型"></a>1. 常用数据类型</h2><h3 id="1-1-string-字符串"><a href="#1-1-string-字符串" class="headerlink" title="1.1. string 字符串"></a>1.1. string 字符串</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> user:001 <span class="string">&#x27;&#123;&quot;Id&quot;:&quot;214&quot;,&quot;Name&quot;:&quot;玫德丝度假系列青梨洗发水&quot;,&quot;Barcode&quot;:&quot;8714462081942&quot;,&quot;RecordCode&quot;:&quot;61F9J8714462081942&quot;&#125;&#x27;</span></span><br><span class="line"><span class="string">&quot;OK&quot;</span></span><br><span class="line">&gt; get user:001</span><br><span class="line"><span class="string">&quot;&#123;&quot;</span>Id<span class="string">&quot;:&quot;</span>214<span class="string">&quot;,&quot;</span>Name<span class="string">&quot;:&quot;</span>玫德丝度假系列青梨洗发水<span class="string">&quot;,&quot;</span>Barcode<span class="string">&quot;:&quot;</span>8714462081942<span class="string">&quot;,&quot;</span>RecordCode<span class="string">&quot;:&quot;</span>61F9J8714462081942<span class="string">&quot;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-hash-哈希"><a href="#1-2-hash-哈希" class="headerlink" title="1.2. hash 哈希"></a>1.2. hash 哈希</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; hget </span><br><span class="line">&gt; hmget </span><br><span class="line">&gt; hset </span><br><span class="line">&gt; hmset </span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-list-链表"><a href="#1-3-list-链表" class="headerlink" title="1.3. list 链表"></a>1.3. list 链表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; lpush user zhangsan</span><br><span class="line">&gt; lpush user lisi</span><br><span class="line">&gt; lpush user wangwu</span><br><span class="line">&gt; rpop user </span><br><span class="line">&gt; lpop user </span><br><span class="line">&gt;lrange user 1 10</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-set-集合"><a href="#1-4-set-集合" class="headerlink" title="1.4. set 集合"></a>1.4. set 集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; sadd</span><br><span class="line">&gt; spop</span><br><span class="line">&gt; smembers</span><br></pre></td></tr></table></figure>
-<h3 id="1-5-sort-set-有序集合"><a href="#1-5-sort-set-有序集合" class="headerlink" title="1.5. sort set 有序集合"></a>1.5. sort set 有序集合</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; zadd</span><br><span class="line">&gt; zrange</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>更多用法: <a href="https://www.runoob.com/redis/redis-tutorial.html">菜鸟教程</a></p>
-]]></content>
-      <categories>
-        <category>redis</category>
-      </categories>
-      <tags>
-        <tag>string</tag>
-        <tag>get</tag>
-        <tag>set</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>免费 图床</title>
-    <url>/2022/10/03/util/tu-chuang/</url>
-    <content><![CDATA[<p>免费 图床 <a href="https://www.imgurl.org/vip/manage">https://www.imgurl.org/vip/manage</a></p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>postman、apipost 预览接口数据</title>
-    <url>/2022/10/03/util/postman-apipost-yu-lan-jie-kou-shu-ju/</url>
-    <content><![CDATA[<p>使用postman 挺长时间了 ， 最近才发现可以预览接口返回的json数据</p>
-<p>ps：早知道这个功能能省事好多啊</p>
-<p>在此记录一下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 此代码写在 tests 中，请求接口后返回数据点击 Visualize 按钮 即可预览</span><br><span class="line">// html 模板字符</span><br><span class="line">var template = `</span><br><span class="line"> </span><br><span class="line">    &lt;table&gt;</span><br><span class="line">        &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;用户名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;创建时间&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line"> </span><br><span class="line">        &#123;&#123;<span class="comment">#each response&#125;&#125;</span></span><br><span class="line">            &lt;<span class="built_in">tr</span>&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;<span class="built_in">id</span>&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;name&#125;&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&#123;&#123;create_time&#125;&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line"> </span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">`;</span><br><span class="line"> </span><br><span class="line">// Set visualizer</span><br><span class="line">pm.visualizer.set(template, &#123;</span><br><span class="line">    // 解析返回的数据，并传给模板想要预览的数据 </span><br><span class="line">    response: pm.response.json().data.details</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>mysql 优化</title>
-    <url>/2022/10/03/mysql/mysql-you-hua/</url>
-    <content><![CDATA[<p>mysql</p>
-<h2 id="1-mysql-优化的不同维度："><a href="#1-mysql-优化的不同维度：" class="headerlink" title="1. mysql 优化的不同维度："></a>1. mysql 优化的不同维度：</h2><pre><code>sql语句优化
-表优化（分表，加索引）
-库优化（分库，主从分离，读写分离）
-</code></pre>
-<h2 id="2-防sql注入："><a href="#2-防sql注入：" class="headerlink" title="2. 防sql注入："></a>2. 防sql注入：</h2><pre><code>限制权限
-过滤用户数据，参数化
-不使用原生sql
-</code></pre>
-<h2 id="3-explain-执行计划"><a href="#3-explain-执行计划" class="headerlink" title="3. explain 执行计划"></a>3. explain 执行计划</h2><pre><code>从优到劣依次为：
-null &gt; system&gt; const &gt; eq_ref &gt; ref &gt; range &gt; index &gt; ALL 
-</code></pre>
-<h2 id="4-mysql-优化"><a href="#4-mysql-优化" class="headerlink" title="4. mysql 优化"></a>4. mysql 优化</h2><p>建立索引的原则是： 尽量选择区分度高的字段建立索引</p>
-<p>比例越接近1，越适合建立索引，但是区分度高低，并不能作为绝对的标准，还要结合实际业务设置索引</p>
-<p>区分度公式 ： </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">count(distinct col_name)/count(*)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引"><a href="#4-1-在-where-x2F-order-by-字段加索引，比如下面的sql，需要在-name-age-建立索引" class="headerlink" title="4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引"></a>4.1. 在 where&#x2F;order by 字段加索引，比如下面的sql，需要在 name,age 建立索引</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">select name,age,phone from user <span class="built_in">where</span> name = <span class="string">&quot;张三&quot;</span> order by age desc </span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-用户“性别”要不要建立索引-？"><a href="#4-2-用户“性别”要不要建立索引-？" class="headerlink" title="4.2. 用户“性别”要不要建立索引 ？"></a>4.2. 用户“性别”要不要建立索引 ？</h3><p>如果用户性别是平均分布，那么性别列建立索引效果不大<br>如果男女不平衡，经常需要查询少的那部分，则建立索引比较好</p>
-<p>同理，比如数据是否已经处理，is_deal 字段，0 未处理，1 已处理成功，2 处理失败，处理成功的数据占据99.9%。<br>那么建立索引就比较好</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>golang 实现简单文件上传</title>
-    <url>/2022/10/03/golang/go-base/go-shi-xian-wen-jian-shang-chuan/</url>
-    <content><![CDATA[<h2 id="golang-上传文件"><a href="#golang-上传文件" class="headerlink" title="golang 上传文件"></a>golang 上传文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;html/template&quot;</span></span><br><span class="line">	<span class="string">&quot;io&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;os&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>()  &#123;</span><br><span class="line">	http.HandleFunc(<span class="string">&quot;/upload&quot;</span>, Upload)</span><br><span class="line">	<span class="keyword">if</span> err := http.ListenAndServe(<span class="string">&quot;127.0.0.1:9090&quot;</span>, nil); err != nil &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func Upload(w http.ResponseWriter, r *http.Request)  &#123;</span><br><span class="line">	//判断请求方式</span><br><span class="line">	<span class="keyword">if</span> r.Method == <span class="string">&quot;POST&quot;</span> &#123;</span><br><span class="line">		//设置内存大小</span><br><span class="line">		r.ParseMultipartForm(32 &lt;&lt; <span class="string">20)</span></span><br><span class="line"><span class="string">		//获取上传文件</span></span><br><span class="line"><span class="string">		file, handler, err := r.FormFile(&quot;uploadfile&quot;)</span></span><br><span class="line"><span class="string">		if err != nil &#123;</span></span><br><span class="line"><span class="string">			fmt.Println(err)</span></span><br><span class="line"><span class="string">			return</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		defer file.Close()</span></span><br><span class="line"><span class="string">		fmt.Fprintf(w, &quot;%v&quot;, handler.Header)</span></span><br><span class="line"><span class="string">		//创建上传目录</span></span><br><span class="line"><span class="string">		os.Mkdir(&quot;./upload&quot;, os.ModePerm)</span></span><br><span class="line"><span class="string">		//创建上传文件</span></span><br><span class="line"><span class="string">		f, err := os.Create(&quot;./upload/&quot; + handler.Filename)</span></span><br><span class="line"><span class="string">		if err != nil &#123;</span></span><br><span class="line"><span class="string">			fmt.Println(err)</span></span><br><span class="line"><span class="string">			return</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">		defer f.Close()</span></span><br><span class="line"><span class="string">		io.Copy(f, file)</span></span><br><span class="line"><span class="string">		w.WriteHeader(http.StatusCreated)</span></span><br><span class="line"><span class="string">		io.WriteString(w, &quot;Uploaded successfully&quot;)</span></span><br><span class="line"><span class="string">	&#125; else &#123;</span></span><br><span class="line"><span class="string">		//渲染页面 解析模板文件</span></span><br><span class="line"><span class="string">		tpl, _ := template.ParseFiles(&quot;./upload.html&quot;)</span></span><br><span class="line"><span class="string">		tpl.Execute(w, nil)</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
-
-<p>参考文章: <a href="https://juejin.cn/post/7134935002432667679">稀土掘金</a></p>
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>go 修改结构体切片的值</title>
-    <url>/2022/10/03/golang/go-base/go-jie-gou-ti-qie-pian-de-zhi/</url>
-    <content><![CDATA[<p>golang</p>
-<h2 id="for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的"><a href="#for-循环结构体切片的时候，直接使用-value-值去修改，是不会修改原数据的" class="headerlink" title="for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的"></a>for 循环结构体切片的时候，直接使用 value 值去修改，是不会修改原数据的</h2><h3 id="for-循环里的-v-属于临时变量"><a href="#for-循环里的-v-属于临时变量" class="headerlink" title="for 循环里的 v 属于临时变量"></a>for 循环里的 v 属于临时变量</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span> User struct &#123;</span><br><span class="line">	Name    string</span><br><span class="line">	Address string</span><br><span class="line">	Age     int</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">	<span class="built_in">users</span> := []User&#123;</span><br><span class="line">		&#123;<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;北京&quot;</span>, 18&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;李四&quot;</span>, <span class="string">&quot;上海&quot;</span>, 19&#125;,</span><br><span class="line">		&#123;<span class="string">&quot;王五&quot;</span>, <span class="string">&quot;广州&quot;</span>, 20&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	users02 := <span class="built_in">users</span></span><br><span class="line">	fmt.Printf(<span class="string">&quot;原数据:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := range <span class="built_in">users</span> &#123;</span><br><span class="line">		v.Name = <span class="string">&quot;大傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第一种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">	<span class="keyword">for</span> k, v := range users02 &#123;</span><br><span class="line">		<span class="built_in">users</span>[k].Name = <span class="string">&quot;小傻瓜：&quot;</span> + v.Name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;第二种方式修改后:\n %+v \n&quot;</span>, <span class="built_in">users</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"><a href="#打印内容，可以看到大傻瓜没加上，小傻瓜加上了" class="headerlink" title="打印内容，可以看到大傻瓜没加上，小傻瓜加上了"></a>打印内容，可以看到大傻瓜没加上，小傻瓜加上了</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">原数据:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第一种方式修改后:</span><br><span class="line">[&#123;Name:张三 Address:北京 Age:18&#125; &#123;Name:李四 Address:上海 Age:19&#125; &#123;Name:王五 Address:广州 Age:20&#125;]</span><br><span class="line">第二种方式修改后:</span><br><span class="line">[&#123;Name:小傻瓜：张三 Address:北京 Age:18&#125; &#123;Name:小傻瓜：李四 Address:上海 Age:19 &#125; &#123;Name:小傻瓜：王五 Address:广州 Age:20&#125;]</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-        <tag>结构体</tag>
-        <tag>切片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>go int64 精度丢失</title>
-    <url>/2022/10/03/golang/go-base/go-int64-jing-du-diu-shi/</url>
-    <content><![CDATA[<p>golang</p>
-<h2 id="math-包可查看各种类型的最大值，最小数"><a href="#math-包可查看各种类型的最大值，最小数" class="headerlink" title="math 包可查看各种类型的最大值，最小数"></a>math 包可查看各种类型的最大值，最小数</h2><h3 id="int64-接收超过最大值的数字将会丢失数据"><a href="#int64-接收超过最大值的数字将会丢失数据" class="headerlink" title="int64 接收超过最大值的数字将会丢失数据"></a>int64 接收超过最大值的数字将会丢失数据</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;math&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func <span class="function"><span class="title">main</span></span>() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最大值&quot;</span>, math.MaxInt64)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Int64 最小值&quot;</span>, math.MinInt64)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#Int64 最大值 9223372036854775807</span></span><br><span class="line"><span class="comment">#Int64 最小值 -9223372036854775808</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>golang</category>
-      </categories>
-      <tags>
-        <tag>golang</tag>
-        <tag>数据类型</tag>
-        <tag>int64</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows下 docker Vmmem 占用内存过多</title>
-    <url>/2022/10/03/docker/docker-vmmem-zhan-yong-nei-cun-guo-duo/</url>
-    <content><![CDATA[<h2 id="1-Windows下-docker-启动后，Vmmem-占用内存过多"><a href="#1-Windows下-docker-启动后，Vmmem-占用内存过多" class="headerlink" title="1. Windows下 docker 启动后，Vmmem 占用内存过多"></a>1. Windows下 docker 启动后，Vmmem 占用内存过多</h2><h3 id="1-1-如果是用的wsl模式的话，就可以关闭-hyper-v"><a href="#1-1-如果是用的wsl模式的话，就可以关闭-hyper-v" class="headerlink" title="1.1. 如果是用的wsl模式的话，就可以关闭 hyper-v"></a>1.1. 如果是用的wsl模式的话，就可以关闭 hyper-v</h3><h4 id="1-1-1-关闭方式-learn-microsoft-com"><a href="#1-1-1-关闭方式-learn-microsoft-com" class="headerlink" title="1.1.1. 关闭方式 learn.microsoft.com"></a>1.1.1. 关闭方式 <a href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v">learn.microsoft.com</a></h4><h3 id="1-2-然后设置-docker-的最大使用内存"><a href="#1-2-然后设置-docker-的最大使用内存" class="headerlink" title="1.2. 然后设置 docker 的最大使用内存"></a>1.2. 然后设置 docker 的最大使用内存</h3><h4 id="1-2-1-按下-Windows-R-键，输入-UserProfile-并运行进入用户文件夹"><a href="#1-2-1-按下-Windows-R-键，输入-UserProfile-并运行进入用户文件夹" class="headerlink" title="1.2.1. 按下 Windows+R 键，输入 %UserProfile% 并运行进入用户文件夹"></a>1.2.1. 按下 <code>Windows+R</code> 键，输入 <code>%UserProfile%</code> 并运行进入用户文件夹</h4><h4 id="1-2-2-新建文件-wslconfig-，然后记事本编辑"><a href="#1-2-2-新建文件-wslconfig-，然后记事本编辑" class="headerlink" title="1.2.2. 新建文件 .wslconfig ，然后记事本编辑"></a>1.2.2. 新建文件 <code>.wslconfig</code> ，然后记事本编辑</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line">memory=2GB</span><br><span class="line">swap=0</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="1-3-重启电脑和docker"><a href="#1-3-重启电脑和docker" class="headerlink" title="1.3. 重启电脑和docker"></a>1.3. 重启电脑和docker</h3>]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>Vmmem</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows 环境下 使用 docker 安装 mysql,并且挂载外部配置和数据</title>
-    <url>/2022/10/03/docker/windows-xia-shi-yong-docker-an-zhuang-mysql/</url>
-    <content><![CDATA[<h2 id="1-Docker-安装-MySQL"><a href="#1-Docker-安装-MySQL" class="headerlink" title="1. Docker 安装 MySQL"></a>1. Docker 安装 MySQL</h2><h3 id="1-1-查看可用的-MySQL-版本"><a href="#1-1-查看可用的-MySQL-版本" class="headerlink" title="1.1. 查看可用的 MySQL 版本"></a>1.1. 查看可用的 MySQL 版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-拉取-MySQL-镜像"><a href="#1-2-拉取-MySQL-镜像" class="headerlink" title="1.2. 拉取 MySQL 镜像"></a>1.2. 拉取 MySQL 镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull mysql:latest</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-查看本地镜像"><a href="#1-3-查看本地镜像" class="headerlink" title="1.3. 查看本地镜像"></a>1.3. 查看本地镜像</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-运行容器"><a href="#1-4-运行容器" class="headerlink" title="1.4. 运行容器"></a>1.4. 运行容器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -itd --name mysql-test06 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test07 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test08 -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br><span class="line">docker run -itd --name mysql-test09 -p 3309:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-5-参数说明："><a href="#1-5-参数说明：" class="headerlink" title="1.5. 参数说明："></a>1.5. 参数说明：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">--name 设置容器名</span><br><span class="line">-p ，设置端口映射，</span><br><span class="line">    3306:3306 ：主机 windows 3306 端口:容器内mysql 的 3306 端口，</span><br><span class="line">    外部主机可以直接通过 宿主机ip:3306 访问到 MySQL 的服务。</span><br><span class="line">    也可以改为 3307/3308/3309 等其他可用端口值</span><br><span class="line"></span><br><span class="line">-e 设置环境变量</span><br><span class="line">    MYSQL_ROOT_PASSWORD=123456：设置 MySQL 服务 root 用户的密码。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-6-挂载外部配置和数据"><a href="#1-6-挂载外部配置和数据" class="headerlink" title="1.6. 挂载外部配置和数据"></a>1.6. 挂载外部配置和数据</h3><ul>
-<li>data: mysql的数据目录，包括数据库，表</li>
-<li>conf.d :存储自定义配置文件</li>
-<li>my.cnf :是默认配置文件</li>
-</ul>
-<h3 id="1-7-创建对应的文件夹和文件"><a href="#1-7-创建对应的文件夹和文件" class="headerlink" title="1.7. 创建对应的文件夹和文件"></a>1.7. 创建对应的文件夹和文件</h3><p>如下：<br><img src="https://s3.bmp.ovh/imgs/2022/09/28/9106e755438c0a34.png"></p>
-<h4 id="1-7-1-创建对应的文件夹"><a href="#1-7-1-创建对应的文件夹" class="headerlink" title="1.7.1. 创建对应的文件夹"></a>1.7.1. 创建对应的文件夹</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/data  </span><br><span class="line">d:/docker/mysql/conf.d</span><br></pre></td></tr></table></figure>
-<h4 id="1-7-2-创建对应的配置文件-my-cnf"><a href="#1-7-2-创建对应的配置文件-my-cnf" class="headerlink" title="1.7.2. 创建对应的配置文件 my.cnf"></a>1.7.2. 创建对应的配置文件 my.cnf</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:/docker/mysql/my.cnf</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-7-3-my-cnf添加如下内容"><a href="#1-7-3-my-cnf添加如下内容" class="headerlink" title="1.7.3. my.cnf添加如下内容"></a>1.7.3. my.cnf添加如下内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">user=mysql</span><br><span class="line">character-set-server=utf8</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">secure_file_priv=/var/lib/mysql</span><br><span class="line">expire_logs_days=7</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br><span class="line">max_connections=1000</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-8-创建容器，并后台启动"><a href="#1-8-创建容器，并后台启动" class="headerlink" title="1.8. 创建容器，并后台启动"></a>1.8. 创建容器，并后台启动</h3><p><strong>注意，这里如果在 windows 系统下 需要加上盘符，即绝对路径</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">示例一：</span><br><span class="line">docker run -v d:/docker/mysql/data/:/var/lib/mysql -v d:/docker/mysql/conf.d:/etc/mysql/conf.d -v d:/docker/mysql/my.cnf:/etc/mysql/my.cnf -p 3309:3306 --name mysql-test09 -e MYSQL_ROOT_PASSWORD=123456 -d 43fcfca0776d</span><br><span class="line">示例二：</span><br><span class="line">docker run -v d:/docker/mysql3306/data/:/var/lib/mysql -v d:/docker/mysql3306/conf.d:/etc/mysql/conf.d -v d:/docker/mysql3306/my.cnf:/etc/mysql/my.cnf -p 3306:3306 --name mysql-test06 -e MYSQL_ROOT_PASSWORD=123456 -d 43fcfca0776d</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="1-5-参数说明：-1"><a href="#1-5-参数说明：-1" class="headerlink" title="1.5. 参数说明："></a>1.5. 参数说明：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-v : --volume 绑定一个卷</span><br><span class="line">-d :后台运行容器，并返回容器ID</span><br></pre></td></tr></table></figure>
-
-<p>参考文章:<br>    <a href="https://www.runoob.com/docker/docker-install-mysql.html">菜鸟教程</a><br>    <a href="https://www.cnblogs.com/linjiqin/p/11465804.html">博客园</a></p>
-]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PowerShell一次执行多条命令</title>
-    <url>/2022/10/03/util/powershell-yi-ci-zhi-xing-duo-tiao-ming-ling/</url>
-    <content><![CDATA[<p>参考文章 <a href="https://blog.csdn.net/u011215669/article/details/81086097">csdn</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add . | git commit -m <span class="string">&quot;edit&quot;</span> | git push</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
   </entry>
 </search>
